@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description:
     "Führender Anbieter von AI Vision Systemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtinspektion und Qualitätskontrolle.",
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon512.png",
+    apple: "/favicon512.png",
   },
 }
 

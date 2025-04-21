@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   description:
     "Leading provider of AI vision systems for automotive and manufacturing industries, specializing in weld seam inspection and quality control.",
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon512.png",
+    apple: "/favicon512.png",
   },
     generator: 'v0.dev'
 }

@@ -89,14 +89,10 @@ export default function AboutPage() {
                   entwickeln Deep-Learning-basierte Kamerasysteme und Bildverarbeitungssoftware zur Automatisierung der
                   Qualitätssicherung in der industriellen Fertigung.
                 </p>
-                <p>
+                <p className="mt-4">
                   Unser Team vereint Expertise in Softwareentwicklung, maschinellem Lernen und Automobilherstellung, um
                   hochmoderne AI Vision Systeme zu entwickeln, die reale Herausforderungen in der Qualitätskontrolle
                   lösen.
-                </p>
-                <p>
-                  Als Mitglied der Campus Founders auf dem Bildungscampus in Heilbronn sind wir Teil eines lebendigen
-                  Startup-Ökosystems, das Innovation und Wachstum fördert.
                 </p>
               </div>
             </div>
@@ -135,12 +131,12 @@ export default function AboutPage() {
                   insbesondere im Bereich der visuellen Inspektion und Qualitätssicherung. Dabei helfen wir Unternehmen,
                   effizienter zu arbeiten und die Qualität ihrer Endprodukte zu steigern.
                 </p>
-                <p>
+                <p className="mt-4">
                   In einer Zeit, in der Arbeit schneller, besser und effizienter erledigt werden muss und der
                   Kostendruck auf Unternehmen steigt, stoßen Mitarbeiter und Unternehmen an ihre Grenzen. An diesem
                   Punkt haben Technologien das Potenzial, mit künstlicher Intelligenz zu unterstützen.
                 </p>
-                <p>
+                <p className="mt-4">
                   Wir lassen die Zeit hinter uns, in der Menschen mit repetitiven und körperlich anstrengenden Arbeiten
                   belastet werden. Wir wollen, dass Mitarbeiter ihre Energie in kreative und wertschöpfende Aufgaben
                   investieren können. Um dies zu erreichen, bringen wir die neuesten technologischen Entwicklungen von

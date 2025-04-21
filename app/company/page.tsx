@@ -89,13 +89,9 @@ export default function AboutPage() {
                   learning based camera systems and image processing software to automate quality assurance in
                   industrial manufacturing.
                 </p>
-                <p>
+                <p className="mt-4">
                   Our team combines expertise in software engineering, machine learning, and automotive manufacturing to
                   create cutting-edge AI vision systems that solve real-world quality control challenges.
-                </p>
-                <p>
-                  As a member of the Campus Founders on the Bildungscampus in Heilbronn, we're part of a vibrant startup
-                  ecosystem that fosters innovation and growth.
                 </p>
               </div>
             </div>
@@ -134,12 +130,12 @@ export default function AboutPage() {
                   visual inspection and quality assurance. In doing so, we help companies to work more efficiently plus
                   increase the quality of their end products.
                 </p>
-                <p>
+                <p className="mt-4">
                   At a time when work needs to be done faster, better and more efficiently and cost pressure on
                   companies is increasing, employees and companies are reaching their limits. At this point,
                   technologies have the potential to support with artificial intelligence.
                 </p>
-                <p>
+                <p className="mt-4">
                   We are leaving behind the time when people are burdened with repetitive and physically demanding work.
                   We want employees to be able to invest their energy in creative and value-adding tasks. To achieve
                   this, we bring the latest technological developments of software and hardware in the field of image

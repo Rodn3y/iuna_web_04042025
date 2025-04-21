@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "IUNA AI - Advanced AI Vision Systems for Manufacturing",
   description:
     "Leading provider of AI vision systems for automotive and manufacturing industries, specializing in weld seam inspection and quality control.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
     generator: 'v0.dev'
 }
 

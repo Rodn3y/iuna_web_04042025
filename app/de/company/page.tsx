@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/iuna-team-audi.jpeg"
-            alt="IUNA AI Team at Audi"
+            alt="IUNA AI Team bei Audi"
             fill
             className="object-cover brightness-[0.4]"
             priority
@@ -43,7 +43,7 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-center text-gray-900 mb-12">This is IUNA AI</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-center text-gray-900 mb-12">Das ist IUNA AI</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Vehicles Inspected */}
@@ -51,8 +51,8 @@ export default function AboutPage() {
               <div className="flex items-center justify-center w-24 h-24 rounded-full bg-black mb-6">
                 <Car className="h-12 w-12 text-white" />
               </div>
-              <p className="text-5xl font-bold text-primary mb-2">100,000+</p>
-              <p className="text-xl text-gray-700">inspected vehicles</p>
+              <p className="text-5xl font-bold text-primary mb-2">100.000+</p>
+              <p className="text-xl text-gray-700">inspizierte Fahrzeuge</p>
             </div>
 
             {/* Labeled Images */}
@@ -60,8 +60,8 @@ export default function AboutPage() {
               <div className="flex items-center justify-center w-24 h-24 rounded-full bg-black mb-6">
                 <ImageIcon className="h-12 w-12 text-white" />
               </div>
-              <p className="text-5xl font-bold text-primary mb-2">1,000,000+</p>
-              <p className="text-xl text-gray-700">labeled images</p>
+              <p className="text-5xl font-bold text-primary mb-2">1.000.000+</p>
+              <p className="text-xl text-gray-700">gelabelte Bilder</p>
             </div>
 
             {/* Processed Images */}
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 <BarChart3 className="h-12 w-12 text-white" />
               </div>
               <p className="text-5xl font-bold text-primary mb-2">150M+</p>
-              <p className="text-xl text-gray-700">processed images</p>
+              <p className="text-xl text-gray-700">verarbeitete Bilder</p>
             </div>
           </div>
         </div>
@@ -81,28 +81,29 @@ export default function AboutPage() {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 md:grid-cols-2 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Company</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Unternehmen</h2>
 
               <div className="prose prose-lg max-w-none">
                 <p>
-                  IUNA AI Systems GmbH is a company founded in 2020 and based in Heilbronn, Germany. We develop deep
-                  learning based camera systems and image processing software to automate quality assurance in
-                  industrial manufacturing.
+                  IUNA AI Systems GmbH ist ein 2020 gegründetes Unternehmen mit Sitz in Heilbronn, Deutschland. Wir
+                  entwickeln Deep-Learning-basierte Kamerasysteme und Bildverarbeitungssoftware zur Automatisierung der
+                  Qualitätssicherung in der industriellen Fertigung.
                 </p>
                 <p>
-                  Our team combines expertise in software engineering, machine learning, and automotive manufacturing to
-                  create cutting-edge AI vision systems that solve real-world quality control challenges.
+                  Unser Team vereint Expertise in Softwareentwicklung, maschinellem Lernen und Automobilherstellung, um
+                  hochmoderne AI Vision Systeme zu entwickeln, die reale Herausforderungen in der Qualitätskontrolle
+                  lösen.
                 </p>
                 <p>
-                  As a member of the Campus Founders on the Bildungscampus in Heilbronn, we're part of a vibrant startup
-                  ecosystem that fosters innovation and growth.
+                  Als Mitglied der Campus Founders auf dem Bildungscampus in Heilbronn sind wir Teil eines lebendigen
+                  Startup-Ökosystems, das Innovation und Wachstum fördert.
                 </p>
               </div>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/iuna-team-thumbs-up.png"
-                alt="IUNA AI team giving thumbs up"
+                alt="IUNA AI Team mit Daumen hoch"
                 width={800}
                 height={600}
                 className="w-full h-auto"
@@ -119,31 +120,31 @@ export default function AboutPage() {
             <div className="order-2 md:order-1 relative rounded-lg overflow-hidden shadow-xl">
               <Image
                 src="/images/team-exhibition.png"
-                alt="IUNA AI team at an exhibition"
+                alt="IUNA AI Team auf einer Ausstellung"
                 width={800}
                 height={600}
                 className="w-full h-auto"
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Our Mission</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Unsere Mission</h2>
 
               <div className="prose prose-lg max-w-none">
                 <p>
-                  We want to take automation in industrial production to the next level, especially in the area of
-                  visual inspection and quality assurance. In doing so, we help companies to work more efficiently plus
-                  increase the quality of their end products.
+                  Wir wollen die Automatisierung in der industriellen Produktion auf die nächste Stufe heben,
+                  insbesondere im Bereich der visuellen Inspektion und Qualitätssicherung. Dabei helfen wir Unternehmen,
+                  effizienter zu arbeiten und die Qualität ihrer Endprodukte zu steigern.
                 </p>
                 <p>
-                  At a time when work needs to be done faster, better and more efficiently and cost pressure on
-                  companies is increasing, employees and companies are reaching their limits. At this point,
-                  technologies have the potential to support with artificial intelligence.
+                  In einer Zeit, in der Arbeit schneller, besser und effizienter erledigt werden muss und der
+                  Kostendruck auf Unternehmen steigt, stoßen Mitarbeiter und Unternehmen an ihre Grenzen. An diesem
+                  Punkt haben Technologien das Potenzial, mit künstlicher Intelligenz zu unterstützen.
                 </p>
                 <p>
-                  We are leaving behind the time when people are burdened with repetitive and physically demanding work.
-                  We want employees to be able to invest their energy in creative and value-adding tasks. To achieve
-                  this, we bring the latest technological developments of software and hardware in the field of image
-                  processing to the industry.
+                  Wir lassen die Zeit hinter uns, in der Menschen mit repetitiven und körperlich anstrengenden Arbeiten
+                  belastet werden. Wir wollen, dass Mitarbeiter ihre Energie in kreative und wertschöpfende Aufgaben
+                  investieren können. Um dies zu erreichen, bringen wir die neuesten technologischen Entwicklungen von
+                  Software und Hardware im Bereich der Bildverarbeitung in die Industrie.
                 </p>
               </div>
             </div>
@@ -155,8 +156,10 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Our Values</h2>
-            <p className="mt-4 text-lg text-gray-600">The principles that guide our work and company culture</p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Unsere Werte</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Die Prinzipien, die unsere Arbeit und Unternehmenskultur leiten
+            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -164,10 +167,10 @@ export default function AboutPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200">
                 <Users className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Collaboration</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Zusammenarbeit</h3>
               <p className="text-gray-600">
-                We believe in the power of teamwork and open communication. By working together across disciplines, we
-                create solutions that exceed expectations.
+                Wir glauben an die Kraft der Teamarbeit und offenen Kommunikation. Durch die Zusammenarbeit über
+                Disziplinen hinweg schaffen wir Lösungen, die die Erwartungen übertreffen.
               </p>
             </div>
 
@@ -177,8 +180,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
               <p className="text-gray-600">
-                We constantly push the boundaries of what's possible with AI and computer vision technology, seeking
-                creative solutions to complex industrial challenges.
+                Wir erweitern ständig die Grenzen des Möglichen mit KI- und Computer-Vision-Technologie und suchen nach
+                kreativen Lösungen für komplexe industrielle Herausforderungen.
               </p>
             </div>
 
@@ -186,10 +189,10 @@ export default function AboutPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-200">
                 <Award className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Exzellenz</h3>
               <p className="text-gray-600">
-                We are committed to delivering the highest quality in everything we do, from our AI algorithms to our
-                customer service and support.
+                Wir sind bestrebt, in allem, was wir tun, höchste Qualität zu liefern, von unseren KI-Algorithmen bis zu
+                unserem Kundenservice und Support.
               </p>
             </div>
           </div>
@@ -200,9 +203,9 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Our Work Environment</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Unsere Arbeitsumgebung</h2>
             <p className="mt-4 text-lg text-gray-600">
-              At IUNA AI, we work at the intersection of cutting-edge technology and industrial manufacturing
+              Bei IUNA AI arbeiten wir an der Schnittstelle von Spitzentechnologie und industrieller Fertigung
             </p>
           </div>
 
@@ -210,32 +213,32 @@ export default function AboutPage() {
             <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/images/manufacturing-worker.png"
-                alt="Manufacturing worker using IUNA AI vision system"
+                alt="Fertigungsmitarbeiter mit IUNA AI Vision System"
                 fill
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs text-white text-center">
-                Image Source: Audi AG
+                Bildquelle: Audi AG
               </div>
             </div>
             <div className="relative h-80 overflow-hidden rounded-lg shadow-lg">
               <Image
                 src="/images/team-audi-inspection.png"
-                alt="IUNA AI team inspecting components at Audi"
+                alt="IUNA AI Team bei der Inspektion von Komponenten bei Audi"
                 fill
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs text-white text-center">
-                Image Source: Audi AG
+                Bildquelle: Audi AG
               </div>
             </div>
           </div>
 
           <div className="mt-8 text-center">
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our team regularly visits customer sites to implement our AI vision systems, working directly with
-              manufacturing teams to optimize quality control processes. This hands-on approach ensures our solutions
-              meet real-world needs and deliver measurable results.
+              Unser Team besucht regelmäßig Kundenstandorte, um unsere AI Vision Systeme zu implementieren und arbeitet
+              direkt mit Fertigungsteams zusammen, um Qualitätskontrollprozesse zu optimieren. Dieser praktische Ansatz
+              stellt sicher, dass unsere Lösungen reale Bedürfnisse erfüllen und messbare Ergebnisse liefern.
             </p>
           </div>
         </div>
@@ -245,7 +248,7 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Founders</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Gründer</h2>
           </div>
 
           <div className="grid gap-12 md:grid-cols-3">
@@ -257,8 +260,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold">Jan Nabatian</h3>
               <p className="text-primary font-medium">CEO</p>
               <p className="mt-2 text-gray-600">
-                Jan studied software engineering in Stuttgart before working in the field of production analysis in the
-                automotive industry. Since 2020, Jan has been leading IUNA AI as Managing Director.
+                Jan studierte Softwareentwicklung in Stuttgart, bevor er im Bereich der Produktionsanalyse in der
+                Automobilindustrie arbeitete. Seit 2020 leitet Jan IUNA AI als Geschäftsführer.
               </p>
             </div>
 
@@ -270,8 +273,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold">William Chen</h3>
               <p className="text-primary font-medium">CTO</p>
               <p className="mt-2 text-gray-600">
-                William studied automotive engineering in Beijing and Karlsruhe before working as a development engineer
-                in the automotive industry. Since 2020, he has been head of product development at IUNA AI.
+                William studierte Automobilingenieurwesen in Peking und Karlsruhe, bevor er als Entwicklungsingenieur in
+                der Automobilindustrie arbeitete. Seit 2020 ist er Leiter der Produktentwicklung bei IUNA AI.
               </p>
             </div>
 
@@ -283,8 +286,8 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold">Samira Nabatian</h3>
               <p className="text-primary font-medium">COO</p>
               <p className="mt-2 text-gray-600">
-                Samira studied economics in Nuremberg before working in commercial project management at Siemens. She
-                has been Head of Business Development and Finance at IUNA AI since 2020.
+                Samira studierte Wirtschaftswissenschaften in Nürnberg, bevor sie im kaufmännischen Projektmanagement
+                bei Siemens arbeitete. Seit 2020 ist sie Leiterin für Business Development und Finanzen bei IUNA AI.
               </p>
             </div>
           </div>
@@ -296,11 +299,11 @@ export default function AboutPage() {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-12 gap-12">
             <div className="col-span-12 md:col-span-4">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Contact Us</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Kontaktieren Sie uns</h2>
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Address</h3>
+                  <h3 className="text-xl font-bold mb-4">Adresse</h3>
                   <div className="flex items-start space-x-3 text-gray-700">
                     <MapPin className="h-5 w-5 flex-shrink-0 mt-1" />
                     <div>
@@ -312,7 +315,7 @@ export default function AboutPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Contact</h3>
+                  <h3 className="text-xl font-bold mb-4">Kontakt</h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3 text-gray-700">
                       <Mail className="h-5 w-5 flex-shrink-0" />
@@ -333,7 +336,7 @@ export default function AboutPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-700 hover:text-primary transition-colors"
-                      aria-label="Follow us on LinkedIn"
+                      aria-label="Folgen Sie uns auf LinkedIn"
                     >
                       <Linkedin className="h-12 w-12" />
                       <span className="sr-only">LinkedIn</span>
@@ -343,7 +346,7 @@ export default function AboutPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-700 hover:text-primary transition-colors"
-                      aria-label="Follow us on X (Twitter)"
+                      aria-label="Folgen Sie uns auf X (Twitter)"
                     >
                       <Twitter className="h-12 w-12" />
                       <span className="sr-only">X (Twitter)</span>
@@ -353,7 +356,7 @@ export default function AboutPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-700 hover:text-primary transition-colors"
-                      aria-label="Subscribe to our YouTube channel"
+                      aria-label="Abonnieren Sie unseren YouTube-Kanal"
                     >
                       <Youtube className="h-12 w-12" />
                       <span className="sr-only">YouTube</span>
@@ -372,7 +375,7 @@ export default function AboutPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="IUNA AI Location Map showing broader Baden-Württemberg region"
+                title="IUNA AI Standortkarte mit der Region Baden-Württemberg"
                 className="w-full h-full"
               ></iframe>
             </div>
@@ -384,19 +387,22 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6 text-center">Join Our Team</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6 text-center">
+              Werde Teil unseres Teams
+            </h2>
             <p className="text-lg text-gray-600 mb-6">
-              We're always looking for talented individuals who are passionate about AI, computer vision, and quality
-              assurance to join our growing team.
+              Wir suchen stets nach talentierten Personen, die sich für KI, Computer Vision und Qualitätssicherung
+              begeistern und Teil unseres wachsenden Teams werden möchten.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              At IUNA AI, you'll have the opportunity to work on cutting-edge technology that's transforming industrial
-              manufacturing, collaborate with a talented team, and make a real impact on our customers' operations.
+              Bei IUNA AI haben Sie die Möglichkeit, an Spitzentechnologien zu arbeiten, die die industrielle Fertigung
+              verändern, mit einem talentierten Team zusammenzuarbeiten und einen echten Einfluss auf die Abläufe
+              unserer Kunden zu nehmen.
             </p>
             <div className="flex justify-center">
-              <Link href="/careers">
+              <Link href="/de/careers">
                 <Button className="group">
-                  View Open Positions
+                  Offene Stellen ansehen
                   <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -410,24 +416,25 @@ export default function AboutPage() {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to transform your quality control?
+              Bereit, Ihre Qualitätskontrolle zu transformieren?
             </h2>
             <p className="mt-4 text-xl text-white/90">
-              Contact us to learn how our AI vision systems can improve your manufacturing processes.
+              Kontaktieren Sie uns, um zu erfahren, wie unsere AI Vision Systeme Ihre Fertigungsprozesse verbessern
+              können.
             </p>
             <div className="mt-10 flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Link href="/contact#schedule-consultation">
+              <Link href="/de/contact#schedule-consultation">
                 <Button size="lg" variant="secondary">
-                  Schedule Consultation
+                  Beratungstermin vereinbaren
                 </Button>
               </Link>
-              <Link href="/contact#contact-form">
+              <Link href="/de/contact#contact-form">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-gray-300 bg-gray-200 text-gray-900 hover:bg-gray-300"
                 >
-                  Request Demo
+                  Demo anfragen
                 </Button>
               </Link>
             </div>

@@ -93,10 +93,6 @@ export default function AboutPage() {
                   Our team combines expertise in software engineering, machine learning, and automotive manufacturing to
                   create cutting-edge AI vision systems that solve real-world quality control challenges.
                 </p>
-                <p>
-                  As a member of the Campus Founders on the Bildungscampus in Heilbronn, we're part of a vibrant startup
-                  ecosystem that fosters innovation and growth.
-                </p>
               </div>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">

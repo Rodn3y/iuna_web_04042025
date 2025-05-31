@@ -23,31 +23,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Combine all routes
   const allRoutes = [...englishRoutes, ...germanRoutes]
 
-  // Current date for lastModified
-  const date = new Date()
-
-  // Generate sitemap entries
+  // Create sitemap entries
   return allRoutes.map((route) => {
+    // Determine priority based on route importance
+    let priority = 0.5
+    if (route === "" || route === "/de") {
+      priority = 1.0 // Homepage gets highest priority
+    } else if (route.includes("products") || route.includes("produkte")) {
+      priority = 0.8 // Product pages get high priority
+    } else if (route.includes("use-cases") || route.includes("news")) {
+      priority = 0.7 // Use cases and news get medium-high priority
+    } else if (route.includes("careers") || route.includes("contact")) {
+      priority = 0.6 // Careers and contact get medium priority
+    }
+
+    // Determine change frequency
+    const changeFrequency = route === "" || route === "/de" ? "weekly" : "monthly"
+
     return {
       url: `${baseUrl}${route}`,
-      lastModified: date,
-      changeFrequency: route === "" || route === "/de" ? "weekly" : "monthly",
-      priority: getPriority(route),
+      lastModified: new Date(),
+      changeFrequency: changeFrequency as "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never",
+      priority: priority,
     }
   })
-}
-
-// Helper function to determine priority based on route importance
-function getPriority(route: string): number {
-  if (route === "" || route === "/de") {
-    return 1.0 // Homepage gets highest priority
-  } else if (route.includes("/products/") || route === "/company" || route === "/de/company") {
-    return 0.8 // Product pages and company page get high priority
-  } else if (route.includes("/use-cases") || route.includes("/news")) {
-    return 0.7 // Use cases and news get medium-high priority
-  } else if (route.includes("/careers") || route.includes("/contact")) {
-    return 0.6 // Careers and contact get medium priority
-  } else {
-    return 0.5 // All other pages get standard priority
-  }
 }

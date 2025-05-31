@@ -2,26 +2,30 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
 export function middleware(request: NextRequest) {
-  // Add pathname to headers so layouts can access it
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set("x-pathname", request.nextUrl.pathname)
+  // Get the pathname from the URL
+  const pathname = request.nextUrl.pathname
 
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  })
+  // Create a new response
+  const response = NextResponse.next()
+
+  // Add the pathname as a header
+  response.headers.set("x-pathname", pathname)
+
+  // Check if preview mode is enabled
+  const isPreviewMode = request.cookies.get("preview-mode")?.value === "true"
+  response.headers.set("x-preview-mode", isPreviewMode ? "true" : "false")
+
+  return response
 }
 
+// Configure which paths the middleware runs on
 export const config = {
   matcher: [
     /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
+     * Match all paths except:
+     * - API routes (/api/*)
+     * - Static files (_next/static, _next/image, favicon.ico, etc.)
      */
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api/enable-preview|_next/static|_next/image|favicon.ico).*)",
   ],
 }

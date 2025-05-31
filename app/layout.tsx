@@ -10,15 +10,33 @@ import { headers } from "next/headers"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "IUNA AI - Advanced AI Vision Systems for Manufacturing",
-  description:
-    "Leading provider of AI vision systems for automotive and manufacturing industries, specializing in weld seam inspection and quality control.",
-  icons: {
-    icon: "/favicon512.png",
-    apple: "/favicon512.png",
-  },
-    generator: 'v0.dev'
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = headers()
+  const pathname = headersList.get("x-pathname") || ""
+  const isGerman = pathname.startsWith("/de")
+
+  // Generate canonical URL and alternate URLs
+  const baseUrl = "https://www.iuna.ai"
+  const englishPath = isGerman ? pathname.replace(/^\/de/, "") || "/" : pathname
+  const germanPath = isGerman ? pathname : `/de${pathname}`
+
+  return {
+    title: "IUNA AI - Advanced AI Vision Systems for Manufacturing",
+    description:
+      "Leading provider of AI vision systems for automotive and manufacturing industries, specializing in weld seam inspection and quality control.",
+    icons: {
+      icon: "/favicon512.png",
+      apple: "/favicon512.png",
+    },
+    alternates: {
+      canonical: `${baseUrl}${pathname}`,
+      languages: {
+        en: `${baseUrl}${englishPath}`,
+        de: `${baseUrl}${germanPath}`,
+        "x-default": `${baseUrl}${englishPath}`,
+      },
+    },
+  }
 }
 
 export default function RootLayout({
@@ -45,3 +63,7 @@ export default function RootLayout({
     </html>
   )
 }
+
+export const metadata = {
+      generator: 'v0.dev'
+    };

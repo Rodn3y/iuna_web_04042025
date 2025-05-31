@@ -19,9 +19,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   return {
-    title: "IUNA AI - Fortschrittliche AI Vision Systeme für die Fertigung",
+    title: "IUNA AI – KI-Bildverarbeitungssysteme für die industrielle Fertigung",
     description:
-      "Führender Anbieter von AI Vision Systemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtinspektion und Qualitätskontrolle.",
+      "Führender Anbieter von KI-Bildverarbeitungssystemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtprüfung und dimensionales Messen.",
     icons: {
       icon: "/favicon512.png",
       apple: "/favicon512.png",

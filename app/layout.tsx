@@ -10,9 +10,9 @@ import { headers } from "next/headers"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "IUNA AI - Advanced AI Vision Systems for Manufacturing",
+  title: "IUNA AI - AI Vision Systems for industrial Manufacturing",
   description:
-    "Leading provider of AI vision systems for automotive and manufacturing industries, specializing in weld seam inspection and quality control.",
+    "Leading provider of AI Vision Systems for automotive and manufacturing industries, specializing in weld seam inspection and dimensional measurement.",
   icons: {
     icon: "/favicon512.png",
     apple: "/favicon512.png",

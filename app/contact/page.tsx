@@ -370,7 +370,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-lg font-medium text-gray-900">Telefon</p>
+                    <p className="text-lg font-medium text-gray-900">Phone</p>
                     <a href="tel:+4915255386189" className="mt-1 text-gray-600 hover:text-primary">
                       +49 152 5538 6189
                     </a>
@@ -382,7 +382,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-lg font-medium text-gray-900">Adresse</p>
+                    <p className="text-lg font-medium text-gray-900">Address</p>
                     <p className="mt-1 text-gray-600">
                       IUNA AI Systems GmbH
                       <br />

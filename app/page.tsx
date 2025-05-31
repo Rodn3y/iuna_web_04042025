@@ -28,7 +28,7 @@ export default function Home() {
               </h1>
               <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
               <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
-                Leading Innovation in Automated Visual Inspection
+                for automated weld seam inspection and dimensional measurement
               </p>
             </div>
           </div>

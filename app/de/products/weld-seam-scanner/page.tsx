@@ -47,6 +47,11 @@ export default function WeldSeamScannerPage() {
               Genauigkeit, die Sie benötigen.
             </p>
             <p>
+              Unser System unterstützt die Sichtprüfung von Schweißnähten nach den internationalen Normen ISO 5817 (für
+              Stahl, Edelstahl, Titan, Nickel) und ISO 10042 (für Aluminium). Dies gewährleistet eine objektive und
+              wiederholbare Bewertung, die den höchsten Qualitätsanforderungen der Industrie entspricht.
+            </p>
+            <p>
               Wir unterstützen die Inspektion aller gängigen Schweißverfahren, einschließlich MIG- und MAG-Schweißen.
             </p>
           </div>

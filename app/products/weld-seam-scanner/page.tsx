@@ -45,6 +45,11 @@ export default function WeldSeamScannerPage() {
               want comprehensive documentation of the results, our system adapts seamlessly to your production
               environment and offers you the flexibility and accuracy you need.
             </p>
+            <p>
+              Our system supports the visual inspection of weld seams in accordance with international standards ISO
+              5817 (for steel, stainless steel, titanium, and nickel) and ISO 10042 (for aluminum). This ensures an
+              objective and repeatable assessment that meets the highest industry quality requirements.
+            </p>
             <p>We support the inspection of all common welding processes, including MIG and MAG welding.</p>
           </div>
         </div>

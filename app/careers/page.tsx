@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronRight, Check, Users, Lightbulb, Zap, GraduationCap, Clock, Coffee } from "lucide-react"
+import { ChevronRight, Check, Users, Lightbulb, Zap, GraduationCap, Clock, Coffee } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 export default function CareersPage() {
@@ -318,8 +318,8 @@ export default function CareersPage() {
             </p>
             <p className="mt-2 text-lg text-white/90">
               Send your application to{" "}
-              <a href="mailto:sales@iuna.ai" className="underline hover:text-white">
-                sales@iuna.ai
+              <a href="mailto:careers@iuna.ai" className="underline hover:text-white">
+                careers@iuna.ai
               </a>
             </p>
             <div className="mt-10 flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

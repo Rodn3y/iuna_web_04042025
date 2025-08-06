@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -25,32 +25,31 @@ export default function WeldSeamScannerPage() {
           <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
             Fully automatic visual inspection of weld seams
           </p>
-          {/* Buttons removed */}
         </div>
       </section>
 
       {/* Overview Section */}
       <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">AI-based weld seam inspection</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900">Ensure the highest weld quality – based on international standards</h2>
           <div className="mt-6 prose prose-lg max-w-none text-gray-600">
             <p>
-              Our standard system, consisting of one or more industrial cameras, an industrial PC and the IUNA AI
-              software, can be individually adapted to your requirements and impresses with its simple integration into
-              your production process. Our system is ideal for inspecting both manually and automatically welded seams.
+              Our system enables the visual inspection of weld seams in accordance with globally recognized welding standards:
             </p>
-            <p>
-              With the IUNA Weld Seam Scanner, you benefit from an efficient, reliable and user-friendly solution that
-              takes your quality control to the next level. Whether you need precise inspection of your weld seams or
-              want comprehensive documentation of the results, our system adapts seamlessly to your production
-              environment and offers you the flexibility and accuracy you need.
+            <ul className="space-y-4 mt-6">
+              <li>
+                <strong>ISO 5817:</strong> Defines quality levels and acceptance criteria for weld imperfections in steel, stainless steel, titanium, and nickel.
+              </li>
+              <li>
+                <strong>ISO 10042:</strong> Applies specifically to aluminum welds and sets limits for acceptable deviations in aluminum arc welding.
+              </li>
+              <li>
+                <strong>ISO 6520-1:</strong> Serves as the classification basis for all welding imperfections and defines the types and categories of weld seam irregularities.
+              </li>
+            </ul>
+            <p className="mt-6">
+              These standards ensure an objective, repeatable, and traceable assessment of weld quality across all production batches.
             </p>
-            <p>
-              Our system supports the visual inspection of weld seams in accordance with international standards ISO
-              5817 (for steel, stainless steel, titanium, and nickel) and ISO 10042 (for aluminum). This ensures an
-              objective and repeatable assessment that meets the highest industry quality requirements.
-            </p>
-            <p>We support the inspection of all common welding processes, including MIG and MAG welding.</p>
           </div>
         </div>
       </section>

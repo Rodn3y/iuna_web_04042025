@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -31,28 +31,24 @@ export default function WeldSeamScannerPage() {
       {/* Overview Section */}
       <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">KI-basierte Schweißnahtinspektion</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900">Höchste Schweißqualität gewährleisten – basierend auf internationalen Standards</h2>
           <div className="mt-6 prose prose-lg max-w-none text-gray-600">
             <p>
-              Unser Standardsystem, bestehend aus einer oder mehreren Industriekameras, einem Industrie-PC und der IUNA
-              AI-Software, kann individuell an Ihre Anforderungen angepasst werden und überzeugt durch seine einfache
-              Integration in Ihren Produktionsprozess. Unser System eignet sich ideal zur Inspektion sowohl manuell als
-              auch automatisch geschweißter Nähte.
+              Unser System ermöglicht die visuelle Inspektion von Schweißnähten gemäß weltweit anerkannten Schweißnormen:
             </p>
-            <p>
-              Mit dem IUNA Schweißnahtscanner profitieren Sie von einer effizienten, zuverlässigen und
-              benutzerfreundlichen Lösung, die Ihre Qualitätskontrolle auf die nächste Stufe hebt. Ob Sie eine präzise
-              Inspektion Ihrer Schweißnähte benötigen oder eine umfassende Dokumentation der Ergebnisse wünschen, unser
-              System passt sich nahtlos in Ihre Produktionsumgebung ein und bietet Ihnen die Flexibilität und
-              Genauigkeit, die Sie benötigen.
-            </p>
-            <p>
-              Unser System unterstützt die Sichtprüfung von Schweißnähten nach den internationalen Normen ISO 5817 (für
-              Stahl, Edelstahl, Titan, Nickel) und ISO 10042 (für Aluminium). Dies gewährleistet eine objektive und
-              wiederholbare Bewertung, die den höchsten Qualitätsanforderungen der Industrie entspricht.
-            </p>
-            <p>
-              Wir unterstützen die Inspektion aller gängigen Schweißverfahren, einschließlich MIG- und MAG-Schweißen.
+            <ul className="space-y-4 mt-6">
+              <li>
+                <strong>ISO 5817:</strong> Definiert Qualitätsstufen und Annahmekriterien für Schweißfehler in Stahl, Edelstahl, Titan und Nickel.
+              </li>
+              <li>
+                <strong>ISO 10042:</strong> Gilt speziell für Aluminiumschweißnähte und legt Grenzwerte für akzeptable Abweichungen beim Aluminium-Lichtbogenschweißen fest.
+              </li>
+              <li>
+                <strong>ISO 6520-1:</strong> Dient als Klassifizierungsgrundlage für alle Schweißfehler und definiert die Arten und Kategorien von Schweißnahtunregelmäßigkeiten.
+              </li>
+            </ul>
+            <p className="mt-6">
+              Diese Standards gewährleisten eine objektive, wiederholbare und nachvollziehbare Bewertung der Schweißqualität über alle Produktionschargen hinweg.
             </p>
           </div>
         </div>

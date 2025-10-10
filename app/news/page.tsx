@@ -62,7 +62,143 @@ export default function NewsPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
-            {/* News Item */}
+            {/* News Item - SCHWEISSEN & SCHNEIDEN 2025 */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>September 15, 2025</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                IUNA AI at SCHWEISSEN & SCHNEIDEN 2025 in Essen
+              </h2>
+
+              {/* Image Slider */}
+              <div className="w-full mb-24" style={{ height: "400px" }}>
+                <ImageSlider
+                  images={[
+                    {
+                      src: "/images/schweissen-schneiden-2025-demo-1.jpeg",
+                      alt: "Visitors examining the IUNA AI Weld Seam Scanner demonstration at the AWL booth",
+                    },
+                    {
+                      src: "/images/schweissen-schneiden-2025-demo-2.jpeg",
+                      alt: "IUNA team member demonstrating real-time AI weld inspection to a visitor",
+                    },
+                    {
+                      src: "/images/schweissen-schneiden-2025-booth.jpeg",
+                      alt: "AWL booth at SCHWEISSEN & SCHNEIDEN 2025 with many interested visitors",
+                    },
+                    {
+                      src: "/images/schweissen-schneiden-2025-team.jpeg",
+                      alt: "IUNA AI and AWL team at their joint booth at the trade fair",
+                    },
+                  ]}
+                  aspectRatio="wide"
+                  showAttribution={false}
+                  className="h-full w-full"
+                />
+              </div>
+
+              {/* Visual Separator */}
+              <div className="w-full h-1 bg-gray-200 my-6"></div>
+
+              {/* Text content */}
+              <div className="prose prose-lg max-w-none mt-20 pt-6">
+                <p>
+                  This year's SCHWEISSEN & SCHNEIDEN trade fair in Essen was truly special for IUNA AI. We had the
+                  opportunity to showcase the future of weld seam inspection live, and the response was overwhelming.
+                  Not only companies from the automotive sector stopped by, but also many other industries eager to
+                  explore how AI-powered inspection can enhance their quality processes.
+                </p>
+
+                <h3 className="text-2xl font-bold mt-8 mb-4">Highlights from the Fair</h3>
+
+                <p>
+                  <strong>Live Demo of Our Weld Seam Scanner:</strong> Visitors experienced real-time AI weld inspection
+                  firsthand, seeing how our technology moves beyond manual checks toward faster, more consistent quality
+                  control. The interactive demonstrations allowed attendees to see the system detect and classify weld
+                  defects in real-time, showcasing the practical benefits of AI-powered inspection.
+                </p>
+
+                <p>
+                  <strong>AI Innovation in Practice:</strong> We demonstrated how computer vision and deep learning can
+                  be transformed into robust, practical tools for production environments. Our system's ability to
+                  detect defects according to international standards like ISO 5817, ISO 10042, and ISO 6520-1 impressed
+                  many visitors who are looking for reliable, automated quality assurance solutions.
+                </p>
+
+                <p>
+                  <strong>Inspiring Conversations:</strong> The discussions with partners, customers, and new contacts
+                  were incredibly valuable. We connected with companies from various industries including automotive,
+                  manufacturing, metal fabrication, and construction, all interested in leveraging AI for quality
+                  control. These conversations have already led to several follow-up meetings and potential
+                  partnerships.
+                </p>
+
+                <h3 className="text-2xl font-bold mt-8 mb-4">Partnership with AWL</h3>
+
+                <p>
+                  We would like to extend a big thank you to everyone who visited us at our joint booth with AWL. The
+                  collaboration between IUNA AI's intelligent software solutions and AWL's expertise in smart robotic
+                  automation creates a powerful combination for the future of industrial quality control.
+                </p>
+
+                <p>
+                  The journey of bringing deep learning-based weld inspection to production lines has just begun, and
+                  we're excited for what's next. The positive feedback and interest from the fair confirm that the
+                  industry is ready for AI-powered quality assurance, and we're proud to be at the forefront of this
+                  transformation.
+                </p>
+
+                <div className="mt-8">
+                  <Link
+                    href="/products/weld-seam-scanner"
+                    className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
+                  >
+                    Learn more about our Weld Seam Scanner
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* News Item - inVISION Magazine */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>August 1, 2024</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                IUNA AI featured in inVISION Magazine
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  We are pleased to announce that our company IUNA AI has been mentioned in the trade magazine inVISION
+                  News in the article "Weld Seam Inspection". The article presents our Weld Seam Vision System, which
+                  was specially developed for the automated inspection of MIG/MAG weld seams - for both manual and
+                  robot-assisted welding processes.
+                </p>
+                <p>
+                  Our system provides comprehensive quality assurance by detecting weld seam defects in real-time,
+                  ensuring compliance with international standards including ISO 5817, ISO 10042, and ISO 6520-1. This
+                  recognition in a leading industry publication underscores our commitment to innovation in industrial
+                  quality control.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href="https://invision-news.de/ki-deep-learning/weld-seam-inspection/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-primary/80"
+                  >
+                    Read the article
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* News Item - Valve Cap Recognition */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
@@ -108,7 +244,6 @@ export default function NewsPage() {
                 Further development of the IUNA Auto Scanner for use in the final assembly (finish)
               </h2>
 
-              {/* Slider in eigenem Container mit fester Höhe */}
               <div className="w-full mb-24" style={{ height: "400px" }}>
                 <ImageSlider
                   images={[
@@ -132,10 +267,8 @@ export default function NewsPage() {
                 />
               </div>
 
-              {/* Visueller Trenner */}
               <div className="w-full h-1 bg-gray-200 my-6"></div>
 
-              {/* Text content in separatem Container mit extra Abstand */}
               <div className="prose prose-lg max-w-none mt-20 pt-6">
                 <p>
                   We are proud to announce the latest development of our IUNA Auto Scanner. The Auto Scanner can now

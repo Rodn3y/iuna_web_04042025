@@ -4,25 +4,25 @@ import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, Phone, MapPin, Calendar, Upload, X, CheckCircle2 } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Upload, X } from "lucide-react"
 import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ContactPage() {
+  const router = useRouter()
   const [files, setFiles] = useState<File[]>([])
   const [selectedProduct, setSelectedProduct] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const [captchaValue, setCaptchaValue] = useState<string | null>(null)
   const [formError, setFormError] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
-  // Keep the useEffect for hash navigation
   useEffect(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash
@@ -37,7 +37,6 @@ export default function ContactPage() {
     }
   }, [])
 
-  // Keep the useEffect for drag and drop
   useEffect(() => {
     const preventDefaults = (e: Event) => {
       e.preventDefault()
@@ -78,21 +77,16 @@ export default function ContactPage() {
 
     try {
       const formData = new FormData(e.currentTarget)
-
-      // Add the reCAPTCHA token to the form data
       formData.append("recaptchaToken", captchaValue)
 
-      // Add selected product if any
       if (selectedProduct) {
         formData.append("product", selectedProduct)
       }
 
-      // Add files to form data
       files.forEach((file, index) => {
         formData.append(`file-${index}`, file)
       })
 
-      // Simple fetch without trying to parse the response first
       const response = await fetch("/api/contact", {
         method: "POST",
         body: formData,
@@ -102,20 +96,11 @@ export default function ContactPage() {
         throw new Error(`Serverfehler: ${response.status}`)
       }
 
-      // Only try to parse JSON if the response is OK
       const data = await response.json()
 
       if (data.success) {
-        setIsSubmitted(true)
-        // Reset form
-        e.currentTarget.reset()
-        setFiles([])
-        setSelectedProduct("")
-        setCaptchaValue(null)
-        // Reset reCAPTCHA
-        if (recaptchaRef.current) {
-          recaptchaRef.current.reset()
-        }
+        // Redirect to thank you page
+        router.push("/de/contact/thank-you")
       } else {
         throw new Error(data.message || "Formular konnte nicht übermittelt werden")
       }
@@ -166,162 +151,149 @@ export default function ContactPage() {
                 Füllen Sie das Formular aus und unser Team wird sich innerhalb von 24 Stunden bei Ihnen melden.
               </p>
 
-              {isSubmitted ? (
-                <div className="mt-8 rounded-lg bg-green-50 p-6 text-center">
-                  <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
-                  <h3 className="mt-4 text-xl font-medium text-gray-900">Vielen Dank für Ihre Nachricht!</h3>
-                  <p className="mt-2 text-gray-600">
-                    Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden.
-                  </p>
+              <form className="mt-8 space-y-6" onSubmit={handleSubmit} ref={formRef}>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                    Name <span className="text-red-500">*</span>
+                  </label>
+                  <Input type="text" id="name" name="name" className="mt-1" required />
                 </div>
-              ) : (
-                <form className="mt-8 space-y-6" onSubmit={handleSubmit} ref={formRef}>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                      Name <span className="text-red-500">*</span>
-                    </label>
-                    <Input type="text" id="name" name="name" className="mt-1" required />
-                  </div>
 
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                      Unternehmen <span className="text-red-500">*</span>
-                    </label>
-                    <Input type="text" id="company" name="company" className="mt-1" required />
-                  </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                    Unternehmen <span className="text-red-500">*</span>
+                  </label>
+                  <Input type="text" id="company" name="company" className="mt-1" required />
+                </div>
 
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                      E-Mail <span className="text-red-500">*</span>
-                    </label>
-                    <Input type="email" id="email" name="email" className="mt-1" required />
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                    E-Mail <span className="text-red-500">*</span>
+                  </label>
+                  <Input type="email" id="email" name="email" className="mt-1" required />
+                </div>
 
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                      Telefon
-                    </label>
-                    <Input type="tel" id="phone" name="phone" className="mt-1" />
-                  </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                    Telefon
+                  </label>
+                  <Input type="tel" id="phone" name="phone" className="mt-1" />
+                </div>
 
-                  <div>
-                    <label htmlFor="product" className="block text-sm font-medium text-gray-700">
-                      Produkt
-                    </label>
-                    <Select value={selectedProduct} onValueChange={setSelectedProduct}>
-                      <SelectTrigger className="mt-1">
-                        <SelectValue placeholder="Produkt auswählen" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="ai-scanner">AI Scanner</SelectItem>
-                        <SelectItem value="weld-seam-scanner">Schweißnahtscanner</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                <div>
+                  <label htmlFor="product" className="block text-sm font-medium text-gray-700">
+                    Produkt
+                  </label>
+                  <Select value={selectedProduct} onValueChange={setSelectedProduct}>
+                    <SelectTrigger className="mt-1">
+                      <SelectValue placeholder="Produkt auswählen" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ai-scanner">AI Scanner</SelectItem>
+                      <SelectItem value="weld-seam-scanner">Schweißnahtscanner</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                      Nachricht <span className="text-red-500">*</span>
-                    </label>
-                    <Textarea id="message" name="message" rows={6} className="mt-1" required />
-                  </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                    Nachricht <span className="text-red-500">*</span>
+                  </label>
+                  <Textarea id="message" name="message" rows={6} className="mt-1" required />
+                </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Dateien anhängen</label>
-                    <p className="text-sm text-gray-500 mt-1">
-                      Fügen Sie Bilder des zu prüfenden Produkts, Beispielbilder von fehlerhaften Mustern oder einen
-                      Fehlerkatalog hinzu.
-                    </p>
-                    <div className="mt-2">
-                      <div
-                        className="flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:bg-gray-50"
-                        onClick={() => fileInputRef.current?.click()}
-                        onDragOver={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
-                        }}
-                        onDragEnter={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
-                        }}
-                        onDragLeave={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
-                        }}
-                        onDrop={(e) => {
-                          e.preventDefault()
-                          e.stopPropagation()
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Dateien anhängen</label>
+                  <p className="text-sm text-gray-500 mt-1">
+                    Fügen Sie Bilder des zu prüfenden Produkts, Beispielbilder von fehlerhaften Mustern oder einen
+                    Fehlerkatalog hinzu.
+                  </p>
+                  <div className="mt-2">
+                    <div
+                      className="flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md cursor-pointer hover:bg-gray-50"
+                      onClick={() => fileInputRef.current?.click()}
+                      onDragOver={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                      }}
+                      onDragEnter={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                      }}
+                      onDragLeave={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                      }}
+                      onDrop={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
 
-                          if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-                            const newFiles = Array.from(e.dataTransfer.files)
-                            setFiles((prev) => [...prev, ...newFiles])
-                          }
-                        }}
-                      >
-                        <div className="space-y-1 text-center">
-                          <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                          <div className="flex text-sm text-gray-600">
-                            <label
-                              htmlFor="file-upload"
-                              className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none"
-                            >
-                              <span>Dateien hochladen</span>
-                              <input
-                                id="file-upload"
-                                name="file-upload"
-                                type="file"
-                                className="sr-only"
-                                multiple
-                                onChange={handleFileChange}
-                                ref={fileInputRef}
-                              />
-                            </label>
-                            <p className="pl-1">oder per Drag & Drop</p>
-                          </div>
-                          <p className="text-xs text-gray-500">PNG, JPG, PDF bis zu 10MB</p>
+                        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+                          const newFiles = Array.from(e.dataTransfer.files)
+                          setFiles((prev) => [...prev, ...newFiles])
+                        }
+                      }}
+                    >
+                      <div className="space-y-1 text-center">
+                        <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                        <div className="flex text-sm text-gray-600">
+                          <label
+                            htmlFor="file-upload"
+                            className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none"
+                          >
+                            <span>Dateien hochladen</span>
+                            <input
+                              id="file-upload"
+                              name="file-upload"
+                              type="file"
+                              className="sr-only"
+                              multiple
+                              onChange={handleFileChange}
+                              ref={fileInputRef}
+                            />
+                          </label>
+                          <p className="pl-1">oder per Drag & Drop</p>
                         </div>
+                        <p className="text-xs text-gray-500">PNG, JPG, PDF bis zu 10MB</p>
                       </div>
                     </div>
-                    {files.length > 0 && (
-                      <div className="mt-4 space-y-2">
-                        <p className="text-sm font-medium text-gray-700">Ausgewählte Dateien:</p>
-                        <ul className="space-y-2">
-                          {files.map((file, index) => (
-                            <li
-                              key={index}
-                              className="flex items-center justify-between bg-gray-50 px-3 py-2 rounded-md"
+                  </div>
+                  {files.length > 0 && (
+                    <div className="mt-4 space-y-2">
+                      <p className="text-sm font-medium text-gray-700">Ausgewählte Dateien:</p>
+                      <ul className="space-y-2">
+                        {files.map((file, index) => (
+                          <li key={index} className="flex items-center justify-between bg-gray-50 px-3 py-2 rounded-md">
+                            <span className="text-sm truncate max-w-[80%]">{file.name}</span>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(index)}
+                              className="text-gray-500 hover:text-red-500"
                             >
-                              <span className="text-sm truncate max-w-[80%]">{file.name}</span>
-                              <button
-                                type="button"
-                                onClick={() => removeFile(index)}
-                                className="text-gray-500 hover:text-red-500"
-                              >
-                                <X className="h-5 w-5" />
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
+                              <X className="h-5 w-5" />
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
 
-                  <div className="mt-6">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey="6Lc2tAArAAAAAIN9CObjWB7raxn0LfbJu-QHOhr0"
-                      onChange={handleCaptchaChange}
-                    />
-                    {formError && <p className="mt-2 text-sm text-red-600">{formError}</p>}
-                  </div>
+                <div className="mt-6">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="6Lc2tAArAAAAAIN9CObjWB7raxn0LfbJu-QHOhr0"
+                    onChange={handleCaptchaChange}
+                  />
+                  {formError && <p className="mt-2 text-sm text-red-600">{formError}</p>}
+                </div>
 
-                  <div>
-                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting || !captchaValue}>
-                      {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
-                    </Button>
-                  </div>
-                </form>
-              )}
+                <div>
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting || !captchaValue}>
+                    {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
+                  </Button>
+                </div>
+              </form>
             </div>
 
             {/* Calendar */}

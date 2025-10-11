@@ -60,11 +60,11 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center">
                   <Image
-                    src="/images/logo_michael.png"
-                    alt="Rudolph Michael GmbH Logo weiß"
-                    width={70}
-                    height={35}
-                    className="h-[35px] w-auto object-contain brightness-0 invert"
+                    src="/images/logo_awl.png"
+                    alt="AWL Logo weiß"
+                    width={120}
+                    height={40}
+                    className="h-[40px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -129,7 +129,7 @@ export default function Home() {
               <Link href="/de/products/ai-scanner">
                 <Button
                   variant="outline"
-                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white"
+                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
                   MEHR ERFAHREN
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -155,7 +155,7 @@ export default function Home() {
               <Link href="/de/products/ai-scanner">
                 <Button
                   variant="outline"
-                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white"
+                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
                   MEHR ERFAHREN
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -181,7 +181,7 @@ export default function Home() {
               <Link href="/de/products/weld-seam-scanner">
                 <Button
                   variant="outline"
-                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white"
+                  className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
                   MEHR ERFAHREN
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

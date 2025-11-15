@@ -1,7 +1,8 @@
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ImageSlider } from "@/components/image-slider"
 
 export default function UseCasesPage() {
   return (
@@ -45,48 +46,199 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Weld Seam Inspection */}
-      <section className="bg-gray-50 py-20">
+      {/* Weld Seam Inspection for Automotive Seating Structures */}
+      <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Weld Seam Inspection</h2>
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Weld Seam Inspection for Automotive Seating Structures
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our AI-powered weld seam inspection system automatically detects and classifies defects in weld seams
-                with unprecedented accuracy. The system distinguishes between acceptable (I.O.) and defective (N.I.O.)
-                welds, providing immediate feedback to optimize your manufacturing process.
+                In this application, the IUNA weld seam scanner inspects all MAG weld seams of an automotive seating
+                structure. The camera is statically mounted while a handling robot manages the component positioning,
+                ensuring comprehensive inspection coverage.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Detects pores, cracks, undercuts, and other weld defects</span>
+                  <span className="ml-3 text-gray-600">
+                    Statically mounted camera for consistent inspection quality
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">99.8% accuracy in defect detection</span>
+                  <span className="ml-3 text-gray-600">Automated component handling via industrial robot</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Real-time analysis and feedback</span>
+                  <span className="ml-3 text-gray-600">Complete inspection of all MAG weld seams</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Seamless integration with existing production lines</span>
+                  <span className="ml-3 text-gray-600">Real-time defect detection and classification</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Integrated with production line for seamless workflow</span>
+                </li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2 relative rounded-lg overflow-hidden shadow-xl">
+              <ImageSlider
+                images={[
+                  {
+                    src: "/images/seat-structure-mag-welding.jpg",
+                    alt: "IUNA AI Weld Seam Inspection - Automotive seating structure with handling robot",
+                  },
+                  {
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iuna_web_demo_seat_20250630_2-ekxhuHZLvLEiZaVU8JqL8CXmd3MSm0.png",
+                    alt: "IUNA AI Control Interface - 3D visualization of weld inspection with defect analysis",
+                  },
+                  {
+                    src: "/images/seat-structure-ui-2.png",
+                    alt: "IUNA AI Control Interface - Detailed weld seam analysis with defect classification",
+                  },
+                ]}
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Weld Seam Detection for Cross Car Beams */}
+      <section className="bg-gray-50 py-20">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 items-center md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Weld Seam Detection for Cross Car Beams
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Our weld seam detection system for Cross Car Beams (CCBs) offers flexible mounting options with cameras
+                that can be mounted either statically or on an industrial robot. This enables fully automated inline weld
+                seam inspection of CCBs with significantly faster cycle times compared to laser-based inspection systems.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Flexible camera mounting: static or robot-mounted configurations
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Fully automated inline weld seam inspection</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Much faster cycle times than laser-based inspection systems
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Near real-time automated defect detection and classification
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Optimized for high-volume automotive production lines
+                  </span>
                 </li>
               </ul>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/weld-seam-inspection.png"
-                alt="IUNA AI Weld Seam Inspection - Comparison of good and defective welds"
+                src="/images/ccb-weld-inspection-spark.png"
+                alt="IUNA AI Weld Seam Detection for Cross Car Beams - Robot-mounted camera system during welding"
+                width={800}
+                height={600}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fully Automated Inspection of Weld Seams on Vehicle Bodies */}
+      <section className="bg-white py-20">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 items-center md:grid-cols-2">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Fully Automated Inspection of Weld Seams on Vehicle Bodies
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                The IUNA weld seam scanner is capable of inspecting the entire vehicle body for weld defects. Each
+                individual weld seam can be inspected at different stations throughout the production process. The
+                software checks for presence, length, and weld defects such as pores, cracks, burn-throughs, etc.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Complete vehicle body inspection across multiple production stations
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Checks for weld presence, length, and defects (pores, cracks, burn-throughs, etc.)
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Cameras can be static or robot-mounted</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Supports both MIG and MAG welding processes</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Fully automated defect detection and classification</span>
+                </li>
+              </ul>
+              <p className="text-sm text-gray-500 italic">(Image Source: Audi AG)</p>
+            </div>
+            <div className="order-1 md:order-2 relative rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/images/vehicle-body-inspection-audi-light-tunnel.png"
+                alt="IUNA AI Vehicle Body Inspection - Automated camera system inspecting vehicle body weld seams"
                 width={800}
                 height={600}
                 className="w-full h-auto"
@@ -97,15 +249,14 @@ export default function UseCasesPage() {
       </section>
 
       {/* Presence Check */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
-            <div className="order-2 md:order-1">
+            <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Presence Check</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Our presence check system verifies that all required components are correctly installed during the
-                assembly process. The system can detect the presence or absence of nuts, bolts, clips, and other small
-                components with high precision.
+                Our presence check software verifies that all required components are correctly installed during the
+                assembly process. Customers can conduct presence checks for features like nuts, bolts, studs, clips and holes during the same inspection cycle.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
@@ -113,7 +264,7 @@ export default function UseCasesPage() {
                     <Check className="h-4 w-4 text-primary" />
                   </div>
                   <span className="ml-3 text-gray-600">
-                    Verifies presence of nuts, bolts, clips, and other components
+                    Verifies presence of nuts, bolts, studs, clips, holes, and other components
                   </span>
                 </li>
                 <li className="flex items-start">
@@ -140,9 +291,9 @@ export default function UseCasesPage() {
                 </li>
               </ul>
             </div>
-            <div className="order-1 md:order-2 relative rounded-lg overflow-hidden shadow-xl">
+            <div className="relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/presence-check.jpeg"
+                src="/images/presence-check-rendering-camera-red.png"
                 alt="IUNA AI Presence Check System - Verifying component installation"
                 width={800}
                 height={600}
@@ -154,7 +305,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Optical Character Recognition (OCR) */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div>
@@ -210,7 +361,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Dimensional Measurement */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div className="order-2 md:order-1">
@@ -264,68 +415,11 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Surface Defect Detection */}
-      <section className="bg-gray-50 py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Surface Defect Detection</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Our surface defect detection system identifies imperfections in painted surfaces, metal finishes, and
-                other materials. The system can detect scratches, dents, paint runs, and other defects that might be
-                missed by human inspectors. (Image Source: Audi AG)
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Detects scratches, dents, paint runs, and other surface defects
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Works with various materials including painted surfaces, metal finishes, and plastics
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Identifies defects invisible to the human eye</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Classifies defects by type and severity for targeted rework
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/manufacturing-facility.jpeg"
-                alt="IUNA AI Surface Defect Detection - Manufacturing facility with car bodies"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Assembly Verification */}
       <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
-            <div className="order-2 md:order-1">
+            <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Assembly Verification</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Our assembly verification system ensures that complex assemblies are correctly put together. The system

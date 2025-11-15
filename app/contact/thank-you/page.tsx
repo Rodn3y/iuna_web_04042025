@@ -1,8 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, Mail, Phone, Calendar } from "lucide-react"
+import { CheckCircle2, Mail, Phone, Calendar } from 'lucide-react'
 import Script from "next/script"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Thank You - IUNA AI",
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function ThankYouPage() {
   return (

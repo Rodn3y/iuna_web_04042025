@@ -1,7 +1,8 @@
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { ImageSlider } from "@/components/image-slider"
 
 export default function UseCasesPage() {
   return (
@@ -49,49 +50,205 @@ export default function UseCasesPage() {
         </div>
       </section>
 
-      {/* Weld Seam Inspection */}
-      <section className="bg-gray-50 py-20">
+      {/* Weld Seam Inspection for Automotive Seating Structures */}
+      <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Schweißnahtinspektion</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Schweißnahtinspektion für Automotive Sitzstrukturen
+              </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Unser KI-gestütztes Schweißnahtinspektionssystem erkennt und klassifiziert automatisch Defekte in
-                Schweißnähten mit beispielloser Genauigkeit. Das System unterscheidet zwischen akzeptablen (I.O.) und
-                fehlerhaften (N.I.O.) Schweißnähten und liefert sofortiges Feedback zur Optimierung Ihres
-                Fertigungsprozesses.
+                In dieser Anwendung prüft der IUNA Schweißnahtscanner alle MAG-Schweißnähte einer Automotive
+                Sitzstruktur. Die Kamera ist statisch montiert, während ein Handling-Roboter die Positionierung des
+                Bauteils übernimmt und so eine umfassende Inspektionsabdeckung gewährleistet.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Erkennt Poren, Risse, Kerben und andere Schweißfehler</span>
+                  <span className="ml-3 text-gray-600">
+                    Statisch montierte Kamera für konsistente Inspektionsqualität
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">99,8% Genauigkeit bei der Fehlererkennung</span>
+                  <span className="ml-3 text-gray-600">
+                    Automatisiertes Bauteil-Handling über Industrieroboter
+                  </span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Echtzeit-Analyse und Feedback</span>
+                  <span className="ml-3 text-gray-600">Vollständige Inspektion aller MAG-Schweißnähte</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">Nahtlose Integration in bestehende Produktionslinien</span>
+                  <span className="ml-3 text-gray-600">Echtzeit-Fehlererkennung und Klassifizierung</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Integration in die Produktionslinie für nahtlosen Workflow
+                  </span>
                 </li>
               </ul>
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-xl">
+              <ImageSlider
+                images={[
+                  {
+                    src: "/images/seat-structure-mag-welding.jpg",
+                    alt: "IUNA AI Schweißnahtinspektion - Automotive Sitzstruktur mit Handling-Roboter",
+                  },
+                  {
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iuna_web_demo_seat_20250630_2-ekxhuHZLvLEiZaVU8JqL8CXmd3MSm0.png",
+                    alt: "IUNA AI Control Interface - 3D-Visualisierung der Schweißnahtinspektion mit Fehleranalyse",
+                  },
+                  {
+                    src: "/images/seat-structure-ui-2.png",
+                    alt: "IUNA AI Control Interface - Detaillierte Schweißnahtanalyse mit Fehlerklassifizierung",
+                  },
+                ]}
+                aspectRatio="video"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Weld Seam Detection for Cross Car Beams */}
+      <section className="bg-gray-50 py-20">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 items-center md:grid-cols-2">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Schweißnahterkennung für Cockpitträger
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Unser Schweißnahterkennungssystem für Cockpitträger (CCBs) bietet flexible Montageoptionen mit Kameras,
+                die entweder statisch oder auf einem Industrieroboter montiert werden können. Dies ermöglicht eine
+                vollautomatische Schweißnahtprüfung der CCBs inline mit einer weit schnelleren Taktzeit als es z.B. mit
+                einem laserbasierten Prüfsystem möglich wäre.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Flexible Kameramontage: statisch oder robotergeführte Konfigurationen
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Vollautomatische Inline-Schweißnahtprüfung</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Weit schnellere Taktzeiten als laserbasierte Prüfsysteme
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Fast in Echtzeit automatisierte Fehlererkennung und Klassifizierung
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Optimiert für hochvolumige Automobilproduktionslinien
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2 relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/weld-seam-inspection.png"
-                alt="IUNA AI Schweißnahtinspektion - Vergleich von guten und fehlerhaften Schweißnähten"
+                src="/images/ccb-weld-inspection-spark.png"
+                alt="IUNA AI Schweißnahterkennung für Cockpitträger - Robotergeführtes Kamerasystem während des Schweißens"
+                width={800}
+                height={600}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Fully Automated Inspection of Weld Seams on Vehicle Bodies */}
+      <section className="bg-white py-20">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-12 items-center md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                Vollautomatische Inspektion von Schweißnähten an Fahrzeugkarosserien
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Der IUNA Schweißnahtscanner ist in der Lage, die gesamte Fahrzeugkarosserie auf Schweißfehler zu
+                prüfen. Jede einzelne Schweißnaht kann an unterschiedlichen Stationen in der Fertigung geprüft werden.
+                Die Software prüft das Vorhandensein, die Länge sowie ob Schweißfehler wie Poren, Risse, Durchbrände,
+                usw. vorhanden sind.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Vollständige Fahrzeugkarosserie-Inspektion über mehrere Produktionsstationen
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">
+                    Prüft Vorhandensein, Länge und Schweißfehler (Poren, Risse, Durchbrände, usw.)
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Kameras können statisch oder robotergestützt sein</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Unterstützt sowohl MIG als auch MAG Schweißen</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <Check className="h-4 w-4 text-primary" />
+                  </div>
+                  <span className="ml-3 text-gray-600">Vollautomatische Fehlererkennung und Klassifizierung</span>
+                </li>
+              </ul>
+              <p className="text-sm text-gray-500 italic">(Bildquelle: Audi AG)</p>
+            </div>
+            <div className="relative rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/images/vehicle-body-inspection-audi-light-tunnel.png"
+                alt="IUNA AI Fahrzeugkarosserie-Inspektion - Automatisiertes Kamerasystem zur Inspektion von Schweißnähten"
                 width={800}
                 height={600}
                 className="w-full h-auto"
@@ -102,15 +259,14 @@ export default function UseCasesPage() {
       </section>
 
       {/* Presence Check */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
-            <div className="order-2 md:order-1">
+            <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Anwesenheitsprüfung</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Unser Anwesenheitsprüfungssystem verifiziert, dass alle erforderlichen Komponenten während des
-                Montageprozesses korrekt installiert sind. Das System kann das Vorhandensein oder Fehlen von Muttern,
-                Schrauben, Clips und anderen kleinen Komponenten mit hoher Präzision erkennen.
+                Unsere Anwesenheitsprüfungssoftware verifiziert, dass alle erforderlichen Komponenten während des
+                Montageprozesses korrekt installiert sind. Kunden können Anwesenheitsprüfungen für Merkmale wie Muttern, Schrauben, Bolzen, Clips und Bohrungen während desselben Inspektionszyklus durchführen.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
@@ -118,7 +274,7 @@ export default function UseCasesPage() {
                     <Check className="h-4 w-4 text-primary" />
                   </div>
                   <span className="ml-3 text-gray-600">
-                    Überprüft das Vorhandensein von Muttern, Schrauben, Clips und anderen Komponenten
+                    Überprüft das Vorhandensein von Muttern, Schrauben, Bolzen, Clips, Bohrungen und anderen Komponenten
                   </span>
                 </li>
                 <li className="flex items-start">
@@ -145,9 +301,9 @@ export default function UseCasesPage() {
                 </li>
               </ul>
             </div>
-            <div className="order-1 md:order-2 relative rounded-lg overflow-hidden shadow-xl">
+            <div className="relative rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/presence-check.jpeg"
+                src="/images/presence-check-rendering-camera-red.png"
                 alt="IUNA AI Anwesenheitsprüfungssystem - Überprüfung der Komponenteninstallation"
                 width={800}
                 height={600}
@@ -159,7 +315,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Optical Character Recognition (OCR) */}
-      <section className="bg-gray-50 py-20">
+      <section className="bg-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div>
@@ -217,7 +373,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Dimensional Measurement */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 items-center md:grid-cols-2">
             <div className="order-2 md:order-1">
@@ -263,65 +419,6 @@ export default function UseCasesPage() {
                 width={800}
                 height={600}
                 className="w-full h-auto bg-gray-800 p-4"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Surface Defect Detection */}
-      <section className="bg-gray-50 py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Oberflächenfehlererkennung</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Unser Oberflächenfehlerkennungssystem identifiziert Unvollkommenheiten in lackierten Oberflächen,
-                Metallveredelungen und anderen Materialien. Das System kann Kratzer, Dellen, Lackläufer und andere
-                Defekte erkennen, die von menschlichen Inspektoren möglicherweise übersehen werden. (Bildquelle: Audi
-                AG)
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Erkennt Kratzer, Dellen, Lackläufer und andere Oberflächendefekte
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Funktioniert mit verschiedenen Materialien, einschließlich lackierter Oberflächen,
-                    Metallveredelungen und Kunststoffen
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Identifiziert für das menschliche Auge unsichtbare Defekte</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Klassifiziert Defekte nach Typ und Schweregrad für gezielte Nacharbeit
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/manufacturing-facility.jpeg"
-                alt="IUNA AI Oberflächenfehlererkennung - Fertigungsanlage mit Fahrzeugkarosserien"
-                width={800}
-                height={600}
-                className="w-full h-auto"
               />
             </div>
           </div>

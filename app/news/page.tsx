@@ -152,10 +152,10 @@ export default function NewsPage() {
 
                 <div className="mt-8">
                   <Link
-                    href="/products/weld-seam-scanner"
+                    href="/products/ai-weld-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
                   >
-                    Learn more about our Weld Seam Scanner
+                    Learn more about our AI Weld Inspector
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
@@ -511,7 +511,7 @@ export default function NewsPage() {
             </div>
 
             {/* News Item */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
+            <div className="mb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
                 <span>March 15, 2020</span>

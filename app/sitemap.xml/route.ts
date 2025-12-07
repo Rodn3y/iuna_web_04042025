@@ -13,7 +13,8 @@ const staticPaths = [
   "/contact",
   "/careers",
   "/products/ai-scanner",
-  "/products/weld-seam-scanner",
+  "/products/ai-weld-inspector",
+  "/contact/thank-you",
 ]
 
 // Beispiel für dynamische Routen (z.B. Lösungsseiten)

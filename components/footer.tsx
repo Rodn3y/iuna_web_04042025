@@ -78,8 +78,8 @@ function FooterContent() {
                 </Link>
               </li>
               <li>
-                <Link href={getLocalizedPath("/products/weld-seam-scanner")} className="text-gray-400 hover:text-white">
-                  {isGerman ? "Schweißnahtscanner" : "Weld Seam Scanner"}
+                <Link href={getLocalizedPath("/products/ai-weld-inspector")} className="text-gray-400 hover:text-white">
+                  {isGerman ? "AI Weld Inspector" : "AI Weld Inspector"}
                 </Link>
               </li>
             </ul>

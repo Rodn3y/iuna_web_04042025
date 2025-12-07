@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Check } from 'lucide-react'
+import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ImageSlider } from "@/components/image-slider"
@@ -59,7 +59,7 @@ export default function UseCasesPage() {
                 Schweißnahtinspektion für Automotive Sitzstrukturen
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                In dieser Anwendung prüft der IUNA Schweißnahtscanner alle MAG-Schweißnähte einer Automotive
+                In dieser Anwendung prüft der IUNA AI Weld Inspector alle MAG-Schweißnähte einer Automotive
                 Sitzstruktur. Die Kamera ist statisch montiert, während ein Handling-Roboter die Positionierung des
                 Bauteils übernimmt und so eine umfassende Inspektionsabdeckung gewährleistet.
               </p>
@@ -76,9 +76,7 @@ export default function UseCasesPage() {
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">
-                    Automatisiertes Bauteil-Handling über Industrieroboter
-                  </span>
+                  <span className="ml-3 text-gray-600">Automatisiertes Bauteil-Handling über Industrieroboter</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
@@ -96,9 +94,7 @@ export default function UseCasesPage() {
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">
-                    Integration in die Produktionslinie für nahtlosen Workflow
-                  </span>
+                  <span className="ml-3 text-gray-600">Integration in die Produktionslinie für nahtlosen Workflow</span>
                 </li>
               </ul>
             </div>
@@ -110,7 +106,7 @@ export default function UseCasesPage() {
                     alt: "IUNA AI Schweißnahtinspektion - Automotive Sitzstruktur mit Handling-Roboter",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iuna_web_demo_seat_20250630_2-ekxhuHZLvLEiZaVU8JqL8CXmd3MSm0.png",
+                    src: "/images/iuna-web-demo-seat-20250630-2.png",
                     alt: "IUNA AI Control Interface - 3D-Visualisierung der Schweißnahtinspektion mit Fehleranalyse",
                   },
                   {
@@ -158,9 +154,7 @@ export default function UseCasesPage() {
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">
-                    Weit schnellere Taktzeiten als laserbasierte Prüfsysteme
-                  </span>
+                  <span className="ml-3 text-gray-600">Weit schnellere Taktzeiten als laserbasierte Prüfsysteme</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
@@ -174,9 +168,7 @@ export default function UseCasesPage() {
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">
-                    Optimiert für hochvolumige Automobilproduktionslinien
-                  </span>
+                  <span className="ml-3 text-gray-600">Optimiert für hochvolumige Automobilproduktionslinien</span>
                 </li>
               </ul>
             </div>
@@ -202,10 +194,10 @@ export default function UseCasesPage() {
                 Vollautomatische Inspektion von Schweißnähten an Fahrzeugkarosserien
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                Der IUNA Schweißnahtscanner ist in der Lage, die gesamte Fahrzeugkarosserie auf Schweißfehler zu
-                prüfen. Jede einzelne Schweißnaht kann an unterschiedlichen Stationen in der Fertigung geprüft werden.
-                Die Software prüft das Vorhandensein, die Länge sowie ob Schweißfehler wie Poren, Risse, Durchbrände,
-                usw. vorhanden sind.
+                Der IUNA AI Weld Inspector ist in der Lage, die gesamte Fahrzeugkarosserie auf Schweißfehler zu prüfen.
+                Jede einzelne Schweißnaht kann an unterschiedlichen Stationen in der Fertigung geprüft werden. Die
+                Software prüft das Vorhandensein, die Länge sowie ob Schweißfehler wie Poren, Risse, Durchbrände, usw.
+                vorhanden sind.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
@@ -266,7 +258,8 @@ export default function UseCasesPage() {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Anwesenheitsprüfung</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Unsere Anwesenheitsprüfungssoftware verifiziert, dass alle erforderlichen Komponenten während des
-                Montageprozesses korrekt installiert sind. Kunden können Anwesenheitsprüfungen für Merkmale wie Muttern, Schrauben, Bolzen, Clips und Bohrungen während desselben Inspektionszyklus durchführen.
+                Montageprozesses korrekt installiert sind. Kunden können Anwesenheitsprüfungen für Merkmale wie Muttern,
+                Schrauben, Bolzen, Clips und Bohrungen während desselben Inspektionszyklus durchführen.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">

@@ -159,10 +159,10 @@ export default function NewsPage() {
 
                 <div className="mt-8">
                   <Link
-                    href="/de/products/weld-seam-scanner"
+                    href="/de/products/ai-weld-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
                   >
-                    Erfahren Sie mehr über unseren Weld Seam Scanner
+                    Erfahren Sie mehr über unseren AI Weld Inspector
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>

@@ -178,7 +178,7 @@ export default function Home() {
                 AI-powered defect detection: The IUNA AI Vision System uses advanced neural networks to identify OK and
                 Not-OK weld seams directly from captured images.
               </p>
-              <Link href="/products/weld-seam-scanner">
+              <Link href="/products/ai-weld-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
@@ -202,9 +202,75 @@ export default function Home() {
             </p>
           </div>
 
-          {/* AI Scanner */}
+          {/* AI Weld Inspector */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 md:order-1">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">AI Weld Inspector</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                Our IUNA AI Weld Inspector uses advanced AI algorithms to detect and classify weld defects with
+                unprecedented accuracy. The system distinguishes between acceptable (I.O.) and defective (N.I.O.) welds,
+                providing immediate feedback to optimize your manufacturing process.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="ml-3 text-gray-600">AI-powered defect classification system</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="ml-3 text-gray-600">Detects pores, cracks, undercuts, and other weld defects</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
+                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="ml-3 text-gray-600">Seamless integration with existing production lines</span>
+                </li>
+              </ul>
+              <Link href="/products/ai-weld-inspector">
+                <Button className="group">
+                  Learn More About AI Weld Inspector
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/images/weld-seam-scanner.png"
+                  alt="IUNA AI Weld Inspector - AI-powered weld inspection system showing good and defective welds"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* AI Scanner */}
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <Image
+                  src="/images/ai-scanner.png"
+                  alt="IUNA AI Scanner - Robotic vision system inspecting automotive components"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+            <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">AI Scanner</h3>
               <p className="text-lg text-gray-600 mb-6">
                 With the IUNA AI scanner, we offer you a system that can be used flexibly in quality assurance. Each AI
@@ -254,72 +320,6 @@ export default function Home() {
               <Link href="/products/ai-scanner">
                 <Button className="group">
                   Learn More About AI Scanner
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src="/images/ai-scanner.png"
-                  alt="IUNA AI Scanner - Robotic vision system inspecting automotive components"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Weld Seam Scanner */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src="/images/weld-seam-scanner.png"
-                  alt="IUNA Weld Seam Scanner - AI-powered weld inspection system showing good and defective welds"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Weld Seam Scanner</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                Our Weld Seam Scanner uses advanced AI algorithms to detect and classify weld defects with unprecedented
-                accuracy. The system distinguishes between acceptable (I.O.) and defective (N.I.O.) welds, providing
-                immediate feedback to optimize your manufacturing process.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="ml-3 text-gray-600">AI-powered defect classification system</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="ml-3 text-gray-600">Detects pores, cracks, undercuts, and other weld defects</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="ml-3 text-gray-600">Seamless integration with existing production lines</span>
-                </li>
-              </ul>
-              <Link href="/products/weld-seam-scanner">
-                <Button className="group">
-                  Learn More About Weld Seam Scanner
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

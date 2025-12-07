@@ -186,7 +186,7 @@ export default function ContactPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="ai-scanner">AI Scanner</SelectItem>
-                      <SelectItem value="weld-seam-scanner">Weld Seam Scanner</SelectItem>
+                      <SelectItem value="ai-weld-inspector">AI Weld Inspector</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

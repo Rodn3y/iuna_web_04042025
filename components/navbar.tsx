@@ -38,10 +38,10 @@ export default function Navbar() {
             <div className="absolute left-0 top-full h-2 w-full"></div>
             <div className="absolute left-0 top-[calc(100%+8px)] z-50 w-56 rounded-md bg-white p-2 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
               <Link
-                href={getLocalizedPath("/products/weld-seam-scanner")}
+                href={getLocalizedPath("/products/ai-weld-inspector")}
                 className="block rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100"
               >
-                {isGerman ? "Schweißnahtscanner" : "Weld Seam Scanner"}
+                {isGerman ? "AI Weld Inspector" : "AI Weld Inspector"}
               </Link>
               <Link
                 href={getLocalizedPath("/products/ai-scanner")}
@@ -93,11 +93,11 @@ export default function Navbar() {
                 {isGerman ? "Produkte" : "Products"}
               </div>
               <Link
-                href={getLocalizedPath("/products/weld-seam-scanner")}
+                href={getLocalizedPath("/products/ai-weld-inspector")}
                 className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {isGerman ? "Schweißnahtscanner" : "Weld Seam Scanner"}
+                {isGerman ? "AI Weld Inspector" : "AI Weld Inspector"}
               </Link>
               <Link
                 href={getLocalizedPath("/products/ai-scanner")}

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Check } from 'lucide-react'
+import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ImageSlider } from "@/components/image-slider"
@@ -55,7 +55,7 @@ export default function UseCasesPage() {
                 Weld Seam Inspection for Automotive Seating Structures
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                In this application, the IUNA weld seam scanner inspects all MAG weld seams of an automotive seating
+                In this application, the IUNA AI Weld Inspector inspects all MAG weld seams of an automotive seating
                 structure. The camera is statically mounted while a handling robot manages the component positioning,
                 ensuring comprehensive inspection coverage.
               </p>
@@ -102,7 +102,7 @@ export default function UseCasesPage() {
                     alt: "IUNA AI Weld Seam Inspection - Automotive seating structure with handling robot",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iuna_web_demo_seat_20250630_2-ekxhuHZLvLEiZaVU8JqL8CXmd3MSm0.png",
+                    src: "/images/iuna-web-demo-seat-20250630-2.png",
                     alt: "IUNA AI Control Interface - 3D visualization of weld inspection with defect analysis",
                   },
                   {
@@ -127,8 +127,9 @@ export default function UseCasesPage() {
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 Our weld seam detection system for Cross Car Beams (CCBs) offers flexible mounting options with cameras
-                that can be mounted either statically or on an industrial robot. This enables fully automated inline weld
-                seam inspection of CCBs with significantly faster cycle times compared to laser-based inspection systems.
+                that can be mounted either statically or on an industrial robot. This enables fully automated inline
+                weld seam inspection of CCBs with significantly faster cycle times compared to laser-based inspection
+                systems.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
@@ -165,9 +166,7 @@ export default function UseCasesPage() {
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="ml-3 text-gray-600">
-                    Optimized for high-volume automotive production lines
-                  </span>
+                  <span className="ml-3 text-gray-600">Optimized for high-volume automotive production lines</span>
                 </li>
               </ul>
             </div>
@@ -193,7 +192,7 @@ export default function UseCasesPage() {
                 Fully Automated Inspection of Weld Seams on Vehicle Bodies
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                The IUNA weld seam scanner is capable of inspecting the entire vehicle body for weld defects. Each
+                The IUNA AI Weld Inspector is capable of inspecting the entire vehicle body for weld defects. Each
                 individual weld seam can be inspected at different stations throughout the production process. The
                 software checks for presence, length, and weld defects such as pores, cracks, burn-throughs, etc.
               </p>
@@ -256,7 +255,8 @@ export default function UseCasesPage() {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Presence Check</h2>
               <p className="text-lg text-gray-600 mb-6">
                 Our presence check software verifies that all required components are correctly installed during the
-                assembly process. Customers can conduct presence checks for features like nuts, bolts, studs, clips and holes during the same inspection cycle.
+                assembly process. Customers can conduct presence checks for features like nuts, bolts, studs, clips and
+                holes during the same inspection cycle.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">

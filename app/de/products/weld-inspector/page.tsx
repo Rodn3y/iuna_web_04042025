@@ -83,8 +83,8 @@ export default function WeldSeamScannerPage() {
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
           <h2 className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl font-normal">
-            Ersetzen Sie subjektive Sichtprüfungen durch 100% objektive KI-Präzision. Erkennen Sie Fehler in Echtzeit,
-            ohne die Produktion zu verlangsamen.
+            Ersetzen Sie subjektive Sichtprüfungen durch objektive KI-Präzision. Erkennen Sie Fehler in Echtzeit, ohne
+            die Produktion zu verlangsamen.
           </h2>
         </div>
       </section>

@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import {
   Check,
@@ -13,11 +15,47 @@ import {
   Monitor,
   Globe,
   Lightbulb,
+  ChevronRight,
+  ChevronLeft,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState } from "react"
 
-export default function AssemblyInspector() {
+const integrationOptions = [
+  {
+    id: 1,
+    title: "Robot-Mounted Industrial Camera",
+    description:
+      "The industrial camera is mounted on the robot arm, allowing flexible inspection of stationary parts from multiple angles.",
+    image: "/images/interface-weld-inspector-robot-mounted.jpg",
+  },
+  {
+    id: 2,
+    title: "Static Camera with Robot Handling",
+    description: "A statically mounted camera inspects parts that are presented by a product handling robot.",
+    image: "/images/interface-weld-inspector-static-camera.jpg",
+  },
+  {
+    id: 3,
+    title: "Fully Static Multi-Camera Setup",
+    description:
+      "Multiple statically mounted cameras inspect parts without requiring any robot. Ideal for high-throughput applications.",
+    image: "/images/interface-weld-inspector-complete-static.jpg",
+  },
+]
+
+export default function AssemblyInspectorPage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % integrationOptions.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + integrationOptions.length) % integrationOptions.length)
+  }
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -463,8 +501,7 @@ export default function AssemblyInspector() {
                 </div>
                 <div>
                   <div className="inline-flex items-center gap-2 text-primary font-medium mb-2">
-                    <Lightbulb className="h-4 w-4" />
-                    <span className="text-sm">Illumination</span>
+                    <Lightbulb className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Vision Light</h3>
                   <ul className="space-y-1 text-sm text-gray-600">
@@ -479,6 +516,136 @@ export default function AssemblyInspector() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Flexible System Integration Options Section */}
+      <section className="bg-gradient-to-b from-white to-gray-50 py-24">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Flexible System Integration Options</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              The IUNA Assembly Inspector can be easily integrated into your existing production environment via the
+              included PLC. Choose from three flexible camera configuration options to match your specific production
+              requirements.
+            </p>
+          </div>
+
+          {/* Image Slider */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="relative bg-gray-100 rounded-lg overflow-hidden shadow-xl">
+              <div className="relative h-[400px] md:h-[500px]">
+                <Image
+                  src={integrationOptions[currentSlide].image || "/placeholder.svg"}
+                  alt={integrationOptions[currentSlide].title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="bg-white p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {currentSlide + 1}. {integrationOptions[currentSlide].title}
+                </h3>
+                <p className="text-gray-600">{integrationOptions[currentSlide].description}</p>
+              </div>
+            </div>
+
+            {/* Slider Controls */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-700" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-700" />
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {integrationOptions.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-3 w-3 rounded-full transition-colors ${
+                    index === currentSlide ? "bg-primary" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* PLC and Robot Compatibility */}
+          <div className="mt-16 grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">PLC Compatibility</h3>
+              <p className="text-gray-600 mb-4">
+                The IUNA Assembly Inspector supports industry-standard communication protocols:
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">PROFINET Simatic PLCs</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">EtherNet/IP Allen-Bradley PLCs</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Robot Compatibility</h3>
+              <p className="text-gray-600 mb-4">Full support for all major industrial robot brands:</p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">KUKA</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">FANUC</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">ABB</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">Yaskawa</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Turnkey Solution */}
+          <div className="mt-12 max-w-4xl mx-auto bg-primary/10 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Complete Turnkey Solution</h3>
+            <p className="text-gray-600 text-center mb-6">
+              We deliver the complete hardware package including industrial camera technology and accessories such as
+              lenses and tripods, light sources, PLC, and if required, the enclosure (inspection cell). We also handle
+              on-site commissioning, so you can integrate the complete ready-to-use system into your production without
+              any prior knowledge.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">
+                Industrial Cameras
+              </span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Lenses & Tripods</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Light Sources</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">PLC Integration</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Inspection Cell</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">
+                On-Site Commissioning
+              </span>
             </div>
           </div>
         </div>
@@ -608,6 +775,48 @@ export default function AssemblyInspector() {
                 From now on, the Assembly Inspector takes over your inspection fully automatically. With the help of the
                 user interface, you can track and evaluate results at any time.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Options Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Integration Options</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Choose the integration option that best fits your production needs.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={integrationOptions[currentSlide].image || "/placeholder.svg"}
+                alt={integrationOptions[currentSlide].title}
+                fill
+                className="object-cover brightness-[0.4]"
+              />
+            </div>
+            <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">
+              <h3 className="text-2xl font-bold tracking-tight text-white">{integrationOptions[currentSlide].title}</h3>
+              <p className="mt-4 text-xl text-gray-200 sm:text-2xl">{integrationOptions[currentSlide].description}</p>
+              <div className="mt-10 flex justify-center space-x-4">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-gray-300 bg-gray-200 text-gray-900 hover:bg-gray-300"
+                  onClick={prevSlide}
+                >
+                  <ChevronLeft className="h-5 w-5 mr-2" />
+                  Previous
+                </Button>
+                <Button size="lg" variant="secondary" onClick={nextSlide}>
+                  Next
+                  <ChevronRight className="h-5 w-5 ml-2" />
+                </Button>
+              </div>
             </div>
           </div>
         </div>

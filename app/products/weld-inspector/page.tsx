@@ -82,8 +82,8 @@ export default function WeldSeamScannerPage() {
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
           <h2 className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl font-normal">
-            Replace subjective visual inspections with 100% objective AI precision. Find defects in real time without
-            slowing down production.
+            Replace subjective visual inspections with objective AI precision. Find defects in real time without slowing
+            down production.
           </h2>
         </div>
       </section>
@@ -981,7 +981,7 @@ export default function WeldSeamScannerPage() {
               </div>
             </div>
 
-            {/* Drop-in Solution */}
+            {/* One-Click Reporting */}
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">

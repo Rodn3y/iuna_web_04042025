@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import GoogleAnalytics from "@/components/google-analytics"
+import { CookieConsentProvider } from "@/components/cookie-consent-provider"
+import CookieBanner from "@/components/cookie-banner"
 import { headers } from "next/headers"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -34,11 +36,15 @@ export default function RootLayout({
     <html lang={isGerman ? "de" : "en"}>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
-          {/* Google Analytics */}
-          <GoogleAnalytics GA_MEASUREMENT_ID="G-YVPD5C9ZKC" />
-          <Navbar />
-          {children}
-          <Footer />
+          <CookieConsentProvider>
+            {/* Google Analytics - only loads with consent */}
+            <GoogleAnalytics GA_MEASUREMENT_ID="G-YVPD5C9ZKC" />
+            <Navbar />
+            {children}
+            <Footer />
+            {/* Cookie Banner */}
+            <CookieBanner />
+          </CookieConsentProvider>
         </ThemeProvider>
       </body>
     </html>

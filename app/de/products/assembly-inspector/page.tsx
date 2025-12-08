@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import {
   Check,
@@ -8,16 +10,53 @@ import {
   Target,
   Gauge,
   Camera,
-  Globe,
-  Lightbulb,
-  Monitor,
   Eye,
   Server,
+  Monitor,
+  Globe,
+  Lightbulb,
+  ChevronRight,
+  ChevronLeft,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useState } from "react"
 
-export default function AssemblyInspector() {
+const integrationOptions = [
+  {
+    id: 1,
+    title: "Robotergeführte Industriekamera",
+    description:
+      "Die Industriekamera ist am Roboterarm montiert und ermöglicht eine flexible Inspektion stationärer Teile aus mehreren Winkeln.",
+    image: "/images/interface-weld-inspector-robot-mounted.jpg",
+  },
+  {
+    id: 2,
+    title: "Statische Kamera mit Roboter-Handling",
+    description:
+      "Eine statisch montierte Kamera inspiziert Teile, die von einem Produkthandhabungsroboter präsentiert werden.",
+    image: "/images/interface-weld-inspector-static-camera.jpg",
+  },
+  {
+    id: 3,
+    title: "Vollständig statisches Multi-Kamera-Setup",
+    description:
+      "Mehrere statisch montierte Kameras inspizieren Teile ohne Roboter. Ideal für Anwendungen mit hohem Durchsatz.",
+    image: "/images/interface-weld-inspector-complete-static.jpg",
+  },
+]
+
+export default function AssemblyInspectorPage() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % integrationOptions.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + integrationOptions.length) % integrationOptions.length)
+  }
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
@@ -485,6 +524,136 @@ export default function AssemblyInspector() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Flexible System Integration Options Section */}
+      <section className="bg-gradient-to-b from-white to-gray-50 py-24">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Flexible Systemintegrationsoptionen</h2>
+            <p className="mt-4 text-lg text-gray-600">
+              Der IUNA Assembly Inspector lässt sich über die mitgelieferte SPS einfach in Ihre bestehende
+              Produktionsumgebung integrieren. Wählen Sie aus drei flexiblen Kamerakonfigurationsoptionen, die zu Ihren
+              spezifischen Produktionsanforderungen passen.
+            </p>
+          </div>
+
+          {/* Image Slider */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="relative bg-gray-100 rounded-lg overflow-hidden shadow-xl">
+              <div className="relative h-[400px] md:h-[500px]">
+                <Image
+                  src={integrationOptions[currentSlide].image || "/placeholder.svg"}
+                  alt={integrationOptions[currentSlide].title}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="bg-white p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {currentSlide + 1}. {integrationOptions[currentSlide].title}
+                </h3>
+                <p className="text-gray-600">{integrationOptions[currentSlide].description}</p>
+              </div>
+            </div>
+
+            {/* Slider Controls */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+              aria-label="Vorheriges Bild"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-700" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+              aria-label="Nächstes Bild"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-700" />
+            </button>
+
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 mt-4">
+              {integrationOptions.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-3 w-3 rounded-full transition-colors ${
+                    index === currentSlide ? "bg-primary" : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Zu Bild ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* PLC and Robot Compatibility */}
+          <div className="mt-16 grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">SPS-Kompatibilität</h3>
+              <p className="text-gray-600 mb-4">
+                Der IUNA Assembly Inspector unterstützt branchenübliche Kommunikationsprotokolle:
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">PROFINET Simatic SPSen</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">EtherNet/IP Allen-Bradley SPSen</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Roboter-Kompatibilität</h3>
+              <p className="text-gray-600 mb-4">Volle Unterstützung für alle großen Industrieroboter-Marken:</p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">KUKA</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">FANUC</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">ABB</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-gray-600">Yaskawa</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Turnkey Solution */}
+          <div className="mt-12 max-w-4xl mx-auto bg-primary/10 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Komplette Schlüsselfertige Lösung</h3>
+            <p className="text-gray-600 text-center mb-6">
+              Wir liefern das komplette Hardware-Paket inklusive Industriekamera-Technologie und Zubehör wie Objektive
+              und Stative, Lichtquellen, SPS und bei Bedarf das Gehäuse (Prüfzelle). Wir übernehmen auch die
+              Inbetriebnahme vor Ort, sodass Sie das komplette einsatzbereite System ohne Vorkenntnisse in Ihre
+              Produktion integrieren können.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Industriekameras</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">
+                Objektive & Stative
+              </span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Lichtquellen</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">SPS-Integration</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">Prüfzelle</span>
+              <span className="bg-white px-4 py-2 rounded-full text-sm text-gray-700 shadow-sm">
+                Inbetriebnahme vor Ort
+              </span>
             </div>
           </div>
         </div>

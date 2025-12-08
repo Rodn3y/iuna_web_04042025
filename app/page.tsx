@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section - Full viewport height */}
-      <section className="relative h-screen w-full">
+      <section className="relative min-h-screen min-h-[100dvh] w-full pt-24">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/automotive-head.jpg"
@@ -19,36 +19,36 @@ export default function Home() {
             quality={100}
           />
         </div>
-        <div className="relative z-10 flex h-full flex-col">
+        <div className="relative z-10 flex min-h-[calc(100dvh-6rem)] flex-col">
           {/* Hauptinhalt - vertikal zentriert */}
           <div className="flex flex-grow items-center">
             <div className="container px-4 sm:px-6 lg:px-8">
-              <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                 The New Standard for Visual Weld & Assembly Inspection
               </h1>
               <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
-              <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
-                Replace subjective manual checks with objective AI precision. Ensure 100% quality compliance with the{" "}
-                <span className="font-bold">IUNA Weld Inspector</span> and{" "}
+              <p className="mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl md:text-2xl">
+                Replace subjective manual checks with objective AI precision. Move from random sampling to 100% inline
+                inspection with the <span className="font-bold">IUNA Weld Inspector</span> and{" "}
                 <span className="font-bold">Assembly Inspector</span>.
               </p>
             </div>
           </div>
 
           {/* Client Logos Section - Full width */}
-          <div className="w-full bg-black/50 py-8 backdrop-blur-sm">
+          <div className="w-full bg-black/50 py-4 sm:py-8 backdrop-blur-sm">
             <div className="container px-4 sm:px-6 lg:px-8">
-              <p className="mb-6 text-center text-lg font-medium text-white">
+              <p className="mb-4 sm:mb-6 text-center text-sm sm:text-lg font-medium text-white">
                 Trusted by leading Automotive Manufacturers, Suppliers and System Integrators
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-16">
                 <div className="flex justify-center">
                   <Image
                     src="/images/logo_vw.png"
                     alt="vw logo white"
                     width={70}
                     height={70}
-                    className="h-[70px] w-auto object-contain brightness-0 invert"
+                    className="h-[50px] sm:h-[70px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -57,7 +57,7 @@ export default function Home() {
                     alt="audi logo white"
                     width={90}
                     height={90}
-                    className="h-[90px] w-auto object-contain brightness-0 invert"
+                    className="h-[60px] sm:h-[90px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -66,7 +66,7 @@ export default function Home() {
                     alt="awl logo white"
                     width={120}
                     height={40}
-                    className="h-[40px] w-auto object-contain brightness-0 invert"
+                    className="h-[30px] sm:h-[40px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -75,7 +75,7 @@ export default function Home() {
                     alt="ehr logo white"
                     width={70}
                     height={35}
-                    className="h-[35px] w-auto object-contain brightness-0 invert"
+                    className="h-[25px] sm:h-[35px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -84,7 +84,7 @@ export default function Home() {
                     alt="heidelberger druckmaschinen logo white"
                     width={120}
                     height={60}
-                    className="h-[60px] w-auto object-contain brightness-0 invert"
+                    className="h-[40px] sm:h-[60px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
                 <div className="flex justify-center">
@@ -93,7 +93,7 @@ export default function Home() {
                     alt="schedl automotive logo white"
                     width={100}
                     height={100}
-                    className="h-[100px] w-auto object-contain brightness-0 invert"
+                    className="h-[70px] sm:h-[100px] w-auto object-contain brightness-0 invert"
                   />
                 </div>
               </div>

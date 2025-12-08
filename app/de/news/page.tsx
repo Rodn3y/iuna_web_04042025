@@ -159,10 +159,10 @@ export default function NewsPage() {
 
                 <div className="mt-8">
                   <Link
-                    href="/de/products/ai-weld-inspector"
+                    href="/de/products/weld-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
                   >
-                    Erfahren Sie mehr über unseren AI Weld Inspector
+                    Erfahren Sie mehr über unseren Weld Inspector
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
@@ -233,10 +233,10 @@ export default function NewsPage() {
                   Genauigkeit bei der Reifenmontage in den letzten Jahren stark gestiegen.
                 </p>
                 <p>
-                  Dank des IUNA AI Scanners ist es jetzt möglich, diesen Inspektionsprozess zu automatisieren. Der IUNA
-                  AI Scanner vergleicht Farbe und Form der Ventilkappe und des Ventils auf dem Bild und gleicht diese
-                  Informationen mit dem Sollwert aus der Datenbank ab. Dieser Einsatz von industrieller Computer Vision
-                  und KI-Technologie vermeidet Fehler und Rücksendungen bereits vor der Auslieferung.
+                  Dank des IUNA Assembly Inspectors ist es jetzt möglich, diesen Inspektionsprozess zu automatisieren.
+                  Der IUNA Assembly Inspector vergleicht Farbe und Form der Ventilkappe und des Ventils auf dem Bild und
+                  gleicht diese Informationen mit dem Sollwert aus der Datenbank ab. Dieser Einsatz von industrieller
+                  Computer Vision und KI-Technologie vermeidet Fehler und Rücksendungen bereits vor der Auslieferung.
                 </p>
               </div>
             </div>
@@ -379,9 +379,9 @@ export default function NewsPage() {
                 <p>
                   Um die Produktentwicklung weiter zu beschleunigen, haben wir Anfang 2022 die Entscheidung getroffen,
                   eine erste Finanzierungsrunde abzuschließen. Nach sorgfältiger Prüfung aller Angebote fiel die
-                  endgültige Entscheidung zugunsten zweier lokaler und erfahrener VC-Unternehmen aus dem Heilbronner
-                  Raum: Die Campus Founders Venture Studios und der erfahrene Business Angel Prof. Wolf Nietzer mit der
-                  VC Corporation Wolfman.One.
+                  endgültige Entscheidung zugunsten zweier lokaler und erfahrener VC-Unternehmen aus dem Raum Heilbronn:
+                  Die Campus Founders Venture Studios und der erfahrene Business Angel Prof. Wolf Nietzer mit der VC
+                  Corporation Wolfman.One.
                 </p>
                 <div className="mt-6">
                   <a
@@ -407,7 +407,7 @@ export default function NewsPage() {
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
                 <Image
                   src="/images/auto-scanner-v3-interface.jpeg"
-                  alt="IUNA Auto Scanner v3 Oberfläche zeigt Karosserieanalyse in der Audi-Produktionsanlage"
+                  alt="IUNA Auto Scanner v3 Benutzeroberfläche zeigt Karosserieanalyse in der Audi Produktionsanlage"
                   fill
                   className="object-cover"
                 />
@@ -418,12 +418,12 @@ export default function NewsPage() {
               <div className="prose prose-lg max-w-none">
                 <p>
                   Die dritte Version unseres Auto Scanners wurde um die Funktionalität der "Anomalieerkennung"
-                  erweitert. Hier erkennt das System nicht nur vordefinierte Defekte, sondern ist auch in der Lage, die
-                  gesamte Fahrzeugoberfläche auf Anomalien zu überprüfen. Anomalien sind Defekte, für die wenig bis
-                  keine Bilddaten aus der Vergangenheit vorliegen. Dadurch können auch seltene Defekte, die sonst nur
-                  von Menschen erkannt würden, vollautomatisch erkannt werden. Dadurch wurde im Karosseriebau von Audi
-                  eine vollständige Automatisierung des Inspektionsprozesses erreicht, die die manuelle Sichtprüfung
-                  ersetzt.
+                  erweitert. Hierbei erkennt das System nicht nur vordefinierte Defekte, sondern ist auch in der Lage,
+                  die gesamte Fahrzeugoberfläche auf Anomalien zu überprüfen. Anomalien sind Defekte, für die wenige bis
+                  keine historischen Bilddaten verfügbar sind. Das bedeutet, dass auch seltene Defekte, die sonst nur
+                  von Menschen erkannt würden, vollautomatisch erfasst werden können. Dadurch wurde eine vollständige
+                  Automatisierung des Inspektionsprozesses im Karosseriebau von Audi erreicht und die manuelle
+                  Sichtkontrolle ersetzt.
                 </p>
               </div>
             </div>
@@ -434,23 +434,23 @@ export default function NewsPage() {
                 <Calendar className="h-4 w-4" />
                 <span>24. September 2021</span>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Release IUNA AI Scanner</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Release IUNA AI Inspector</h2>
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
-                <Image src="/images/ai-scanner.png" alt="IUNA AI Scanner" fill className="object-cover" />
+                <Image src="/images/ai-scanner.png" alt="IUNA AI Inspector" fill className="object-cover" />
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Basierend auf dem Know-how des Auto Scanners wurde im September 2021 der IUNA AI Scanner entwickelt.
-                  Mit dem AI Scanner haben wir ein modulares und einfach zu bedienendes AI Vision System entwickelt, das
-                  in-line integriert werden kann. In Kombination mit der richtigen Softwareanwendung sind wir flexibel,
-                  um eine Vielzahl von Aufgaben in der industriellen Fertigung zu lösen.
+                  Basierend auf dem Know-how des Auto Scanners wurde im September 2021 der IUNA AI Inspector entwickelt.
+                  Mit dem AI Inspector haben wir ein modulares und einfach zu bedienendes KI-Bildverarbeitungssystem
+                  entwickelt, das inline integriert werden kann. In Kombination mit der richtigen Softwareanwendung sind
+                  wir flexibel, um eine breite Palette von Aufgaben in der industriellen Fertigung zu lösen.
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/de/products/ai-scanner"
+                    href="/de/products/ai-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80"
                   >
-                    Mehr lesen
+                    Mehr erfahren
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
@@ -467,10 +467,10 @@ export default function NewsPage() {
               <div className="prose prose-lg max-w-none">
                 <p>
                   Im März wurde die zweite Version des IUNA Auto Scanners fertiggestellt. Das System prüft
-                  Standardpunkte an der Karosserie des Fahrzeugs auf Oberflächengeometriedefekte. Dazu gehören
-                  Welligkeit, Eindruckstellen, Blechungleichgewichte und andere Defekte, die vor allem im Karosseriebau
-                  auftreten. Darüber hinaus helfen die Daten der jeweiligen Fachabteilung, prozessbedingte Fehler oder
-                  durch Zulieferer verursachte Fehler zu erkennen.
+                  Standardpunkte an der Fahrzeugkarosserie auf Oberflächengeometriedefekte. Dazu gehören Welligkeit,
+                  Eindruckstellen, Blechungleichmäßigkeiten und andere Defekte, die vorwiegend in der
+                  Karosseriebau-Abteilung auftreten. Darüber hinaus helfen die Daten der jeweiligen Fachabteilung,
+                  prozessbedingte Fehler oder Fehler von Lieferanten zu erkennen.
                 </p>
               </div>
             </div>
@@ -488,7 +488,7 @@ export default function NewsPage() {
                 <p>
                   Im September 2020 wurde iuna.ai offizieller Entwicklungspartner von VW. Ziel der
                   Entwicklungskooperation war die Weiterentwicklung des IUNA Auto Scanners v1 im Karosseriebau des Audi
-                  R8 zur vollautonomen Identifikation von Oberflächengeometriedefekten an der Karosserie.
+                  R8 zur vollautonomen Identifizierung von Oberflächengeometriedefekten an der Karosserie.
                 </p>
               </div>
             </div>
@@ -505,7 +505,7 @@ export default function NewsPage() {
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
                 <Image
                   src="/images/founding-team.jpeg"
-                  alt="IUNA AI Gründerteam - Jan Nabatian, William Chen und Samira Nabatian in ihrem Büro"
+                  alt="IUNA AI Gründungsteam - Jan Nabatian, William Chen und Samira Nabatian in ihrem Büro"
                   fill
                   className="object-cover"
                 />
@@ -514,8 +514,8 @@ export default function NewsPage() {
                 <p>
                   Im Mai 2020 wurde die IUNA AI Systems GmbH mit dem Ziel gegründet, die Automatisierung in der
                   industriellen Fertigung im Bereich der visuellen Inspektion und Qualitätssicherung zu revolutionieren.
-                  Gesellschafter der GmbH sind Jan Nabatian (Geschäftsführer), Tong Chen (Leiter Produktentwicklung) und
-                  Samira Nabatian (Leiterin Business Development).
+                  Die Gesellschafter der GmbH sind Jan Nabatian (Geschäftsführer), Tong Chen (Leiter Produktentwicklung)
+                  und Samira Nabatian (Leiterin Geschäftsentwicklung).
                 </p>
               </div>
             </div>
@@ -527,13 +527,13 @@ export default function NewsPage() {
                 <span>15. März 2020</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Auto Scanner v1 / Oberflächenfehlererkennung
+                Auto Scanner v1 / Oberflächendefekterkennung
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p>
                   Im März 2020 wurde die erste Version des Auto Scanners im Rahmen des Forschungsprojekts der Machine
-                  Learning-Gruppe der Universität Stuttgart und Audi fertiggestellt. Damit wurde der Proof of Concept
-                  einer KI-basierten Erkennung von Oberflächenschäden an Fahrzeugen auf dem Fließband erbracht.
+                  Learning Gruppe der Universität Stuttgart und Audi fertiggestellt. Dies lieferte den Proof of Concept
+                  einer KI-basierten Erkennung von Oberflächenschäden an Fahrzeugen am Fließband.
                 </p>
               </div>
             </div>
@@ -551,9 +551,9 @@ export default function NewsPage() {
                 <p>
                   Die Idee für eine KI-basierte Bilddatenanalyse entstand aus einer Kooperation zwischen der
                   Universitätsgruppe für Machine Learning an der Universität Stuttgart und der Audi AG in Neckarsulm.
-                  Ziel des Forschungsprojekts war es, den Proof of Concept einer KI-basierten autonomen
-                  Qualitätssicherung von Fahrzeugen auf dem Fließband zu liefern. Die Universitätsgruppe wurde 2019 von
-                  Jan Nabatian initiiert und geleitet.
+                  Ziel des Forschungsprojekts war es, einen Proof of Concept einer KI-basierten autonomen
+                  Qualitätssicherung von Fahrzeugen am Fließband zu liefern. Die Universitätsgruppe wurde 2019 von Jan
+                  Nabatian initiiert und geleitet.
                 </p>
               </div>
             </div>
@@ -566,10 +566,10 @@ export default function NewsPage() {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Möchten Sie mehr über unsere AI Vision Systeme erfahren?
+              Möchten Sie mehr über unsere KI-Bildverarbeitungssysteme erfahren?
             </h2>
             <p className="mt-4 text-xl text-white/90">
-              Kontaktieren Sie unser Team, um eine persönliche Demonstration unserer Produkte zu vereinbaren.
+              Kontaktieren Sie unser Team, um eine personalisierte Demonstration unserer Produkte zu vereinbaren.
             </p>
             <div className="mt-10 flex justify-center">
               <Link href="/de/contact">

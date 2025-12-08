@@ -1,16 +1,16 @@
 "use client"
 
 import type React from "react"
-
-import { useState, useRef, useEffect } from "react"
+import Link from "next/link"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Mail, Phone, MapPin, Calendar, Upload, X } from "lucide-react"
+import { Mail, Phone, MapPin, Calendar, Upload, X, Check } from "lucide-react"
 import ReCAPTCHA from "react-google-recaptcha"
+import { useState, useRef, useEffect } from "react"
 
 export default function ContactPage() {
   const router = useRouter()
@@ -19,6 +19,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [captchaValue, setCaptchaValue] = useState<string | null>(null)
   const [formError, setFormError] = useState<string | null>(null)
+  const [consentChecked, setConsentChecked] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const recaptchaRef = useRef<ReCAPTCHA>(null)
   const formRef = useRef<HTMLFormElement>(null)
@@ -67,6 +68,11 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormError(null)
+
+    if (!consentChecked) {
+      setFormError("Bitte stimmen Sie der Datenverarbeitung zu, um fortzufahren")
+      return
+    }
 
     if (!captchaValue) {
       setFormError("Bitte bestätigen Sie, dass Sie kein Roboter sind.")
@@ -189,8 +195,8 @@ export default function ContactPage() {
                       <SelectValue placeholder="Produkt auswählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="ai-scanner">AI Scanner</SelectItem>
-                      <SelectItem value="ai-weld-inspector">AI Weld Inspector</SelectItem>
+                      <SelectItem value="ai-inspector">AI Inspector</SelectItem>
+                      <SelectItem value="weld-inspector">Weld Inspector</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -280,16 +286,49 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mt-6">
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="relative flex-shrink-0 mt-0.5">
+                      <input
+                        type="checkbox"
+                        checked={consentChecked}
+                        onChange={(e) => setConsentChecked(e.target.checked)}
+                        className="sr-only peer"
+                        required
+                      />
+                      <div className="w-5 h-5 border-2 border-gray-300 rounded transition-colors peer-checked:bg-primary peer-checked:border-primary peer-focus:ring-2 peer-focus:ring-primary/20 group-hover:border-gray-400">
+                        {consentChecked && (
+                          <Check className="w-4 h-4 text-white absolute top-0.5 left-0.5" strokeWidth={3} />
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-sm text-gray-600">
+                      Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verarbeitet werden.
+                      Weitere Informationen finden Sie in der{" "}
+                      <Link href="/de/privacy-policy" className="text-primary hover:text-primary/80 underline">
+                        Datenschutzerklärung
+                      </Link>
+                      . <span className="text-red-500">*</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div className="mt-6">
                   <ReCAPTCHA
                     ref={recaptchaRef}
                     sitekey="6Lc2tAArAAAAAIN9CObjWB7raxn0LfbJu-QHOhr0"
                     onChange={handleCaptchaChange}
+                    hl="de"
                   />
                   {formError && <p className="mt-2 text-sm text-red-600">{formError}</p>}
                 </div>
 
                 <div>
-                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting || !captchaValue}>
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full"
+                    disabled={isSubmitting || !captchaValue || !consentChecked}
+                  >
                     {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
                   </Button>
                 </div>

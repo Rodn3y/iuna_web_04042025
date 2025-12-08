@@ -73,13 +73,16 @@ function FooterContent() {
             <h3 className="mb-4 text-lg font-semibold">{isGerman ? "Produkte" : "Products"}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={getLocalizedPath("/products/ai-scanner")} className="text-gray-400 hover:text-white">
-                  {isGerman ? "AI Scanner" : "AI Scanner"}
+                <Link
+                  href={getLocalizedPath("/products/assembly-inspector")}
+                  className="text-gray-400 hover:text-white"
+                >
+                  {isGerman ? "Assembly Inspector" : "Assembly Inspector"}
                 </Link>
               </li>
               <li>
-                <Link href={getLocalizedPath("/products/ai-weld-inspector")} className="text-gray-400 hover:text-white">
-                  {isGerman ? "AI Weld Inspector" : "AI Weld Inspector"}
+                <Link href={getLocalizedPath("/products/weld-inspector")} className="text-gray-400 hover:text-white">
+                  {isGerman ? "Weld Inspector" : "Weld Inspector"}
                 </Link>
               </li>
             </ul>

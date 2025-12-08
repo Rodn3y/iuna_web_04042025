@@ -12,7 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin, Calendar, Upload, X, Check } from "lucide-react"
 import ReCAPTCHA from "react-google-recaptcha"
 
-export default function ContactPage() {
+export default function KontaktPage() {
   const router = useRouter()
   const [files, setFiles] = useState<File[]>([])
   const [selectedProduct, setSelectedProduct] = useState<string>("")
@@ -70,12 +70,12 @@ export default function ContactPage() {
     setFormError(null)
 
     if (!consentChecked) {
-      setFormError("Please agree to the data processing terms to continue")
+      setFormError("Bitte stimmen Sie der Datenverarbeitung zu, um fortzufahren")
       return
     }
 
     if (!captchaValue) {
-      setFormError("Please complete the reCAPTCHA verification")
+      setFormError("Bitte vervollständigen Sie die reCAPTCHA-Überprüfung")
       return
     }
 
@@ -99,20 +99,22 @@ export default function ContactPage() {
       })
 
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`)
+        throw new Error(`Serverfehler: ${response.status}`)
       }
 
       const data = await response.json()
 
       if (data.success) {
-        // Redirect to thank you page
-        router.push("/contact/thank-you")
+        // Redirect to German thank you page
+        router.push("/de/kontakt/danke")
       } else {
-        throw new Error(data.message || "Failed to submit form")
+        throw new Error(data.message || "Formular konnte nicht gesendet werden")
       }
     } catch (error) {
-      console.error("Error submitting form:", error)
-      setFormError(error instanceof Error ? error.message : "An error occurred. Please try again later.")
+      console.error("Fehler beim Absenden des Formulars:", error)
+      setFormError(
+        error instanceof Error ? error.message : "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -129,28 +131,30 @@ export default function ContactPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/header_landing_page.jpg"
-            alt="IUNA AI Contact"
+            alt="IUNA AI Kontakt"
             fill
             className="object-cover brightness-[0.4]"
             priority
           />
         </div>
         <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Contact</h1>
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Kontakt</h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
-          <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">Get in touch with us or schedule a meeting</p>
+          <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
+            Nehmen Sie Kontakt mit uns auf oder vereinbaren Sie einen Termin
+          </p>
         </div>
       </section>
 
       {/* Contact Form and Calendar Section */}
-      <section className="py-16 md:py-24 bg-white" id="contact-form">
+      <section className="py-16 md:py-24 bg-white" id="kontaktformular">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in Touch</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Kontaktieren Sie uns</h2>
               <p className="mt-4 text-lg text-gray-600">
-                Fill out the form and our team will get back to you within 24 hours.
+                Füllen Sie das Formular aus und unser Team wird sich innerhalb von 24 Stunden bei Ihnen melden.
               </p>
 
               <form className="mt-8 space-y-6" onSubmit={handleSubmit} ref={formRef}>
@@ -163,32 +167,32 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                    Company <span className="text-red-500">*</span>
+                    Unternehmen <span className="text-red-500">*</span>
                   </label>
                   <Input type="text" id="company" name="company" className="mt-1" required />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email <span className="text-red-500">*</span>
+                    E-Mail <span className="text-red-500">*</span>
                   </label>
                   <Input type="email" id="email" name="email" className="mt-1" required />
                 </div>
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone
+                    Telefon
                   </label>
                   <Input type="tel" id="phone" name="phone" className="mt-1" />
                 </div>
 
                 <div>
                   <label htmlFor="product" className="block text-sm font-medium text-gray-700">
-                    Product
+                    Produkt
                   </label>
                   <Select value={selectedProduct} onValueChange={setSelectedProduct}>
                     <SelectTrigger className="mt-1">
-                      <SelectValue placeholder="Select a product" />
+                      <SelectValue placeholder="Produkt auswählen" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="ai-inspector">AI Inspector</SelectItem>
@@ -199,15 +203,16 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Message <span className="text-red-500">*</span>
+                    Nachricht <span className="text-red-500">*</span>
                   </label>
                   <Textarea id="message" name="message" rows={6} className="mt-1" required />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700">Attach Files</label>
+                  <label className="block text-sm font-medium text-gray-700">Dateien anhängen</label>
                   <p className="text-sm text-gray-500 mt-1">
-                    Add images of the product to be inspected, example images of defective samples, or a defect catalog.
+                    Fügen Sie Bilder des zu prüfenden Produkts, Beispielbilder von fehlerhaften Proben oder einen
+                    Fehlerkatalog hinzu.
                   </p>
                   <div className="mt-2">
                     <div
@@ -242,7 +247,7 @@ export default function ContactPage() {
                             htmlFor="file-upload"
                             className="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary/80 focus-within:outline-none"
                           >
-                            <span>Upload Files</span>
+                            <span>Dateien hochladen</span>
                             <input
                               id="file-upload"
                               name="file-upload"
@@ -253,15 +258,15 @@ export default function ContactPage() {
                               ref={fileInputRef}
                             />
                           </label>
-                          <p className="pl-1">or drag & drop</p>
+                          <p className="pl-1">oder per Drag & Drop</p>
                         </div>
-                        <p className="text-xs text-gray-500">PNG, JPG, PDF up to 10MB</p>
+                        <p className="text-xs text-gray-500">PNG, JPG, PDF bis zu 10MB</p>
                       </div>
                     </div>
                   </div>
                   {files.length > 0 && (
                     <div className="mt-4 space-y-2">
-                      <p className="text-sm font-medium text-gray-700">Selected files:</p>
+                      <p className="text-sm font-medium text-gray-700">Ausgewählte Dateien:</p>
                       <ul className="space-y-2">
                         {files.map((file, index) => (
                           <li key={index} className="flex items-center justify-between bg-gray-50 px-3 py-2 rounded-md">
@@ -297,9 +302,10 @@ export default function ContactPage() {
                       </div>
                     </div>
                     <span className="text-sm text-gray-600">
-                      I agree that my data will be processed to handle my inquiry. More information can be found in the{" "}
-                      <Link href="/privacy-policy" className="text-primary hover:text-primary/80 underline">
-                        Privacy Policy
+                      Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage verarbeitet werden.
+                      Weitere Informationen finden Sie in der{" "}
+                      <Link href="/de/privacy-policy" className="text-primary hover:text-primary/80 underline">
+                        Datenschutzerklärung
                       </Link>
                       . <span className="text-red-500">*</span>
                     </span>
@@ -311,6 +317,7 @@ export default function ContactPage() {
                     ref={recaptchaRef}
                     sitekey="6Lc2tAArAAAAAIN9CObjWB7raxn0LfbJu-QHOhr0"
                     onChange={handleCaptchaChange}
+                    hl="de"
                   />
                   {formError && <p className="mt-2 text-sm text-red-600">{formError}</p>}
                 </div>
@@ -322,17 +329,17 @@ export default function ContactPage() {
                     className="w-full"
                     disabled={isSubmitting || !captchaValue || !consentChecked}
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
                   </Button>
                 </div>
               </form>
             </div>
 
             {/* Calendar */}
-            <div id="schedule-consultation">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Schedule a Meeting</h2>
+            <div id="termin-vereinbaren">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900">Termin vereinbaren</h2>
               <p className="mt-4 text-lg text-gray-600 mb-6">
-                Schedule a meeting with Jan Nabatian to discuss your specific requirements.
+                Vereinbaren Sie einen Termin mit Jan Nabatian, um Ihre spezifischen Anforderungen zu besprechen.
               </p>
               <div className="rounded-lg overflow-hidden border border-gray-200 h-[600px]">
                 <iframe
@@ -355,7 +362,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl grid gap-12 lg:grid-cols-2">
             {/* Contact Information */}
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Contact Information</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Kontaktinformationen</h2>
               <div className="space-y-6">
                 <div className="flex">
                   <div className="flex-shrink-0">
@@ -374,7 +381,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-lg font-medium text-gray-900">Phone</p>
+                    <p className="text-lg font-medium text-gray-900">Telefon</p>
                     <a href="tel:+4915255386189" className="mt-1 text-gray-600 hover:text-primary">
                       +49 152 5538 6189
                     </a>
@@ -386,7 +393,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-lg font-medium text-gray-900">Address</p>
+                    <p className="text-lg font-medium text-gray-900">Adresse</p>
                     <p className="mt-1 text-gray-600">
                       IUNA AI Systems GmbH
                       <br />
@@ -402,8 +409,8 @@ export default function ContactPage() {
                     <Calendar className="h-6 w-6 text-primary" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-lg font-medium text-gray-900">Business Hours</p>
-                    <p className="mt-1 text-gray-600">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p className="text-lg font-medium text-gray-900">Geschäftszeiten</p>
+                    <p className="mt-1 text-gray-600">Montag - Freitag: 9:00 - 17:00 Uhr</p>
                   </div>
                 </div>
               </div>
@@ -412,14 +419,14 @@ export default function ContactPage() {
             {/* Map */}
             <div className="h-[400px] rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.6991203029246!2d9.2982413!3d49.0039444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47982feb3f36f741%3A0x1ef0dcda750483d4!2sIUNA%20AI!5e0!3m2!1sen!2sde!4v1711057234567!5m2!1sen!2sde"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2618.6991203029246!2d9.2982413!3d49.0039444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47982feb3f36f741%3A0x1ef0dcda750483d4!2sIUNA%20AI!5e0!3m2!1sde!2sde!4v1711057234567!5m2!1sde!2sde"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="IUNA AI Location Map"
+                title="IUNA AI Standort Karte"
               ></iframe>
             </div>
           </div>

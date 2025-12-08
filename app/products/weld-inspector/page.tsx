@@ -20,8 +20,14 @@ import {
   Settings,
   Cpu,
   Lightbulb,
+  Ruler,
+  Focus,
+  Flame,
+  ListChecks,
+  ClipboardCheck,
 } from "lucide-react"
 import { useState } from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const integrationOptions = [
   {
@@ -64,7 +70,7 @@ export default function WeldSeamScannerPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/automotive-head.jpg"
-            alt="IUNA AI Weld Inspector - AI-powered weld inspection"
+            alt="IUNA Weld Inspector - AI-powered weld inspection"
             fill
             className="object-cover brightness-[0.4]"
             priority
@@ -76,142 +82,353 @@ export default function WeldSeamScannerPage() {
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
           <h2 className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl font-normal">
-            Fully automatic visual inspection of weld seams
+            Replace subjective visual inspections with 100% objective AI precision. Find defects in real time without
+            slowing down production.
           </h2>
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="bg-white py-20">
+      {/* Overview Section - ISO standards with expandable descriptions */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-            Ensure the highest weld quality – based on international standards
-          </h2>
-          <div className="mt-6 prose prose-lg max-w-none text-gray-600">
-            <p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Ensure the highest weld quality – based on international standards
+            </h2>
+            <div className="mt-4 h-1 w-32 bg-primary mx-auto"></div>
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
               Our system enables the visual inspection of weld seams in accordance with globally recognized welding
-              standards:
-            </p>
-            <ul className="space-y-4 mt-6">
-              <li>
-                <strong>ISO 5817:</strong> Defines quality levels and acceptance criteria for weld imperfections in
-                steel, stainless steel, titanium, and nickel.
-              </li>
-              <li>
-                <strong>ISO 10042:</strong> Applies specifically to aluminum welds and sets limits for acceptable
-                deviations in aluminum arc welding.
-              </li>
-              <li>
-                <strong>ISO 6520-1:</strong> Serves as the classification basis for all welding imperfections and
-                defines the types and categories of weld seam irregularities.
-              </li>
-            </ul>
-            <p className="mt-6">
-              These standards ensure an objective, repeatable, and traceable assessment of weld quality across all
-              production batches.
+              standards. Click on each standard to learn more.
             </p>
           </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {/* Arc Welding */}
+              <AccordionItem value="arc-welding" className="bg-white rounded-xl shadow-sm border border-gray-100 px-6">
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Arc Welding</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 5817
+                        </span>
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 10042
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      These standards are the worldwide foundation of quality assurance in arc welding. They define
+                      three evaluation groups (B, C, D) for weld seam irregularities – from low to high quality
+                      requirements.
+                    </p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">ISO 5817:</span> Steel / Nickel / Titanium
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">ISO 10042:</span> Aluminum
+                      </span>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> Our system objectively checks
+                        whether a seam meets the required limits for pores, undercuts, or excessive reinforcement,
+                        differentiated by material type (e.g., steel vs. aluminum).
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Laser & Beam Welding */}
+              <AccordionItem
+                value="laser-welding"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Focus className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Laser & Beam Welding</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 13919-1
+                        </span>
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 13919-2
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Laser and electron beam welding produce specific defect patterns that conventional standards do
+                      not cover. ISO 13919 is the benchmark for high-performance welding processes, commonly used in the
+                      automotive industry (e.g., battery trays, powertrain).
+                    </p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">ISO 13919-1:</span> Steel & Iron
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">ISO 13919-2:</span> Aluminum & Alloys
+                      </span>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> The IUNA Weld Inspector is
+                        trained to reliably detect the fine, often microscopic defects of these precision processes and
+                        classify them according to the strict criteria of ISO 13919.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Brazing */}
+              <AccordionItem value="brazing" className="bg-white rounded-xl shadow-sm border border-gray-100 px-6">
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Flame className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Brazing</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 18279
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      In vehicle manufacturing, visible surfaces are often brazed rather than welded. This standard
+                      defines irregularities specifically for brazed joints, such as wetting defects or edge bonding
+                      defects that do not occur in welding.
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> Since brazed joints are often
+                        aesthetic visible seams (e.g., on tailgates), our AI combines technical inspection with
+                        aesthetic control according to ISO 18279.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Defect Classification */}
+              <AccordionItem
+                value="defect-classification"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <ListChecks className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Defect Classification</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 6520-1
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      For quality issues to be understood internationally, every defect needs a name and a number. ISO
+                      6520-1 serves as the "dictionary" of welding defects and divides irregularities into six main
+                      groups (e.g., cracks, cavities, lack of fusion).
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> Our software uses this
+                        standardized terminology for reporting. This way, everyone – from the operator to the customer –
+                        understands which defect (e.g., "Defect 2017: Gas pore") is present.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Inspection Process */}
+              <AccordionItem
+                value="inspection-process"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <ClipboardCheck className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Inspection Process</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          ISO 17637
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      This standard describes not the defect, but the "how" of the inspection: What lighting is
+                      required? At what angle should inspection be performed? What distance is permissible?
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> Manual inspectors tire or
+                        look with varying attention. The IUNA Weld Inspector automates the requirements of ISO 17637 by
+                        always guaranteeing constant lighting, the perfect viewing angle, and 100% attention – 24/7.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          <p className="mt-10 text-center text-gray-600 max-w-3xl mx-auto">
+            These standards ensure an objective, repeatable, and traceable assessment of weld quality across all
+            production batches.
+          </p>
         </div>
       </section>
 
-      {/* Weld Testing Section */}
       <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Weld Testing</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                With the IUNA AI Weld Inspector you can automate various testing and inspection steps:
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Is the weld seam there?</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Is the weld seam within the predefined tolerance range?</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Automatic detection of irregularities in the weld seam</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Automatic detection of cracks, pores, open end crater blowholes, burn-through, spatter, excessive
-                    asymmetry in the fillet and other defects that can be expected in normal production
-                  </span>
-                </li>
-              </ul>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Intelligent Weld Seam Analysis</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our software combines deep learning-based AI models with rule-based algorithms, enabling precise detection
+              of defects and accurate measurement of weld seam dimensions in millimeters.
+            </p>
+          </div>
+
+          {/* Main Feature Grid */}
+          <div className="grid gap-8 lg:grid-cols-2 mb-16">
+            {/* Left Column - OK/NOT OK Comparison */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src="/images/weld-seam-comparison-new.png"
+                  alt="IUNA Weld Inspector - Comparison of OK and defective (NOT OK) weld seams"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Automated Defect Detection</h3>
+                <p className="text-gray-600 mb-4">
+                  Automatic classification of weld seams as OK or NOT OK based on trained AI models that detect:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Cracks, pores and blowholes</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Burn-through and spatter</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Asymmetry and geometric deviations</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/weld-seam-comparison.png"
-                alt="IUNA AI Weld Inspector - Comparison of good and defective welds"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
+
+            {/* Right Column - Tolerance & Segmentation */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src="/images/weld-seam-tolerance.png"
+                  alt="IUNA Weld Inspector - Tolerance and segmentation analysis"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Tolerance & Segmentation Analysis</h3>
+                <p className="text-gray-600 mb-4">
+                  Rule-based algorithms verify weld seam position and dimensions against predefined tolerance ranges:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Precise position verification</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Automatic tolerance range checking</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>AI-powered segmentation</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* AI Analysis Section */}
-      <section className="bg-white py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Precise AI Analysis</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Our AI-powered system precisely analyzes each weld seam, identifying the tolerance range and performing
-                detailed segmentation. The IUNA AI Weld Inspector can detect even the smallest defects that might be
-                invisible to the human eye.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                The system automatically determines whether a weld seam is within the acceptable tolerance range and
-                highlights any areas that require attention. This ensures consistent quality control and reduces the
-                risk of defective parts reaching the next production stage.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Precise tolerance measurement</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Advanced segmentation algorithms</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Real-time defect detection</span>
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
+          {/* Precision Measurement Highlight */}
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="grid lg:grid-cols-2 items-center">
+              <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
                 <Image
-                  src="/images/weld-seam-analysis.png"
-                  alt="IUNA AI Weld Inspector - AI analysis with tolerance and segmentation"
-                  width={800}
-                  height={300}
-                  className="w-full h-auto"
+                  src="/images/weld-seam-measure-mm.jpg"
+                  alt="IUNA Weld Inspector - Precise weld seam measurement in millimeters"
+                  fill
+                  className="object-cover"
                 />
+              </div>
+              <div className="p-8 lg:p-12">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Ruler className="h-4 w-4 mr-2" />
+                  Precision Measurement
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Weld Seam Dimensions in Millimeters</h3>
+                <p className="text-gray-600 mb-6">
+                  The hybrid approach of deep learning and rule-based algorithms enables precise measurement of weld
+                  seam length and width directly in millimeters. We can also measure directly at the component edge,
+                  ensuring the seam is symmetrical to the edge and verifying proper bonding. This provides accurate
+                  dimensional data for quality documentation and process optimization.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">{`<0.5mm`}</div>
+                    <div className="text-sm text-gray-600">Measurement Accuracy</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">100%</div>
+                    <div className="text-sm text-gray-600">Documented Results</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -248,7 +465,7 @@ export default function WeldSeamScannerPage() {
                 <div className="relative aspect-video">
                   <Image
                     src="/images/iuna-ai-weld-inspector-user-interface-3d-viewer.png"
-                    alt="IUNA AI Weld Inspector User Interface with 3D Viewer showing weld seam inspection results"
+                    alt="IUNA Weld Inspector User Interface with 3D Viewer showing weld seam inspection results"
                     fill
                     className="object-contain bg-gray-900"
                   />

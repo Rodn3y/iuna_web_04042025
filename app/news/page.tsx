@@ -152,10 +152,10 @@ export default function NewsPage() {
 
                 <div className="mt-8">
                   <Link
-                    href="/products/ai-weld-inspector"
+                    href="/products/weld-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80 font-medium"
                   >
-                    Learn more about our AI Weld Inspector
+                    Learn more about our Weld Inspector
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
@@ -226,10 +226,10 @@ export default function NewsPage() {
                   sharply in recent years.
                 </p>
                 <p>
-                  Thanks to the IUNA AI scanner, it is now possible to automate this inspection process. The IUNA AI
-                  scanner compares the color and shape of the valve cap and the valve on the image and compares this
-                  information with the target value from the database. This use of industrial computer vision and AI
-                  technology avoids errors and returns even before delivery.
+                  Thanks to the IUNA Assembly Inspector, it is now possible to automate this inspection process. The
+                  IUNA Assembly Inspector compares the color and shape of the valve cap and the valve on the image and
+                  compares this information with the target value from the database. This use of industrial computer
+                  vision and AI technology avoids errors and returns even before delivery.
                 </p>
               </div>
             </div>
@@ -424,20 +424,20 @@ export default function NewsPage() {
                 <Calendar className="h-4 w-4" />
                 <span>September 24, 2021</span>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Release IUNA AI Scanner</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Release IUNA AI Inspector</h2>
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
-                <Image src="/images/ai-scanner.png" alt="IUNA AI Scanner" fill className="object-cover" />
+                <Image src="/images/ai-scanner.png" alt="IUNA AI Inspector" fill className="object-cover" />
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Based on the know-how of the Auto Scanner, the IUNA AI Scanner was developed in September 2021. With
-                  the AI Scanner we have developed a modular and easy to use AI Vision System, which can be integrated
+                  Based on the know-how of the Auto Scanner, the IUNA AI Inspector was developed in September 2021. With
+                  the AI Inspector we have developed a modular and easy to use AI Vision System, which can be integrated
                   in-line. Combined with the right software application, we are flexible to solve a wide range of tasks
                   in industrial manufacturing.
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/products/ai-scanner"
+                    href="/products/ai-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80"
                   >
                     Read more

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, Mail, Phone, Calendar } from 'lucide-react'
+import { CheckCircle2, Mail, Phone, Calendar } from "lucide-react"
 import Script from "next/script"
 import type { Metadata } from "next"
 
@@ -91,7 +91,7 @@ export default function ThankYouPage() {
                   <Link href="/">Back to Home</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/products/ai-scanner">View Our Products</Link>
+                  <Link href="/products/ai-inspector">View Our Products</Link>
                 </Button>
               </div>
             </div>

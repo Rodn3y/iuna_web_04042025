@@ -20,8 +20,14 @@ import {
   Settings,
   Cpu,
   Lightbulb,
+  Ruler,
+  Focus,
+  Flame,
+  ListChecks,
+  ClipboardCheck,
 } from "lucide-react"
 import { useState } from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const integrationOptions = [
   {
@@ -65,7 +71,7 @@ export default function WeldSeamScannerPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/automotive-head.jpg"
-            alt="IUNA AI Weld Inspector - KI-gestützte Schweißnahtinspektion"
+            alt="IUNA Weld Inspector - KI-gestützte Schweißnahtinspektion"
             fill
             className="object-cover brightness-[0.4]"
             priority
@@ -77,146 +83,358 @@ export default function WeldSeamScannerPage() {
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
           <h2 className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl font-normal">
-            Vollautomatische visuelle Inspektion von Schweißnähten
+            Ersetzen Sie subjektive Sichtprüfungen durch 100% objektive KI-Präzision. Erkennen Sie Fehler in Echtzeit,
+            ohne die Produktion zu verlangsamen.
           </h2>
         </div>
       </section>
 
-      {/* Overview Section */}
-      <section className="bg-white py-20">
+      {/* Overview Section - ISO standards with expandable descriptions */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">
-            Höchste Schweißqualität gewährleisten – basierend auf internationalen Standards
-          </h2>
-          <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
-          <p className="mt-6 max-w-2xl text-xl text-gray-600 sm:text-2xl">
-            Unser System ermöglicht die visuelle Inspektion von Schweißnähten gemäß weltweit anerkannten Schweißnormen:
-          </p>
-          <ul className="space-y-4 mt-6">
-            <li>
-              <strong>ISO 5817:</strong> Definiert Qualitätsstufen und Annahmekriterien für Schweißfehler in Stahl,
-              Edelstahl, Titan und Nickel.
-            </li>
-            <li>
-              <strong>ISO 10042:</strong> Gilt speziell für Aluminiumschweißnähte und legt Grenzwerte für akzeptable
-              Abweichungen beim Aluminium-Lichtbogenschweißen fest.
-            </li>
-            <li>
-              <strong>ISO 6520-1:</strong> Dient als Klassifizierungsgrundlage für alle Schweißfehler und definiert die
-              Arten und Kategorien von Schweißnahtunregelmäßigkeiten.
-            </li>
-          </ul>
-          <p className="mt-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Höchste Schweißqualität gewährleisten – basierend auf internationalen Standards
+            </h2>
+            <div className="mt-4 h-1 w-32 bg-primary mx-auto"></div>
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
+              Unser System ermöglicht die visuelle Inspektion von Schweißnähten gemäß weltweit anerkannten
+              Schweißnormen. Klicken Sie auf jeden Standard, um mehr zu erfahren.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {/* Lichtbogenschweißen */}
+              <AccordionItem value="arc-welding" className="bg-white rounded-xl shadow-sm border border-gray-100 px-6">
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Zap className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Lichtbogenschweißen</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 5817
+                        </span>
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 10042
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Diese Normen sind das weltweite Fundament der Qualitätssicherung im Lichtbogenschweißen. Sie
+                      definieren drei Bewertungsgruppen (B, C, D) für Schweißnahtunregelmäßigkeiten – von niedrigen bis
+                      zu hohen Qualitätsanforderungen.
+                    </p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">DIN EN ISO 5817:</span> Stahl / Nickel / Titan
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">DIN EN ISO 10042:</span> Aluminium
+                      </span>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Unser Vorteil:</span> Unser System prüft objektiv,
+                        ob eine Naht die geforderten Grenzwerte für Poren, Einbrandkerben oder Nahtüberhöhungen einhält,
+                        differenziert nach Materialart (z. B. Stahl vs. Aluminium).
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Laser- & Strahlschweißen */}
+              <AccordionItem
+                value="laser-welding"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Focus className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Laser- & Strahlschweißen</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 13919-1
+                        </span>
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 13919-2
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Laser- und Elektronenstrahlschweißen erzeugen spezifische Fehlerbilder, die klassische Normen
+                      nicht abdecken. Die DIN EN ISO 13919 ist der Maßstab für Hochleistungsschweißverfahren, wie sie
+                      häufig in der Automobilindustrie (z. B. Batteriewannen, Powertrain) eingesetzt werden.
+                    </p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">DIN EN ISO 13919-1:</span> Stahl & Eisen
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <span className="font-medium">DIN EN ISO 13919-2:</span> Aluminium & Legierungen
+                      </span>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Unser Vorteil:</span> Der IUNA Weld Inspector ist
+                        darauf trainiert, die feinen, oft mikroskopischen Defekte dieser Präzisionsverfahren sicher zu
+                        erkennen und nach den strengen Kriterien der DIN EN ISO 13919 zu klassifizieren.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Hartlöten */}
+              <AccordionItem value="brazing" className="bg-white rounded-xl shadow-sm border border-gray-100 px-6">
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <Flame className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Hartlöten</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 18279
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Im Fahrzeugbau werden Sichtflächen oft gelötet statt geschweißt. Diese Norm definiert
+                      Unregelmäßigkeiten speziell für Hartlötverbindungen (Brazing), wie Benetzungsfehler oder
+                      Kantenbindefehler, die beim Schweißen so nicht vorkommen.
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Unser Vorteil:</span> Da Lötstellen oft ästhetische
+                        Sichtnähte sind (z. B. an Heckklappen), kombiniert unsere KI hier technische Prüfung mit
+                        ästhetischer Kontrolle gemäß DIN EN ISO 18279.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Fehlerklassifizierung */}
+              <AccordionItem
+                value="defect-classification"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <ListChecks className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Fehlerklassifizierung</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 6520-1
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Damit Qualitätsprobleme international verstanden werden, braucht jeder Fehler einen Namen und eine
+                      Nummer. Die DIN EN ISO 6520-1 dient als das „Wörterbuch" der Schweißfehler und teilt
+                      Unregelmäßigkeiten in sechs Hauptgruppen ein (z. B. Risse, Hohlräume, Bindefehler).
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Unser Vorteil:</span> Unsere Software nutzt diese
+                        standardisierte Terminologie für das Reporting. So versteht jeder – vom Werker bis zum Kunden –,
+                        welcher Fehler (z. B. „Fehler 2017: Gasblase") vorliegt.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Prüfverfahren */}
+              <AccordionItem
+                value="inspection-process"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <ClipboardCheck className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Prüfverfahren</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        <span className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded">
+                          DIN EN ISO 17637
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      Diese Norm beschreibt nicht den Fehler, sondern das „Wie" der Prüfung: Welche Beleuchtung ist
+                      nötig? In welchem Winkel muss geprüft werden? Welcher Abstand ist zulässig?
+                    </p>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Unser Vorteil:</span> Manuelle Prüfer ermüden oder
+                        schauen unterschiedlich genau hin. Der IUNA Weld Inspector automatisiert die Vorgaben der DIN EN
+                        ISO 17637, indem er immer konstante Beleuchtung, den perfekten Blickwinkel und 100%
+                        Aufmerksamkeit garantiert – 24/7.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          <p className="mt-10 text-center text-gray-600 max-w-3xl mx-auto">
             Diese Standards gewährleisten eine objektive, wiederholbare und nachvollziehbare Bewertung der
             Schweißqualität über alle Produktionschargen hinweg.
           </p>
         </div>
       </section>
 
-      {/* Weld Testing Section */}
       <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Schweißnahtprüfung</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Mit dem IUNA AI Weld Inspector können Sie verschiedene Prüf- und Inspektionsschritte automatisieren:
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Ist die Schweißnaht vorhanden?</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Liegt die Schweißnaht innerhalb des vordefinierten Toleranzbereichs?
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Automatische Erkennung von Unregelmäßigkeiten in der Schweißnaht
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">
-                    Automatische Erkennung von Rissen, Poren, offenen Endkraterblasenlöchern, Durchbrand, Spritzern,
-                    übermäßiger Asymmetrie in der Kehlnaht und anderen Defekten, die in der normalen Produktion zu
-                    erwarten sind
-                  </span>
-                </li>
-              </ul>
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Intelligente Schweißnahtanalyse
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Unsere Software kombiniert Deep-Learning-basierte KI-Modelle mit regelbasierten Algorithmen und ermöglicht
+              so eine präzise Fehlererkennung sowie eine genaue Messung der Schweißnahtabmessungen in Millimetern.
+            </p>
+          </div>
+
+          {/* Main Feature Grid */}
+          <div className="grid gap-8 lg:grid-cols-2 mb-16">
+            {/* Left Column - I.O./N.I.O. Comparison */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src="/images/weld-seam-comparison-new.png"
+                  alt="IUNA Weld Inspector - Vergleich von OK (I.O.) und fehlerhaften (N.I.O.) Schweißnähten"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Automatische Fehlererkennung</h3>
+                <p className="text-gray-600 mb-4">
+                  Automatische Klassifizierung von Schweißnähten als OK (I.O.) oder NICHT OK (N.I.O.) basierend auf
+                  trainierten KI-Modellen, die erkennen:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Risse, Poren und Blasenlöcher</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Durchbrand und Spritzer</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Asymmetrie und geometrische Abweichungen</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src="/images/weld-seam-comparison.png"
-                alt="IUNA AI Weld Inspector - Vergleich von guten und fehlerhaften Schweißnähten"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-              />
+
+            {/* Right Column - Tolerance & Segmentation */}
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative aspect-[3/2]">
+                <Image
+                  src="/images/weld-seam-tolerance.png"
+                  alt="IUNA Weld Inspector - Toleranz- und Segmentierungsanalyse"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Toleranz- & Segmentierungsanalyse</h3>
+                <p className="text-gray-600 mb-4">
+                  Regelbasierte Algorithmen verifizieren Position und Abmessungen der Schweißnaht gegen vordefinierte
+                  Toleranzbereiche:
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Präzise Positionsverifizierung</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>Automatische Toleranzbereichsprüfung</span>
+                  </li>
+                  <li className="flex items-center text-gray-600">
+                    <Check className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
+                    <span>KI-gestützte Segmentierung</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* AI Analysis Section */}
-      <section className="bg-white py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 items-center md:grid-cols-2">
-            <div className="order-2 md:order-1">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Präzise KI-Analyse</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Unser KI-gestütztes System analysiert jede Schweißnaht präzise, identifiziert den Toleranzbereich und
-                führt eine detaillierte Segmentierung durch. Der IUNA AI Weld Inspector kann selbst kleinste Defekte
-                erkennen, die für das menschliche Auge möglicherweise unsichtbar sind.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Das System bestimmt automatisch, ob eine Schweißnaht innerhalb des akzeptablen Toleranzbereichs liegt,
-                und hebt Bereiche hervor, die Aufmerksamkeit erfordern. Dies gewährleistet eine konsistente
-                Qualitätskontrolle und reduziert das Risiko, dass fehlerhafte Teile die nächste Produktionsstufe
-                erreichen.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Präzise Toleranzmessung</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Fortschrittliche Segmentierungsalgorithmen</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
-                    <Check className="h-4 w-4 text-primary" />
-                  </div>
-                  <span className="ml-3 text-gray-600">Echtzeit-Fehlererkennung</span>
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
+          {/* Precision Measurement Highlight */}
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="grid lg:grid-cols-2 items-center">
+              <div className="relative aspect-[3/2] lg:aspect-auto lg:h-full">
                 <Image
-                  src="/images/weld-seam-analysis.png"
-                  alt="IUNA AI Weld Inspector - KI-Analyse mit Toleranz und Segmentierung"
-                  width={800}
-                  height={300}
-                  className="w-full h-auto"
+                  src="/images/weld-seam-measure-mm.jpg"
+                  alt="IUNA Weld Inspector - Präzise Schweißnahtmessung in Millimetern"
+                  fill
+                  className="object-cover"
                 />
+              </div>
+              <div className="p-8 lg:p-12">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <Ruler className="h-4 w-4 mr-2" />
+                  Präzisionsmessung
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Schweißnahtabmessungen in Millimetern</h3>
+                <p className="text-gray-600 mb-6">
+                  Der hybride Ansatz aus Deep Learning und regelbasierten Algorithmen ermöglicht die präzise Messung von
+                  Schweißnahtlänge und -breite direkt in Millimetern. Wir können auch direkt an der Bauteilkante messen,
+                  um sicherzustellen, dass die Naht symmetrisch zur Kante liegt und die tatsächliche Anbindung
+                  gewährleistet ist. Dies liefert genaue Maßdaten für die Qualitätsdokumentation und Prozessoptimierung.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">{`<0,5mm`}</div>
+                    <div className="text-sm text-gray-600">Messgenauigkeit</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="text-2xl font-bold text-primary mb-1">100%</div>
+                    <div className="text-sm text-gray-600">Dokumentierte Ergebnisse</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -255,7 +473,7 @@ export default function WeldSeamScannerPage() {
                 <div className="relative aspect-video">
                   <Image
                     src="/images/iuna-ai-weld-inspector-user-interface-3d-viewer.png"
-                    alt="IUNA AI Weld Inspector Benutzeroberfläche mit 3D-Viewer für Schweißnahtprüfungsergebnisse"
+                    alt="IUNA Weld Inspector Benutzeroberfläche mit 3D-Viewer für Schweißnahtprüfungsergebnisse"
                     fill
                     className="object-contain bg-gray-900"
                   />
@@ -851,7 +1069,7 @@ export default function WeldSeamScannerPage() {
         </div>
       </section>
 
-      {/* Implementation Process */}
+      {/* Implementation Process - Duplicated, ensure it's intended */}
       <section className="bg-gray-50 py-20">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center mb-16">
@@ -909,8 +1127,8 @@ export default function WeldSeamScannerPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Autonome Prüfung</h3>
               <p className="text-gray-600">
                 Ab sofort übernimmt der IUNA AI Weld Inspector Ihre Prüfung vollautomatisch. Mit Hilfe fortschrittlicher
-                KI-Vision-Modelle erreichen Sie eine konstante, objektive Qualitätskontrolle, die der manuellen Prüfung
-                weit überlegen ist.
+                KI-Vision-Modelle erreichen Sie eine konsistente, objektive Qualitätskontrolle, die der manuellen
+                Prüfung weit überlegen ist.
               </p>
             </div>
           </div>

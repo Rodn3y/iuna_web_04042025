@@ -12,8 +12,8 @@ const staticPaths = [
   "/privacy-policy",
   "/contact",
   "/careers",
-  "/products/ai-scanner",
-  "/products/ai-weld-inspector",
+  "/products/ai-inspector",
+  "/products/weld-inspector", // Updated from /products/ai-weld-inspector to /products/weld-inspector
   "/contact/thank-you",
 ]
 
@@ -27,7 +27,27 @@ const solutionSlugs = [
   "ocr-applications", // Beispiel-Slug
 ]
 
-const dynamicPaths = solutionSlugs.map((slug) => `/solutions/${slug}`)
+const newsSlugs = [
+  "iuna-featured-in-handelsblatt",
+  "iuna-wins-ai-champion-award-2024",
+  "new-partnership-automotive-manufacturer",
+  "ai-inspector-2-0-release",
+  "iuna-expands-to-european-markets",
+  "successful-series-a-funding-round",
+]
+
+const careerSlugs = [
+  "software-engineer-ai-vision",
+  "senior-machine-learning-engineer",
+  "technical-sales-manager",
+  "quality-assurance-engineer",
+]
+
+const dynamicPaths = [
+  ...solutionSlugs.map((slug) => `/solutions/${slug}`),
+  ...newsSlugs.map((slug) => `/news/${slug}`),
+  ...careerSlugs.map((slug) => `/careers/${slug}`), // Added career paths
+]
 
 const allRelativePaths = [...staticPaths, ...dynamicPaths]
 

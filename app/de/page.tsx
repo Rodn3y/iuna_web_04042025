@@ -126,7 +126,7 @@ export default function Home() {
                 Überprüfen Sie die Einhaltung von Maß- und Lagetoleranzen, Lochabständen und Winkeln gleichzeitig und
                 in-line.
               </p>
-              <Link href="/de/products/ai-scanner">
+              <Link href="/de/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
@@ -152,7 +152,7 @@ export default function Home() {
                 Führen Sie Anwesenheitsprüfungen für Merkmale wie Muttern, Schrauben, Bolzen und Löcher während
                 desselben Inspektionszyklus durch.
               </p>
-              <Link href="/de/products/ai-scanner">
+              <Link href="/de/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
@@ -178,7 +178,7 @@ export default function Home() {
                 KI-gestützte Fehlererkennung: Das IUNA AI Vision System verwendet fortschrittliche neuronale Netzwerke,
                 um OK- und Nicht-OK-Schweißnähte direkt aus den aufgenommenen Bildern zu identifizieren.
               </p>
-              <Link href="/de/products/ai-weld-inspector">
+              <Link href="/de/products/weld-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
@@ -202,15 +202,14 @@ export default function Home() {
             </p>
           </div>
 
-          {/* AI Weld Inspector */}
+          {/* Weld Inspector */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
             <div className="order-2 md:order-1">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">AI Weld Inspector</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Weld Inspector</h3>
               <p className="text-lg text-gray-600 mb-6">
-                Unser IUNA AI Weld Inspector verwendet fortschrittliche KI-Algorithmen, um Schweißfehler mit
-                beispielloser Genauigkeit zu erkennen und zu klassifizieren. Das System unterscheidet zwischen
-                akzeptablen (I.O.) und fehlerhaften (N.I.O.) Schweißnähten und liefert sofortiges Feedback zur
-                Optimierung Ihres Fertigungsprozesses.
+                Der IUNA Weld Inspector ist unsere spezialisierte Lösung für die automatisierte Schweißnahtprüfung. Mit
+                fortschrittlichen KI-Vision-Modellen erkennt er Fehler wie Poren, Risse und Einbrandkerben mit
+                außergewöhnlicher Genauigkeit.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
@@ -219,7 +218,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="ml-3 text-gray-600">KI-gestütztes Fehlerklassifizierungssystem</span>
+                  <span className="ml-3 text-gray-600">KI-gestützte Schweißnaht-Fehlererkennung</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
@@ -227,7 +226,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="ml-3 text-gray-600">Erkennt Poren, Risse, Kerben und andere Schweißfehler</span>
+                  <span className="ml-3 text-gray-600">100% Inline-Prüfung bei Produktionsgeschwindigkeit</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
@@ -235,12 +234,12 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="ml-3 text-gray-600">Nahtlose Integration in bestehende Produktionslinien</span>
+                  <span className="ml-3 text-gray-600">Schlüsselfertige Lösung mit komplettem Hardware-Paket</span>
                 </li>
               </ul>
-              <Link href="/de/products/ai-weld-inspector">
+              <Link href="/de/products/weld-inspector">
                 <Button className="group">
-                  Mehr über den AI Weld Inspector erfahren
+                  Mehr über den Weld Inspector erfahren
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -248,8 +247,8 @@ export default function Home() {
             <div className="order-1 md:order-2">
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/weld-seam-scanner.png"
-                  alt="IUNA AI Weld Inspector - KI-gestütztes Schweißinspektionssystem, das gute und fehlerhafte Schweißnähte zeigt"
+                  src="/images/ai-scanner.png"
+                  alt="IUNA Weld Inspector - Automatisiertes Schweißnaht-Inspektionssystem"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -258,13 +257,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* AI Scanner */}
+          {/* Assembly Inspector */}
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/ai-scanner.png"
-                  alt="IUNA AI Scanner - Roboter-Sichtsystem zur Inspektion von Automobilkomponenten"
+                  alt="IUNA Assembly Inspector - Roboter-Sichtsystem zur Inspektion von Automobilkomponenten"
                   width={800}
                   height={600}
                   className="w-full h-auto"
@@ -272,16 +271,16 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">AI Scanner</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Assembly Inspector</h3>
               <p className="text-lg text-gray-600 mb-6">
-                Mit dem IUNA AI Scanner bieten wir Ihnen ein System, das flexibel in der Qualitätssicherung eingesetzt
-                werden kann. Jeder AI Scanner wird individuell für Sie konfiguriert. Durch die optimale Abstimmung von
-                Software und Hardware maximieren wir die Zuverlässigkeit der Inspektion.
+                Mit dem IUNA Assembly Inspector bieten wir Ihnen ein flexibles System für die Qualitätssicherung. Jeder
+                Assembly Inspector wird individuell für Sie konfiguriert. Durch die optimale Abstimmung von Software und
+                Hardware maximieren wir die Zuverlässigkeit der Inspektion.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Für unseren AI Scanner kombinieren wir hochauflösende Industriekameras, die neueste
-                NVIDIA-Chip-Generation und vortrainierte und angepasste KI-Modelle. So können wir Ihnen automatisierte
-                Tests mit maximaler Präzision anbieten.
+                Für unseren Assembly Inspector kombinieren wir hochauflösende Industriekameras, die neueste
+                NVIDIA-Chipgeneration und vortrainierte sowie angepasste KI-Modelle. So bieten wir Ihnen automatisierte
+                Prüfung mit maximaler Präzision.
               </p>
               <h4 className="text-xl font-semibold text-gray-900 mb-4">Anwendungsfälle</h4>
               <ul className="space-y-3 mb-8">
@@ -299,7 +298,7 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="ml-3 text-gray-600">Positionsprüfung</span>
+                  <span className="ml-3 text-gray-600">Dimensionale Messung</span>
                 </li>
                 <li className="flex items-start">
                   <div className="flex-shrink-0 h-6 w-6 rounded-full bg-gray-200 flex items-center justify-center mt-0.5">
@@ -315,12 +314,12 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="ml-3 text-gray-600">Vollständigkeitsprüfung</span>
+                  <span className="ml-3 text-gray-600">Code-Erkennung (QR, Datamatrix, Barcode)</span>
                 </li>
               </ul>
-              <Link href="/de/products/ai-scanner">
+              <Link href="/de/products/assembly-inspector">
                 <Button className="group">
-                  Mehr über den AI Scanner erfahren
+                  Mehr über den Assembly Inspector erfahren
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

@@ -24,11 +24,13 @@ export default function Home() {
           <div className="flex flex-grow items-center">
             <div className="container px-4 sm:px-6 lg:px-8">
               <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                IUNA AI Vision Systeme
+                Der neue Standard für visuelle Schweiß- & Montageprüfung
               </h1>
               <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
               <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
-                für die automatisierte Schweißnahtprüfung und dimensionale Vermessung
+                Ersetzen Sie subjektive manuelle Prüfungen durch objektive KI-Präzision. Gewährleisten Sie 100%
+                Qualitätskonformität mit dem <span className="font-bold">IUNA Weld Inspector</span> und{" "}
+                <span className="font-bold">Assembly Inspector</span>.
               </p>
             </div>
           </div>
@@ -37,7 +39,7 @@ export default function Home() {
           <div className="w-full bg-black/50 py-8 backdrop-blur-sm">
             <div className="container px-4 sm:px-6 lg:px-8">
               <p className="mb-6 text-center text-lg font-medium text-white">
-                IUNA AI arbeitet mit Automobilherstellern, Zulieferern und Anlagenbauern zusammen
+                Vertraut von führenden Automobilherstellern, Zulieferern und Systemintegratoren
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
                 <div className="flex justify-center">
@@ -104,9 +106,12 @@ export default function Home() {
       <section className="bg-gray-900 py-20 text-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Unsere Kernkompetenzen</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Komplette Qualitätssicherung für Rohbau & Montage
+            </h2>
             <p className="mt-4 text-lg text-gray-300">
-              Fortschrittliche AI Vision Lösungen für die Automobil- und Fertigungsindustrie
+              Setzen Sie vollautomatisierte Turnkey-Systeme ein: Inklusive Kamera, Beleuchtung und KI-Recheneinheit.
+              Sichern Sie Ihren Prozess mit dem Assembly Inspector und Weld Inspector.
             </p>
           </div>
 
@@ -121,17 +126,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Dimensionale Messung</h3>
+              <h3 className="mb-3 text-2xl font-bold">Präzisionsmesstechnik</h3>
               <p className="mb-6 text-gray-300">
-                Überprüfen Sie die Einhaltung von Maß- und Lagetoleranzen, Lochabständen und Winkeln gleichzeitig und
-                in-line.
+                Messen Sie Lochpositionen, Spalt & Bündigkeit sowie Winkel innerhalb der Taktzeit. Eine Kernfunktion des
+                IUNA Assembly Inspector.
               </p>
               <Link href="/de/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  MEHR ERFAHREN
+                  Assembly Inspector entdecken
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -147,17 +152,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Anwesenheitsprüfung</h3>
+              <h3 className="mb-3 text-2xl font-bold">Montageprüfung</h3>
               <p className="mb-6 text-gray-300">
-                Führen Sie Anwesenheitsprüfungen für Merkmale wie Muttern, Schrauben, Bolzen und Löcher während
-                desselben Inspektionszyklus durch.
+                Eliminieren Sie fehlende Teile. Erkennen Sie Schrauben, Clips und Muttern sofort, um vollständige
+                Baugruppen mit dem IUNA Assembly Inspector sicherzustellen.
               </p>
               <Link href="/de/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  MEHR ERFAHREN
+                  Assembly Inspector entdecken
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -173,17 +178,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Schweißnahtinspektion</h3>
+              <h3 className="mb-3 text-2xl font-bold">Schweißnahtanalyse</h3>
               <p className="mb-6 text-gray-300">
-                KI-gestützte Fehlererkennung: Das IUNA AI Vision System verwendet fortschrittliche neuronale Netzwerke,
-                um OK- und Nicht-OK-Schweißnähte direkt aus den aufgenommenen Bildern zu identifizieren.
+                Erkennen Sie Fehler in Stahl-, Aluminium- und Laserschweißnähten. Vollständig konform mit DIN EN ISO
+                5817 / 10042. Der IUNA Weld Inspector gewährleistet 100% strukturelle Integrität.
               </p>
               <Link href="/de/products/weld-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  MEHR ERFAHREN
+                  Weld Inspector entdecken
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

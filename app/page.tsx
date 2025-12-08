@@ -24,11 +24,13 @@ export default function Home() {
           <div className="flex flex-grow items-center">
             <div className="container px-4 sm:px-6 lg:px-8">
               <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                IUNA AI Vision Systems
+                The New Standard for Visual Weld & Assembly Inspection
               </h1>
               <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
               <p className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl">
-                for automated weld seam inspection and dimensional measurement
+                Replace subjective manual checks with objective AI precision. Ensure 100% quality compliance with the{" "}
+                <span className="font-bold">IUNA Weld Inspector</span> and{" "}
+                <span className="font-bold">Assembly Inspector</span>.
               </p>
             </div>
           </div>
@@ -37,7 +39,7 @@ export default function Home() {
           <div className="w-full bg-black/50 py-8 backdrop-blur-sm">
             <div className="container px-4 sm:px-6 lg:px-8">
               <p className="mb-6 text-center text-lg font-medium text-white">
-                IUNA AI works with Automotive Manufacturers, Suppliers and Plant Constructors
+                Trusted by leading Automotive Manufacturers, Suppliers and System Integrators
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
                 <div className="flex justify-center">
@@ -104,9 +106,12 @@ export default function Home() {
       <section className="bg-gray-900 py-20 text-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Core Competencies</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Complete Quality Assurance for Body Shop & Assembly
+            </h2>
             <p className="mt-4 text-lg text-gray-300">
-              Advanced AI vision solutions for the automotive and manufacturing industries
+              Deploy fully automated turnkey systems: Including camera, lighting, and AI computing unit. Secure your
+              process with the Assembly Inspector and Weld Inspector.
             </p>
           </div>
 
@@ -121,17 +126,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Dimensional Measurement</h3>
+              <h3 className="mb-3 text-2xl font-bold">Precision Metrology</h3>
               <p className="mb-6 text-gray-300">
-                Check compliance with dimensional and positional tolerances, hole spacing and angles simultaneously and
-                in line.
+                Measure hole positions, gap & flush, and angles within cycle time. A core feature of the IUNA Assembly
+                Inspector.
               </p>
               <Link href="/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  LEARN MORE
+                  Discover Assembly Inspector
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -147,17 +152,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Presence Check</h3>
+              <h3 className="mb-3 text-2xl font-bold">Assembly Verification</h3>
               <p className="mb-6 text-gray-300">
-                Conduct presence checks for features like nuts, bolts, studs, and holes during the same inspection
-                cycle.
+                Eliminate missing parts. Detect bolts, clips, and nuts instantly to ensure complete assemblies with the
+                IUNA Assembly Inspector.
               </p>
               <Link href="/products/assembly-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  LEARN MORE
+                  Discover Assembly Inspector
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -173,17 +178,17 @@ export default function Home() {
                   className="object-contain p-4"
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold">Weld Seam Inspection</h3>
+              <h3 className="mb-3 text-2xl font-bold">Weld Seam Analysis</h3>
               <p className="mb-6 text-gray-300">
-                AI-powered defect detection: The IUNA AI Vision System uses advanced neural networks to identify OK and
-                Not-OK weld seams directly from captured images.
+                Detect defects in Steel, Aluminum, and Laser welds. Fully compliant with ISO 5817 / 10042. The IUNA Weld
+                Inspector ensures 100% structural integrity.
               </p>
               <Link href="/products/weld-inspector">
                 <Button
                   variant="outline"
                   className="mt-auto group border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
                 >
-                  LEARN MORE
+                  Discover Weld Inspector
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

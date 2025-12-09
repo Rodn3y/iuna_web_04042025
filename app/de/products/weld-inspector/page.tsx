@@ -77,12 +77,12 @@ export default function WeldSeamScannerPage() {
             priority
           />
         </div>
-        <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">
-          <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <div className="container relative z-10 flex h-full flex-col items-start justify-center px-4 pt-24 md:pt-0 sm:px-6 lg:px-8">
+          <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Automatisierte Schweißnahtinspektion mit KI
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
-          <h2 className="mt-6 max-w-2xl text-xl text-gray-200 sm:text-2xl font-normal">
+          <h2 className="mt-4 max-w-2xl text-lg text-gray-200 sm:text-xl md:text-2xl font-normal md:mt-6">
             Ersetzen Sie subjektive Sichtprüfungen durch objektive KI-Präzision. Erkennen Sie Fehler in Echtzeit, ohne
             die Produktion zu verlangsamen.
           </h2>

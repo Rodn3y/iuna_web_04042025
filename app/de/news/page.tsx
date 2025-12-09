@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar, ArrowRight, Linkedin, Twitter } from "lucide-react"
+import { Calendar, ArrowRight, Linkedin, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageSlider } from "@/components/image-slider"
 
@@ -52,8 +52,19 @@ export default function NewsPage() {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-700 hover:text-primary transition-colors"
               >
-                <Twitter className="h-6 w-6" />
-                <span className="font-medium">X (Twitter)</span>
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span className="font-medium">X</span>
+              </a>
+              <a
+                href="https://www.youtube.com/@iunaai2860"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-gray-700 hover:text-primary transition-colors"
+              >
+                <Youtube className="h-6 w-6" />
+                <span className="font-medium">YouTube</span>
               </a>
             </div>
           </div>
@@ -530,7 +541,7 @@ export default function NewsPage() {
             </div>
 
             {/* News Item */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
+            <div className="mb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
                 <span>1. September 2020</span>
@@ -543,51 +554,6 @@ export default function NewsPage() {
                   Im September 2020 wurde iuna.ai offizieller Entwicklungspartner von VW. Ziel der
                   Entwicklungskooperation war die Weiterentwicklung des IUNA Auto Scanners v1 im Karosseriebau des Audi
                   R8 zur vollautonomen Identifizierung von Oberflächengeometriedefekten an der Karosserie.
-                </p>
-              </div>
-            </div>
-
-            {/* News Item */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
-              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                <Calendar className="h-4 w-4" />
-                <span>20. Mai 2020</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Die IUNA AI Systems GmbH wird gegründet
-              </h2>
-              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
-                <Image
-                  src="/images/founding-team.jpeg"
-                  alt="IUNA AI Gründungsteam - Jan Nabatian, William Chen und Samira Nabatian in ihrem Büro"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="prose prose-lg max-w-none">
-                <p>
-                  Im Mai 2020 wurde die IUNA AI Systems GmbH mit dem Ziel gegründet, die Automatisierung in der
-                  industriellen Fertigung im Bereich der visuellen Inspektion und Qualitätssicherung zu revolutionieren.
-                  Die Gesellschafter der GmbH sind Jan Nabatian (Geschäftsführer), Tong Chen (Leiter Produktentwicklung)
-                  und Samira Nabatian (Leiterin Geschäftsentwicklung).
-                </p>
-              </div>
-            </div>
-
-            {/* News Item */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
-              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                <Calendar className="h-4 w-4" />
-                <span>15. März 2020</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Auto Scanner v1 / Oberflächendefekterkennung
-              </h2>
-              <div className="prose prose-lg max-w-none">
-                <p>
-                  Im März 2020 wurde die erste Version des Auto Scanners im Rahmen des Forschungsprojekts der Machine
-                  Learning Gruppe der Universität Stuttgart und Audi fertiggestellt. Dies lieferte den Proof of Concept
-                  einer KI-basierten Erkennung von Oberflächenschäden an Fahrzeugen am Fließband.
                 </p>
               </div>
             </div>

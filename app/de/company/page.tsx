@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full">
         <div className="absolute inset-0 z-0">
@@ -293,8 +293,8 @@ export default function AboutPage() {
       {/* Contact & Map Section */}
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-12 gap-12">
-            <div className="col-span-12 md:col-span-4">
+          <div className="grid gap-8 md:gap-12 md:grid-cols-3">
+            <div className="md:col-span-1">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">Kontaktieren Sie uns</h2>
 
               <div className="space-y-6">
@@ -362,7 +362,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="col-span-12 md:col-span-8 h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <div className="md:col-span-2 h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg w-full">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d672000.8487139231!2d8.5518653!3d48.9936516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f7.1!3m3!1m2!1s0x47982feb3f36f741%3A0x1ef0dcda750483d4!2sIUNA%20AI!5e0!3m2!1sen!2sde!4v1711057234567!5m2!1sen!2sde"
                 width="100%"

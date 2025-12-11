@@ -144,6 +144,9 @@ function FooterContent() {
               <Link href={getLocalizedPath("/privacy-policy")} className="hover:text-white">
                 {isGerman ? "Datenschutzerklärung" : "Privacy Policy"}
               </Link>
+              <Link href={getLocalizedPath("/gtc")} className="hover:text-white">
+                {isGerman ? "AGB" : "GTC"}
+              </Link>
               <Link href={getLocalizedPath("/imprint")} className="hover:text-white">
                 {isGerman ? "Impressum" : "Imprint"}
               </Link>

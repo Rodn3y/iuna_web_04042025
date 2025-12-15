@@ -80,7 +80,7 @@ export default function NewsPage() {
                 <span>December 9, 2025</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Our Secret Sauce: How We Train AI Models in Minutes Instead of Days
+                New Update to Our IUNA Label Toolkit: How We Train AI Models in Minutes Instead of Days
               </h2>
 
               {/* YouTube Video Embed */}
@@ -96,19 +96,24 @@ export default function NewsPage() {
 
               <div className="prose prose-lg max-w-none">
                 <p>
+                  Our self-developed <strong>IUNA Label Toolkit</strong> has received a new update! Since 2021, we have
+                  been continuously using and optimizing this internal tool to constantly improve our labeling pipeline
+                  and make it even more efficient.
+                </p>
+                <p>
                   Why are the <strong>IUNA Weld Inspector</strong> and <strong>Assembly Inspector</strong> ready for
                   deployment so quickly? Because we have eliminated AI's biggest bottleneck: Manual labeling.
                 </p>
                 <p>
-                  In this video, we reveal our internal "secret sauce": With <strong>Text-to-Mask technology</strong>,
-                  we train our models for your components in minutes instead of days. See for yourself how we detect
-                  weld seams using simple text commands.
+                  In this video, we reveal our internal "secret sauce": With the latest version of our Label Toolkit and{" "}
+                  <strong>Text-to-Mask technology</strong>, we train our models for your components in minutes instead
+                  of days. See for yourself how we detect weld seams using simple text commands.
                 </p>
 
                 <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                   <p className="text-gray-700 font-medium mb-0">
-                    By leveraging <strong>Vision Foundation Models</strong>, we drastically reduce the commissioning
-                    time at your facility.
+                    By leveraging <strong>Vision Foundation Models</strong> and our continuously evolving IUNA Label
+                    Toolkit, we drastically reduce the commissioning time at your facility.
                   </p>
                 </div>
 
@@ -349,8 +354,99 @@ export default function NewsPage() {
               </div>
             </div>
 
-            {/* News Item */}
-            <div className="mb-16">
+            {/* News Item - Auto Scanner v3 */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>February 15, 2022</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Auto Scanner v3 / Body Shop</h2>
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+                <Image
+                  src="/images/auto-scanner-v3-interface.jpeg"
+                  alt="IUNA Auto Scanner v3 user interface showing body analysis in Audi production facility"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  The third version of our Auto Scanner was expanded with "anomaly detection" functionality. The system
+                  not only detects predefined defects, but is also able to check the entire vehicle surface for
+                  anomalies. Anomalies are defects for which little to no historical image data is available. This means
+                  that even rare defects that would otherwise only be detected by humans can be captured fully
+                  automatically. This achieved complete automation of the inspection process in Audi's body shop and
+                  replaced manual visual inspection.
+                </p>
+              </div>
+            </div>
+
+            {/* News Item - IUNA AI Inspector Release */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>September 24, 2021</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Release IUNA AI Inspector</h2>
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+                <Image src="/images/ai-scanner.png" alt="IUNA AI Inspector" fill className="object-cover" />
+              </div>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  Based on the know-how from the Auto Scanner, the IUNA AI Inspector was developed in September 2021.
+                  With the AI Inspector, we have developed a modular and easy-to-use AI image processing system that can
+                  be integrated inline. Combined with the right software application, we are flexible to solve a wide
+                  range of tasks in industrial manufacturing.
+                </p>
+                <div className="mt-6">
+                  <Link
+                    href="/products/ai-inspector"
+                    className="inline-flex items-center text-primary hover:text-primary/80"
+                  >
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* News Item - Auto Scanner v2 */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>March 11, 2021</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Auto Scanner v2 / Body Shop</h2>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  In March, the second version of the IUNA Auto Scanner was completed. The system checks standard points
+                  on the vehicle body for surface geometry defects. These include waviness, dents, sheet metal
+                  irregularities and other defects that predominantly occur in the body shop department. In addition,
+                  the data helps the respective department to identify process-related errors or errors from suppliers.
+                </p>
+              </div>
+            </div>
+
+            {/* News Item - Development Partner */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>September 1, 2020</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Iuna.ai becomes development partner of Audi AG
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  In September 2020, iuna.ai became an official development partner of VW. The goal of the development
+                  cooperation was to further develop the IUNA Auto Scanner v1 in the body shop of the Audi R8 for fully
+                  autonomous identification of surface geometry defects on the body.
+                </p>
+              </div>
+            </div>
+
+            {/* News Item - Auto Scanner v1 */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
                 <span>March 15, 2020</span>
@@ -367,7 +463,35 @@ export default function NewsPage() {
               </div>
             </div>
 
-            {/* News Item */}
+            {/* News Item - Press Article Heilbronner Stimme */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>July 28, 2022</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Press Article / IUNA AI x Audi</h2>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  The current article in Heilbronner Stimme describes how Audi wants to drive change in production in
+                  the future and how we at IUNA AI are helping to shape this change. Our goal has always been to bring
+                  AI technology to today's manufacturing as easily and quickly as possible. We have already implemented
+                  exactly this for Audi. Further projects with Audi are in the planning phase.
+                </p>
+                <div className="mt-6">
+                  <a
+                    href="https://www.stimme.de/wirtschaft/baden-wuerttemberg/wirtschaft/audi-startet-radikalen-umbau-der-produktion-digitalisierung-kosten-geschwindigkeit-art-4655141"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-primary/80"
+                  >
+                    Read more
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* News Item - Research Project - now last item without border */}
             <div className="mb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />

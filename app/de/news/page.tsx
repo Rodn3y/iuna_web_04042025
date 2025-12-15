@@ -81,7 +81,7 @@ export default function NewsPage() {
                 <span>9. Dezember 2025</span>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Unsere Secret Sauce: Wie wir KI-Modelle in Minuten statt Tagen trainieren
+                Neues Update unserer IUNA Label Toolkit: Wie wir KI-Modelle in Minuten statt Tagen trainieren
               </h2>
 
               {/* YouTube Video Embed */}
@@ -97,20 +97,26 @@ export default function NewsPage() {
 
               <div className="prose prose-lg max-w-none">
                 <p>
+                  Unsere selbst entwickelte <strong>IUNA Label Toolkit</strong> hat ein neues Update erhalten! Seit 2021
+                  nutzen und optimieren wir dieses interne Tool kontinuierlich, um unsere Labeling-Pipeline stetig zu
+                  verbessern und noch effizienter zu gestalten.
+                </p>
+                <p>
                   Warum sind der <strong>IUNA Weld Inspector</strong> und der <strong>Assembly Inspector</strong> so
                   schnell einsatzbereit? Weil wir den größten Flaschenhals der KI eliminiert haben: Das manuelle
                   Labeling.
                 </p>
                 <p>
-                  In diesem Video zeigen wir unsere interne „Secret Sauce": Mit{" "}
-                  <strong>Text-to-Mask-Technologie</strong> trainieren wir unsere Modelle für Ihre Bauteile in Minuten
-                  statt Tagen. Sehen Sie selbst, wie wir Schweißnähte per Textbefehl erkennen.
+                  In diesem Video zeigen wir unsere interne „Secret Sauce": Mit der neuesten Version unserer Label
+                  Toolkit und <strong>Text-to-Mask-Technologie</strong> trainieren wir unsere Modelle für Ihre Bauteile
+                  in Minuten statt Tagen. Sehen Sie selbst, wie wir Schweißnähte per Textbefehl erkennen.
                 </p>
 
                 <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                   <p className="text-gray-700 font-medium mb-0">
-                    Durch den Einsatz von <strong>Vision Foundation Models</strong> reduzieren wir die
-                    Commissioning-Zeit bei Ihnen vor Ort drastisch.
+                    Durch den Einsatz von <strong>Vision Foundation Models</strong> und unserer kontinuierlich
+                    weiterentwickelten IUNA Label Toolkit reduzieren wir die Commissioning-Zeit bei Ihnen vor Ort
+                    drastisch.
                   </p>
                 </div>
 
@@ -390,75 +396,27 @@ export default function NewsPage() {
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
-                <span>27. Mai 2022</span>
+                <span>15. Februar 2022</span>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                IUNA AI als Gewinner des Industrie 4.0 Awards
-              </h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Auto Scanner v3 / Karosseriebau</h2>
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/industry-4-award.png"
-                  alt="IUNA AI Präsentation bei der Industrie 4.0 Award Veranstaltung"
+                  src="/images/auto-scanner-v3-interface.jpeg"
+                  alt="IUNA Auto Scanner v3 Benutzeroberfläche zeigt Karosserieanalyse in der Audi Produktionsanlage"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  IUNA AI ist einer der "100 Orte für Industrie 4.0" in Baden-Württemberg und wurde als eines von acht
-                  Leuchtturmprojekten von der Allianz Industrie 4.0 ausgezeichnet. Die Auszeichnung wurde online durch
-                  eine Videobotschaft des Staatssekretärs Dr. Patrick Rapp überreicht.
+                  Die dritte Version unseres Auto Scanners wurde um die Funktionalität der "Anomalieerkennung"
+                  erweitert. Hierbei erkennt das System nicht nur vordefinierte Defekte, sondern ist auch in der Lage,
+                  die gesamte Fahrzeugoberfläche auf Anomalien zu überprüfen. Anomalien sind Defekte, für die wenige bis
+                  keine historischen Bilddaten verfügbar sind. Das bedeutet, dass auch seltene Defekte, die sonst nur
+                  von Menschen erkannt würden, vollautomatisch erfasst werden können. Dadurch wurde eine vollständige
+                  Automatisierung des Inspektionsprozesses im Karosseriebau von Audi erreicht und die manuelle
+                  Sichtkontrolle ersetzt.
                 </p>
-                <div className="mt-6">
-                  <a
-                    href="https://www.i40-bw.de/100-orte-acht-leuchtturmprojekte-zur-industrie-4-0-im-land-ausgezeichnet/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary hover:text-primary/80"
-                  >
-                    Mehr lesen
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* News Item */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
-              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                <Calendar className="h-4 w-4" />
-                <span>20. April 2022</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                Finanzierung / Campus Founders Venture Studio x WOLFMAN.ONE
-              </h2>
-              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
-                <Image
-                  src="/images/campus-founders-meeting.webp"
-                  alt="IUNA AI Team unterzeichnet Finanzierungsvereinbarung mit Campus Founders und WOLFMAN.ONE"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="prose prose-lg max-w-none">
-                <p>
-                  Um die Produktentwicklung weiter zu beschleunigen, haben wir Anfang 2022 die Entscheidung getroffen,
-                  eine erste Finanzierungsrunde abzuschließen. Nach sorgfältiger Prüfung aller Angebote fiel die
-                  endgültige Entscheidung zugunsten zweier lokaler und erfahrener VC-Unternehmen aus dem Raum Heilbronn:
-                  Die Campus Founders Venture Studios und der erfahrene Business Angel Prof. Wolf Nietzer mit der VC
-                  Corporation Wolfman.One.
-                </p>
-                <div className="mt-6">
-                  <a
-                    href="https://www.stimme.de/wirtschaft/baden-wuerttemberg/wirtschaft/iuna-ai-mit-100000-euro-starthilfe-bei-audi-punkten-art-4629967"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-primary hover:text-primary/80"
-                  >
-                    Mehr lesen
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -476,9 +434,6 @@ export default function NewsPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs text-white text-center">
-                  Bildquelle: Audi AG
-                </div>
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>

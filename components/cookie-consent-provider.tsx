@@ -24,7 +24,7 @@ const CookieConsentContext = createContext<CookieConsentContextType>({
   consent: null,
   hasConsented: false,
   isLoaded: false,
-  isEU: true, // Default to true for safety
+  isEU: true,
   acceptAll: () => {},
   acceptNecessary: () => {},
   savePreferences: () => {},
@@ -54,11 +54,22 @@ function deleteCookie(name: string) {
   document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`
 }
 
+function updateGoogleConsent(consent: CookieConsent) {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("consent", "update", {
+      analytics_storage: consent.analytics ? "granted" : "denied",
+      ad_storage: consent.marketing ? "granted" : "denied",
+      ad_user_data: consent.marketing ? "granted" : "denied",
+      ad_personalization: consent.marketing ? "granted" : "denied",
+    })
+  }
+}
+
 export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const [consent, setConsent] = useState<CookieConsent | null>(null)
   const [hasConsented, setHasConsented] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [isEU, setIsEU] = useState(true) // Default to EU for safety
+  const [isEU, setIsEU] = useState(true)
 
   useEffect(() => {
     const init = async () => {
@@ -69,6 +80,13 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
           const parsed = JSON.parse(decodeURIComponent(storedConsent))
           setConsent(parsed)
           setHasConsented(true)
+          try {
+            const response = await fetch("/api/geo")
+            const data = await response.json()
+            setIsEU(data.isEU)
+          } catch {
+            setIsEU(true)
+          }
           setIsLoaded(true)
           return
         } catch {
@@ -91,6 +109,8 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
           setConsent(allAccepted)
           setHasConsented(true)
           setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(allAccepted)), COOKIE_EXPIRY_DAYS)
+          // Update Google Consent Mode immediately
+          updateGoogleConsent(allAccepted)
         }
       } catch {
         // If geo check fails, assume EU for GDPR compliance
@@ -107,6 +127,7 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
     setConsent(newConsent)
     setHasConsented(true)
     setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(newConsent)), COOKIE_EXPIRY_DAYS)
+    updateGoogleConsent(newConsent)
   }
 
   const acceptAll = () => {

@@ -3,125 +3,52 @@
 import { useEffect, useState } from "react"
 import Script from "next/script"
 import { usePathname } from "next/navigation"
-import { useCookieConsent } from "./cookie-consent-provider"
 
-declare global {
-  interface Window {
-    dataLayer: unknown[]
-    gtag: (...args: unknown[]) => void
+// Helper function to get cookie value
+function getCookie(name: string): string | null {
+  if (typeof document === "undefined") return null
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) {
+    return parts.pop()?.split(";").shift() || null
   }
+  return null
 }
 
 export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
   const pathname = usePathname()
-  const { consent, isLoaded, isEU } = useCookieConsent()
-  const [gaLoaded, setGaLoaded] = useState(false)
+  const [hasAnalyticsConsent, setHasAnalyticsConsent] = useState(false)
 
-  const hasAnalyticsConsent = consent?.analytics === true
-
-  // For EU: only load after explicit consent
-  const shouldLoadGA = isLoaded && (hasAnalyticsConsent || !isEU)
-
-  // Debug logging
   useEffect(() => {
-    console.log(
-      "[v0] GA Debug - isLoaded:",
-      isLoaded,
-      "isEU:",
-      isEU,
-      "hasAnalyticsConsent:",
-      hasAnalyticsConsent,
-      "shouldLoadGA:",
-      shouldLoadGA,
-    )
-  }, [isLoaded, isEU, hasAnalyticsConsent, shouldLoadGA])
+    // Check for cookie consent
+    const consentCookie = getCookie("iuna_cookie_consent")
+    if (consentCookie) {
+      try {
+        const consent = JSON.parse(decodeURIComponent(consentCookie))
+        setHasAnalyticsConsent(consent.analytics === true)
+      } catch {
+        setHasAnalyticsConsent(false)
+      }
+    }
+  }, [])
 
-  // Track page views when pathname changes and GA is loaded
   useEffect(() => {
-    if (pathname && gaLoaded && typeof window !== "undefined" && window.gtag) {
-      console.log("[v0] GA tracking page view:", pathname)
+    if (pathname && hasAnalyticsConsent && window.gtag) {
+      // When the page changes, log a pageview
       window.gtag("config", GA_MEASUREMENT_ID, {
         page_path: pathname,
       })
     }
-  }, [pathname, GA_MEASUREMENT_ID, gaLoaded])
+  }, [pathname, GA_MEASUREMENT_ID, hasAnalyticsConsent])
 
-  // Update consent when it changes
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.gtag && gaLoaded) {
-      console.log("[v0] GA updating consent - analytics:", hasAnalyticsConsent, "marketing:", consent?.marketing)
-      window.gtag("consent", "update", {
-        analytics_storage: hasAnalyticsConsent ? "granted" : "denied",
-        ad_storage: consent?.marketing ? "granted" : "denied",
-        ad_user_data: consent?.marketing ? "granted" : "denied",
-        ad_personalization: consent?.marketing ? "granted" : "denied",
-      })
-    }
-  }, [consent, hasAnalyticsConsent, gaLoaded])
-
-  // Don't render anything until geo-check is complete
-  if (!isLoaded) {
-    console.log("[v0] GA - waiting for geo-check")
+  // Only load Google Analytics if user has consented
+  if (!hasAnalyticsConsent) {
     return null
   }
 
-  // For EU users without consent, only render the default denied consent state
-  if (!shouldLoadGA) {
-    console.log("[v0] GA - EU user without consent, showing denied state")
-    return (
-      <Script
-        id="google-consent-default"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              'analytics_storage': 'denied',
-              'ad_storage': 'denied',
-              'ad_user_data': 'denied',
-              'ad_personalization': 'denied',
-              'wait_for_update': 500
-            });
-            console.log('[v0] GA consent default set to denied for EU user');
-          `,
-        }}
-      />
-    )
-  }
-
-  console.log("[v0] GA - Loading GA4 scripts, isEU:", isEU, "hasConsent:", hasAnalyticsConsent)
-
   return (
     <>
-      {/* Google Consent Mode v2 - Set initial state */}
-      <Script
-        id="google-consent-init"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            // Set default consent - granted for non-EU, denied for EU (will be updated)
-            gtag('consent', 'default', {
-              'analytics_storage': 'granted',
-              'ad_storage': 'granted',
-              'ad_user_data': 'granted',
-              'ad_personalization': 'granted'
-            });
-            console.log('[v0] GA consent default set to granted');
-          `,
-        }}
-      />
-      {/* GA4 Script */}
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        onLoad={() => {
-          console.log("[v0] GA4 script loaded successfully")
-          setGaLoaded(true)
-        }}
-      />
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
       <Script
         id="google-analytics"
         strategy="afterInteractive"
@@ -133,7 +60,6 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
             });
-            console.log('[v0] GA4 configured with ID: ${GA_MEASUREMENT_ID}');
           `,
         }}
       />

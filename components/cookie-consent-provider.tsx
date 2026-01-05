@@ -24,7 +24,7 @@ const CookieConsentContext = createContext<CookieConsentContextType>({
   consent: null,
   hasConsented: false,
   isLoaded: false,
-  isEU: true,
+  isEU: true, // Default to true for safety
   acceptAll: () => {},
   acceptNecessary: () => {},
   savePreferences: () => {},
@@ -54,18 +54,6 @@ function deleteCookie(name: string) {
   document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`
 }
 
-function updateGoogleConsent(consent: CookieConsent) {
-  if (typeof window !== "undefined" && window.gtag) {
-    console.log("[v0] Updating Google Consent Mode:", consent)
-    window.gtag("consent", "update", {
-      analytics_storage: consent.analytics ? "granted" : "denied",
-      ad_storage: consent.marketing ? "granted" : "denied",
-      ad_user_data: consent.marketing ? "granted" : "denied",
-      ad_personalization: consent.marketing ? "granted" : "denied",
-    })
-  }
-}
-
 export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const [consent, setConsent] = useState<CookieConsent | null>(null)
   const [hasConsented, setHasConsented] = useState(false)
@@ -74,65 +62,51 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const init = async () => {
-      console.log("[v0] CookieConsentProvider init starting")
-
       // Check stored consent first
       const storedConsent = getCookie(COOKIE_NAME)
-
-      let geoIsEU = true
-      try {
-        const response = await fetch("/api/geo")
-        const data = await response.json()
-        geoIsEU = data.isEU
-        setIsEU(data.isEU)
-        console.log("[v0] Geo check result - country:", data.country, "isEU:", data.isEU)
-      } catch (error) {
-        console.log("[v0] Geo check failed, assuming EU:", error)
-        setIsEU(true)
-      }
-
       if (storedConsent) {
         try {
           const parsed = JSON.parse(decodeURIComponent(storedConsent))
-          console.log("[v0] Found stored consent:", parsed)
           setConsent(parsed)
           setHasConsented(true)
           setIsLoaded(true)
           return
         } catch {
-          console.log("[v0] Invalid stored cookie, continuing")
+          // Invalid cookie, continue to geo check
         }
       }
 
-      if (!geoIsEU) {
-        console.log("[v0] Non-EU user detected, auto-accepting all cookies")
-        const allAccepted: CookieConsent = {
-          necessary: true,
-          functional: true,
-          analytics: true,
-          marketing: true,
+      try {
+        const response = await fetch("/api/geo")
+        const data = await response.json()
+        setIsEU(data.isEU)
+
+        if (!data.isEU) {
+          const allAccepted: CookieConsent = {
+            necessary: true,
+            functional: true,
+            analytics: true,
+            marketing: true,
+          }
+          setConsent(allAccepted)
+          setHasConsented(true)
+          setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(allAccepted)), COOKIE_EXPIRY_DAYS)
         }
-        setConsent(allAccepted)
-        setHasConsented(true)
-        setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(allAccepted)), COOKIE_EXPIRY_DAYS)
-      } else {
-        console.log("[v0] EU user detected, waiting for consent")
+      } catch {
+        // If geo check fails, assume EU for GDPR compliance
+        setIsEU(true)
       }
 
       setIsLoaded(true)
-      console.log("[v0] CookieConsentProvider init complete, isLoaded: true, isEU:", geoIsEU)
     }
 
     init()
   }, [])
 
   const saveConsent = (newConsent: CookieConsent) => {
-    console.log("[v0] Saving consent:", newConsent)
     setConsent(newConsent)
     setHasConsented(true)
     setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(newConsent)), COOKIE_EXPIRY_DAYS)
-    // Delay slightly to ensure GA is loaded
-    setTimeout(() => updateGoogleConsent(newConsent), 100)
   }
 
   const acceptAll = () => {

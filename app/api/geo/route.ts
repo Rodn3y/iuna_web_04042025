@@ -40,6 +40,8 @@ export async function GET(request: NextRequest) {
   const country = request.headers.get("x-vercel-ip-country") || "unknown"
   const isEU = EU_COUNTRIES.includes(country.toUpperCase())
 
+  console.log("[v0] Geo API - country:", country, "isEU:", isEU)
+
   return NextResponse.json({
     country,
     isEU,

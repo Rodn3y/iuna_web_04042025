@@ -77,13 +77,14 @@ export default function WeldSeamScannerPage() {
           />
         </div>
         <div className="container relative z-10 flex h-full flex-col items-start justify-center px-4 pt-24 md:pt-0 sm:px-6 lg:px-8">
+          <p className="text-lg font-semibold text-white sm:text-xl md:text-2xl mb-2">IUNA Weld Inspector</p>
           <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Automated weld seam inspection with AI
+            The Turnkey AI System for Optical Weld Inspection
           </h1>
           <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
           <h2 className="mt-4 max-w-2xl text-lg text-gray-200 sm:text-xl md:text-2xl font-normal md:mt-6">
-            Replace subjective visual inspections with objective AI precision. Find defects in real time without slowing
-            down production.
+            Complete solution combining industrial imaging hardware and AI software to automate manual visual
+            inspection.
           </h2>
         </div>
       </section>
@@ -227,7 +228,7 @@ export default function WeldSeamScannerPage() {
                       <p className="text-sm text-gray-700">
                         <span className="font-semibold text-primary">Our advantage:</span> Since brazed joints are often
                         aesthetic visible seams (e.g., on tailgates), our AI combines technical inspection with
-                        aesthetic control according to ISO 18279.
+                        aesthetic control according to ISO 1879.
                       </p>
                     </div>
                   </div>

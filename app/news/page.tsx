@@ -73,65 +73,6 @@ export default function NewsPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
-            {/* News Item - Text-to-Mask Technology Video */}
-            <div className="mb-16 border-b border-gray-200 pb-16">
-              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
-                <Calendar className="h-4 w-4" />
-                <span>December 9, 2025</span>
-              </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
-                New Update to Our IUNA Label Toolkit: How We Train AI Models in Minutes Instead of Days
-              </h2>
-
-              {/* YouTube Video Embed */}
-              <div className="relative w-full mb-8 overflow-hidden rounded-lg" style={{ paddingBottom: "56.25%" }}>
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/1gZpjtHAkjA"
-                  title="IUNA AI Text-to-Mask Technology"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              <div className="prose prose-lg max-w-none">
-                <p>
-                  Our self-developed <strong>IUNA Label Toolkit</strong> has received a new update! Since 2021, we have
-                  been continuously using and optimizing this internal tool to constantly improve our labeling pipeline
-                  and make it even more efficient.
-                </p>
-                <p>
-                  Why are the <strong>IUNA Weld Inspector</strong> and <strong>Assembly Inspector</strong> ready for
-                  deployment so quickly? Because we have eliminated AI's biggest bottleneck: Manual labeling.
-                </p>
-                <p>
-                  In this video, we reveal our internal "secret sauce": With the latest version of our Label Toolkit and{" "}
-                  <strong>Text-to-Mask technology</strong>, we train our models for your components in minutes instead
-                  of days. See for yourself how we detect weld seams using simple text commands.
-                </p>
-
-                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
-                  <p className="text-gray-700 font-medium mb-0">
-                    By leveraging <strong>Vision Foundation Models</strong> and our continuously evolving IUNA Label
-                    Toolkit, we drastically reduce the commissioning time at your facility.
-                  </p>
-                </div>
-
-                <div className="mt-8">
-                  <p className="text-lg font-semibold text-gray-900 mb-4">
-                    Want to know how quickly we can automate the inspection of your components?
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 font-medium transition-colors"
-                  >
-                    Request a Feasibility Check Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* News Item - SCHWEISSEN & SCHNEIDEN 2025 */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">

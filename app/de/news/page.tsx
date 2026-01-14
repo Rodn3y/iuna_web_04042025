@@ -75,6 +75,66 @@ export default function NewsPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>9. Dezember 2025</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Neues Update unserer IUNA Label Toolkit: Wie wir KI-Modelle in Minuten statt Tagen trainieren
+              </h2>
+
+              {/* YouTube Video Embed */}
+              <div className="relative w-full mb-8 overflow-hidden rounded-lg" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/1gZpjtHAkjA"
+                  title="IUNA AI Text-to-Mask Technologie"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  Unsere selbst entwickelte <strong>IUNA Label Toolkit</strong> hat ein neues Update erhalten! Seit 2021
+                  nutzen und optimieren wir dieses interne Tool kontinuierlich, um unsere Labeling-Pipeline stetig zu
+                  verbessern und noch effizienter zu gestalten.
+                </p>
+                <p>
+                  Warum sind der <strong>IUNA Weld Inspector</strong> und der <strong>Assembly Inspector</strong> so
+                  schnell einsatzbereit? Weil wir den größten Flaschenhals der KI eliminiert haben: Das manuelle
+                  Labeling.
+                </p>
+                <p>
+                  In diesem Video zeigen wir unsere interne „Secret Sauce": Mit der neuesten Version unserer Label
+                  Toolkit und <strong>Text-to-Mask-Technologie</strong> trainieren wir unsere Modelle für Ihre Bauteile
+                  in Minuten statt Tagen. Sehen Sie selbst, wie wir Schweißnähte per Textbefehl erkennen.
+                </p>
+
+                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                  <p className="text-gray-700 font-medium mb-0">
+                    Durch den Einsatz von <strong>Vision Foundation Models</strong> und unserer kontinuierlich
+                    weiterentwickelten IUNA Label Toolkit reduzieren wir die Commissioning-Zeit bei Ihnen vor Ort
+                    drastisch.
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <p className="text-lg font-semibold text-gray-900 mb-4">
+                    Wollen Sie wissen, wie schnell wir Ihr Bauteil automatisiert prüfen können?
+                  </p>
+                  <Link
+                    href="/de/contact"
+                    className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 font-medium transition-colors"
+                  >
+                    Jetzt Machbarkeits-Check anfordern
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             {/* News Item - SCHWEISSEN & SCHNEIDEN 2025 */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">

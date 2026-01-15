@@ -116,7 +116,7 @@ export default function NewsPage() {
 
                 <div className="mt-8">
                   <a
-                    href="https://www.baslerweb.com/de-de/use-cases/iuna-ai-systems/?utm_source=basler-newsletter&utm_medium=email&utm_campaign=ace-2"
+                    href="https://www.baslerweb.com/en/use-cases/iuna-ai-systems/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 font-medium transition-colors"

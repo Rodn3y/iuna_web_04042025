@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar, ArrowRight, Linkedin, Youtube } from "lucide-react"
+import { Calendar, ArrowRight, ExternalLink, Linkedin, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageSlider } from "@/components/image-slider"
 
@@ -75,6 +75,61 @@ export default function NewsPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>15. Januar 2026</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Basler veröffentlicht Use Case Artikel über IUNA AI
+              </h2>
+
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+                <Image
+                  src="/images/basler-iuna-weld-inspection.png"
+                  alt="Schweißprozess mit KI-basierter Schweißnahtprüfung zeigt I.O. und N.I.O. Klassifizierung"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  <strong>Basler</strong>, einer der weltweit führenden Hersteller von Industriekameras, hat einen
+                  ausführlichen Use Case Artikel über <strong>IUNA AI</strong> und unsere Lösungen für die
+                  automatisierte Sichtprüfung in der Automobilindustrie veröffentlicht.
+                </p>
+                <p>
+                  Der Artikel zeigt, wie der <strong>IUNA Weld Inspector</strong> eine{" "}
+                  <strong>ISO-konforme Schweißnahtprüfung</strong> ermöglicht und wie unsere KI-basierten Systeme die
+                  visuelle Inspektion im <strong>Karosseriebau</strong> automatisieren. Die Zusammenarbeit zwischen IUNA
+                  AI und Basler demonstriert, wie hochmoderne industrielle Bildverarbeitungshardware in Kombination mit
+                  intelligenter KI-Software eine zuverlässige Qualitätssicherung in anspruchsvollen
+                  Produktionsumgebungen ermöglicht.
+                </p>
+
+                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                  <p className="text-gray-700 font-medium mb-0">
+                    „Mit den leistungsstarken Industriekameras von Basler und der intelligenten Software von IUNA AI
+                    ermöglichen wir Herstellern eine 100% automatisierte Sichtprüfung, die internationalen Schweißnormen
+                    wie ISO 5817 entspricht."
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <a
+                    href="https://www.baslerweb.com/de-de/use-cases/iuna-ai-systems/?utm_source=basler-newsletter&utm_medium=email&utm_campaign=ace-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 font-medium transition-colors"
+                  >
+                    Zum vollständigen Artikel auf Basler.com
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
@@ -507,8 +562,8 @@ export default function NewsPage() {
               <div className="prose prose-lg max-w-none">
                 <p>
                   Im September 2020 wurde iuna.ai offizieller Entwicklungspartner von VW. Ziel der
-                  Entwicklungskooperation war die Weiterentwicklung des IUNA Auto Scanners v1 im Karosseriebau des Audi
-                  R8 zur vollautonomen Identifizierung von Oberflächengeometriedefekten an der Karosserie.
+                  Entwicklungskooperation war es die Weiterentwicklung des IUNA Auto Scanners v1 im Karosseriebau des
+                  Audi R8 zur vollautonomen Identifizierung von Oberflächengeometriedefekten an der Karosserie.
                 </p>
               </div>
             </div>

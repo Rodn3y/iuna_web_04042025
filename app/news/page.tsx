@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Calendar, ArrowRight, Linkedin, Youtube } from "lucide-react"
+import { Calendar, ArrowRight, Linkedin, Youtube, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageSlider } from "@/components/image-slider"
 
@@ -73,6 +73,61 @@ export default function NewsPage() {
       <section className="py-16 bg-white">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
+            {/* News Item - Basler Use Case Article */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>January 15, 2026</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Basler Publishes Use Case Article About IUNA AI
+              </h2>
+
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+                <Image
+                  src="/images/basler-iuna-weld-inspection.png"
+                  alt="Welding process with AI-based weld seam inspection showing OK and NOT OK classification"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  <strong>Basler</strong>, one of the world's leading manufacturers of industrial cameras, has published
+                  a detailed use case article about <strong>IUNA AI</strong> and our solutions for automated visual
+                  inspection in the automotive industry.
+                </p>
+                <p>
+                  The article highlights how the <strong>IUNA Weld Inspector</strong> enables{" "}
+                  <strong>ISO-compliant weld seam inspection</strong> and how our AI-based systems automate visual
+                  inspection in <strong>body-in-white manufacturing</strong>. The collaboration between IUNA AI and
+                  Basler demonstrates how cutting-edge industrial imaging hardware combined with intelligent AI software
+                  delivers reliable quality assurance in demanding production environments.
+                </p>
+
+                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                  <p className="text-gray-700 font-medium mb-0">
+                    "With Basler's high-performance industrial cameras and IUNA AI's intelligent software, we enable
+                    manufacturers to achieve 100% automated visual inspection compliant with international welding
+                    standards like ISO 5817."
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <a
+                    href="https://www.baslerweb.com/de-de/use-cases/iuna-ai-systems/?utm_source=basler-newsletter&utm_medium=email&utm_campaign=ace-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 font-medium transition-colors"
+                  >
+                    Read the Full Article on Basler.com
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* News Item - Text-to-Mask Technology Video */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">

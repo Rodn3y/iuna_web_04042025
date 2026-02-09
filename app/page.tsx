@@ -251,7 +251,7 @@ export default function Home() {
             <div className="order-1 md:order-2">
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/ai-scanner.png"
+                  src="/images/weld-seam-tolerance.png"
                   alt="IUNA Weld Inspector - Automated weld seam inspection system"
                   width={800}
                   height={600}

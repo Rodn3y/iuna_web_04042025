@@ -780,48 +780,6 @@ export default function AssemblyInspectorPage() {
         </div>
       </section>
 
-      {/* Integration Options Section */}
-      <section className="bg-gray-50 py-20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Integration Options</h2>
-            <p className="mt-4 text-lg text-gray-600">
-              Choose the integration option that best fits your production needs.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute inset-0 z-0">
-              <Image
-                src={integrationOptions[currentSlide].image || "/placeholder.svg"}
-                alt={integrationOptions[currentSlide].title}
-                fill
-                className="object-cover brightness-[0.4]"
-              />
-            </div>
-            <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">
-              <h3 className="text-2xl font-bold tracking-tight text-white">{integrationOptions[currentSlide].title}</h3>
-              <p className="mt-4 text-xl text-gray-200 sm:text-2xl">{integrationOptions[currentSlide].description}</p>
-              <div className="mt-10 flex justify-center space-x-4">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-gray-300 bg-gray-200 text-gray-900 hover:bg-gray-300"
-                  onClick={prevSlide}
-                >
-                  <ChevronLeft className="h-5 w-5 mr-2" />
-                  Previous
-                </Button>
-                <Button size="lg" variant="secondary" onClick={nextSlide}>
-                  Next
-                  <ChevronRight className="h-5 w-5 ml-2" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="bg-primary py-16">
         <div className="container px-4 sm:px-6 lg:px-8">

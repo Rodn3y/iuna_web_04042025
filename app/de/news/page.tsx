@@ -84,7 +84,7 @@ export default function NewsPage() {
                 Basler veröffentlicht Use Case Artikel über IUNA AI
               </h2>
 
-              <div className="relative h-[23rem] w-full mb-6 overflow-hidden rounded-lg">
+              <div className="relative h-[26rem] w-full mb-6 overflow-hidden rounded-lg">
                 <Image
                   src="/images/basler-iuna-weld-inspection.png"
                   alt="Schweißprozess mit KI-basierter Schweißnahtprüfung zeigt I.O. und N.I.O. Klassifizierung"

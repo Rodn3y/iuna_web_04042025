@@ -83,12 +83,12 @@ export default function NewsPage() {
                 Basler Publishes Use Case Article About IUNA AI
               </h2>
 
-              <div className="relative h-[28rem] w-full mb-6 overflow-hidden rounded-lg">
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
                 <Image
                   src="/images/basler-iuna-weld-inspection.png"
                   alt="Welding process with AI-based weld seam inspection showing OK and NOT OK classification"
                   fill
-                  className="object-contain"
+                  className="object-cover object-top"
                 />
               </div>
 

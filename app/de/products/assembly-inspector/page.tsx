@@ -438,7 +438,7 @@ export default function AssemblyInspectorPage() {
               <div className="flex items-center gap-6 p-6">
                 <div className="relative w-28 h-28 flex-shrink-0">
                   <Image
-                    src="/images/ai-station.jpeg"
+                    src="/images/ai-station.png"
                     alt="IUNA Assembly Server für visuelle Inspektion"
                     fill
                     className="object-contain"

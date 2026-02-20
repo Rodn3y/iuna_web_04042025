@@ -567,7 +567,7 @@ export default function WeldSeamScannerPage() {
               <div className="flex items-center gap-6 p-6">
                 <div className="relative w-28 h-28 flex-shrink-0">
                   <Image
-                    src="/images/ai-station.jpeg"
+                    src="/images/ai-station.png"
                     alt="IUNA AI Server for weld seam inspection"
                     fill
                     className="object-contain"

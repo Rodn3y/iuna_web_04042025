@@ -601,11 +601,11 @@ export default function AssemblyInspectorPage() {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-primary mr-2" />
-                  <span className="text-gray-600">PROFINET Simatic SPSen</span>
+                  <span className="text-gray-600">PROFINET Simatic SPS</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-5 w-5 text-primary mr-2" />
-                  <span className="text-gray-600">EtherNet/IP Allen-Bradley SPSen</span>
+                  <span className="text-gray-600">EtherNet/IP Allen-Bradley SPS</span>
                 </li>
               </ul>
             </div>

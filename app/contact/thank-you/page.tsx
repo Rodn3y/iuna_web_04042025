@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Mail, Phone, Calendar } from "lucide-react"
-import Script from "next/script"
+import GoogleAdsConversion from "@/components/google-ads-conversion"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -17,13 +17,7 @@ export default function ThankYouPage() {
   return (
     <>
       {/* Google Ads Conversion Event */}
-      <Script id="google-ads-conversion" strategy="afterInteractive">
-        {`
-          gtag('event', 'conversion_event_submit_lead_form', {
-            // event_parameters
-          });
-        `}
-      </Script>
+      <GoogleAdsConversion />
 
       <main className="flex min-h-screen flex-col">
         {/* Hero Section */}

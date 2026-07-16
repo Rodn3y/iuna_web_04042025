@@ -1,7 +1,6 @@
 import type React from "react"
 import "./globals.css"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { CookieConsentProvider } from "@/components/cookie-consent-provider"
@@ -35,15 +34,13 @@ export default async function RootLayout({
   return (
     <html lang={isGerman ? "de" : "en"}>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light">
-          <CookieConsentProvider>
-            <Navbar />
-            {children}
-            <Footer />
-            {/* Cookie Banner */}
-            <CookieBanner />
-          </CookieConsentProvider>
-        </ThemeProvider>
+        <CookieConsentProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          {/* Cookie Banner */}
+          <CookieBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   )

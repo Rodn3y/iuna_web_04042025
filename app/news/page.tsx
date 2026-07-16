@@ -409,6 +409,60 @@ export default function NewsPage() {
               </div>
             </div>
 
+            {/* News Item - Campus Founders Pre-Seed */}
+            <div className="mb-16 border-b border-gray-200 pb-16">
+              <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
+                <Calendar className="h-4 w-4" />
+                <span>May 18, 2022</span>
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Campus Founders Heilbronn Backs IUNA AI with €100,000
+              </h2>
+              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+                <Image
+                  src="/images/iuna-campus-founders-heilbronn.jpg"
+                  alt="The IUNA AI founding team with Campus Founders representatives signing the pre-seed financing in Heilbronn"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs text-white text-center">
+                  Image source: Campus Founders
+                </div>
+              </div>
+              <div className="prose prose-lg max-w-none">
+                <p>
+                  We are thrilled to announce that IUNA AI is the first startup to receive €100,000 in pre-seed
+                  financing from Campus Founders in Heilbronn. In addition to the funding, we gain access to the newly
+                  created Venture Studio program and the strong Campus Founders network on the Bildungscampus.
+                </p>
+                <p>
+                  The business idea was born in 2018 during an internship at Audi in Neckarsulm: walking through the
+                  paint shop, founders Jan Nabatian and Tong Chen observed quality inspectors searching for defects
+                  with the naked eye. This sparked the vision of an artificial intelligence that analyzes camera images
+                  and detects defects automatically. Today, six cameras and our AI inspect the body of the Audi R8 for
+                  dents and scratches at the Böllinger Höfe – a task previously done manually. A unique selling point:
+                  our patented system can output the coordinates of defects in three-dimensional CAD data based on
+                  two-dimensional images.
+                </p>
+                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                  <p className="text-gray-700 font-medium mb-0">
+                    {'"For us, the €100,000 means we can now push our projects forward and grow our team," says co-founder Samira Nabatian.'}
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <a
+                    href="https://www.stimme.de/wirtschaft/baden-wuerttemberg/wirtschaft/iuna-ai-mit-100000-euro-starthilfe-bei-audi-punkten-art-4629967"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-primary/80"
+                  >
+                    Read the article in Heilbronner Stimme (German)
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* News Item - Auto Scanner v3 */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">

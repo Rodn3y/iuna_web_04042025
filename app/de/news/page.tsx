@@ -447,31 +447,59 @@ export default function NewsPage() {
               </div>
             </div>
 
-            {/* News Item */}
+            {/* News Item - Campus Founders Pre-Seed */}
             <div className="mb-16 border-b border-gray-200 pb-16">
               <div className="flex items-center space-x-2 text-sm text-gray-500 mb-3">
                 <Calendar className="h-4 w-4" />
-                <span>15. Februar 2022</span>
+                <span>18. Mai 2022</span>
               </div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">Auto Scanner v3 / Karosseriebau</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+                Campus Founders Heilbronn fördert IUNA AI mit 100.000 €
+              </h2>
               <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/auto-scanner-v3-interface.jpeg"
-                  alt="IUNA Auto Scanner v3 Benutzeroberfläche zeigt Karosserieanalyse in der Audi Produktionsanlage"
+                  src="/images/iuna-campus-founders-heilbronn.jpg"
+                  alt="Das IUNA AI Gründerteam mit Vertretern der Campus Founders bei der Unterzeichnung der Pre-Seed-Finanzierung in Heilbronn"
                   fill
                   className="object-cover"
                 />
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs text-white text-center">
+                  Bildquelle: Campus Founders
+                </div>
               </div>
               <div className="prose prose-lg max-w-none">
                 <p>
-                  Die dritte Version unseres Auto Scanners wurde um die Funktionalität der "Anomalieerkennung"
-                  erweitert. Hierbei erkennt das System nicht nur vordefinierte Defekte, sondern ist auch in der Lage,
-                  die gesamte Fahrzeugoberfläche auf Anomalien zu überprüfen. Anomalien sind Defekte, für die wenige bis
-                  keine historischen Bilddaten verfügbar sind. Das bedeutet, dass auch seltene Defekte, die sonst nur
-                  von Menschen erkannt würden, vollautomatisch erfasst werden können. Dadurch wurde eine vollständige
-                  Automatisierung des Inspektionsprozesses im Karosseriebau von Audi erreicht und die manuelle
-                  Sichtkontrolle ersetzt.
+                  Wir freuen uns sehr: IUNA AI ist das erste Startup, das von den Campus Founders in Heilbronn im
+                  Rahmen der neuen Pre-Seed-Finanzierung mit 100.000 € unterstützt wird. Zusätzlich erhalten wir Zugang
+                  zum neu geschaffenen Venture-Studio-Programm und zum starken Netzwerk der Campus Founders auf dem
+                  Bildungscampus.
                 </p>
+                <p>
+                  Die Geschäftsidee entstand 2018 während eines Praktikums bei Audi in Neckarsulm: Beim Rundgang durch
+                  die Lackiererei beobachteten die Gründer Jan Nabatian und Tong Chen, wie Qualitätsprüfer mit bloßem
+                  Auge nach Fehlern suchten. Daraus entstand die Vision einer Künstlichen Intelligenz, die Kamerabilder
+                  auswertet und Defekte automatisch erkennt. Heute prüfen sechs Kameras und unsere KI in den Böllinger
+                  Höfen die Karosserie des Audi R8 auf Dellen und Kratzer – eine Aufgabe, die zuvor manuell erledigt
+                  wurde. Ein besonderes Alleinstellungsmerkmal: Unser patentiertes System kann aus zweidimensionalen
+                  Bildern die Koordinaten der Fehler in dreidimensionalen CAD-Daten ausgeben.
+                </p>
+                <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
+                  <p className="text-gray-700 font-medium mb-0">
+                    „Für uns bedeuten die 100.000 €, dass wir jetzt unsere Projekte vorantreiben können und unser Team
+                    wachsen kann", sagt Mitgründerin Samira Nabatian.
+                  </p>
+                </div>
+                <div className="mt-6">
+                  <a
+                    href="https://www.stimme.de/wirtschaft/baden-wuerttemberg/wirtschaft/iuna-ai-mit-100000-euro-starthilfe-bei-audi-punkten-art-4629967"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-primary hover:text-primary/80"
+                  >
+                    Zum Artikel der Heilbronner Stimme
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
 

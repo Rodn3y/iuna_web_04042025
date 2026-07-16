@@ -60,6 +60,13 @@ const logos: Logo[] = [
     height: 70,
     className: "h-[50px] sm:h-[70px] w-auto object-contain brightness-0 invert",
   },
+  {
+    src: "/images/logo_michael.png",
+    alt: "Michael Kunststofftechnik logo",
+    width: 160,
+    height: 55,
+    className: "h-[45px] sm:h-[60px] w-auto object-contain brightness-0 invert",
+  },
 ]
 
 export default function LogoCarousel() {

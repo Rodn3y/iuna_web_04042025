@@ -45,9 +45,10 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
     })
   }, [isLoaded, shouldLoadGA])
 
-  // Load GA4 script dynamically once consent conditions are met
+  // Load GA4 only in the top-level production page. Injecting third-party
+  // scripts into an embedded preview mutates React's managed document tree.
   useEffect(() => {
-    if (!shouldLoadGA) return
+    if (!shouldLoadGA || window.self !== window.top) return
     if (document.getElementById("ga4-script")) {
       setGaLoaded(true)
       return

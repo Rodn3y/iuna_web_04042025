@@ -8,7 +8,7 @@ import GoogleAnalytics from "@/components/google-analytics"
 import { CookieConsentProvider } from "@/components/cookie-consent-provider"
 import CookieBanner from "@/components/cookie-banner"
 import { headers } from "next/headers"
-import { Analytics } from "@vercel/analytics/next"
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -47,7 +47,6 @@ export default function RootLayout({
             <CookieBanner />
           </CookieConsentProvider>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )

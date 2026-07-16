@@ -25,6 +25,7 @@ import {
   Flame,
   ListChecks,
   ClipboardCheck,
+  CircleDot,
 } from "lucide-react"
 import { useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -194,6 +195,52 @@ export default function WeldSeamScannerPage() {
                         <span className="font-semibold text-primary">Our advantage:</span> The IUNA Weld Inspector is
                         trained to reliably detect the fine, often microscopic defects of these precision processes and
                         classify them according to the strict criteria of ISO 13919.
+                      </p>
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Resistance Spot Welding */}
+              <AccordionItem
+                value="resistance-spot-welding"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+              >
+                <AccordionTrigger className="hover:no-underline py-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <CircleDot className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-semibold text-gray-900">Resistance Spot Welding</h3>
+                      <div className="flex flex-wrap gap-2 mt-1">
+                        {['ISO 14373', 'ISO 18595'].map((standard) => (
+                          <span
+                            key={standard}
+                            className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded"
+                          >
+                            {standard}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-5">
+                  <div className="pl-14 space-y-3">
+                    <p className="text-gray-600">
+                      These standards cover resistance spot welding of steel and aluminum, including weld position,
+                      electrode indentation, spatter, and visible surface damage.
+                    </p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500">
+                      <span><span className="font-medium">ISO 14373:</span> Steel</span>
+                      <span><span className="font-medium">ISO 18595:</span> Aluminum</span>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-4 mt-3">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-primary">Our advantage:</span> Our system automatically detects
+                        missing or misplaced weld spots and evaluates electrode indentations, spatter, and visible surface
+                        damage.
                       </p>
                     </div>
                   </div>

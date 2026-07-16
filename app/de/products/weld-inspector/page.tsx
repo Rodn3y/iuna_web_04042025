@@ -215,7 +215,7 @@ export default function WeldSeamScannerPage() {
                     <div className="text-left">
                       <h3 className="font-semibold text-gray-900">Widerstandspunktschweißen</h3>
                       <div className="flex flex-wrap gap-2 mt-1">
-                        {['ISO 14373', 'ISO 18595', 'ISO 10447'].map((standard) => (
+                        {['ISO 14373', 'ISO 18595'].map((standard) => (
                           <span
                             key={standard}
                             className="text-primary font-mono text-xs font-medium bg-primary/5 px-2 py-0.5 rounded"
@@ -236,7 +236,6 @@ export default function WeldSeamScannerPage() {
                     <div className="flex flex-wrap gap-3 text-sm text-gray-500">
                       <span><span className="font-medium">ISO 14373:</span> Stahl</span>
                       <span><span className="font-medium">ISO 18595:</span> Aluminium</span>
-                      <span><span className="font-medium">ISO 10447:</span> Zerstörende Prüfung</span>
                     </div>
                     <div className="bg-primary/5 rounded-lg p-4 mt-3">
                       <p className="text-sm text-gray-700">

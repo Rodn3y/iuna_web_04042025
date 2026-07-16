@@ -81,7 +81,7 @@ export default function LogoCarousel() {
         WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
       }}
     >
-      <ul className="flex w-max animate-logo-marquee items-center group-hover:[animation-play-state:paused]">
+      <ul className="flex w-max animate-logo-marquee items-center">
         {items.map((logo, index) => (
           <li
             key={`${logo.src}-${index}`}

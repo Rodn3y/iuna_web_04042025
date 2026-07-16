@@ -23,13 +23,13 @@ export const metadata = {
     generator: 'v0.app'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   // Check if the path starts with /de to determine language
-  const headersList = headers()
+  const headersList = await headers()
   const pathname = headersList.get("x-pathname") || ""
   const isGerman = pathname.startsWith("/de")
 

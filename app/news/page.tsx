@@ -418,7 +418,7 @@ export default function NewsPage() {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
                 Campus Founders Heilbronn Backs IUNA AI with €100,000
               </h2>
-              <div className="relative h-80 w-full mb-6 overflow-hidden rounded-lg">
+              <div className="relative h-96 md:h-[32rem] w-full mb-6 overflow-hidden rounded-lg">
                 <Image
                   src="/images/iuna-campus-founders-heilbronn.jpg"
                   alt="The IUNA AI founding team with Campus Founders representatives signing the pre-seed financing in Heilbronn"

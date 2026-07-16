@@ -435,15 +435,6 @@ export default function NewsPage() {
                   financing from Campus Founders in Heilbronn. In addition to the funding, we gain access to the newly
                   created Venture Studio program and the strong Campus Founders network on the Bildungscampus.
                 </p>
-                <p>
-                  The business idea was born in 2018 during an internship at Audi in Neckarsulm: walking through the
-                  paint shop, founders Jan Nabatian and Tong Chen observed quality inspectors searching for defects
-                  with the naked eye. This sparked the vision of an artificial intelligence that analyzes camera images
-                  and detects defects automatically. Today, six cameras and our AI inspect the body of the Audi R8 for
-                  dents and scratches at the Böllinger Höfe – a task previously done manually. A unique selling point:
-                  our patented system can output the coordinates of defects in three-dimensional CAD data based on
-                  two-dimensional images.
-                </p>
                 <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                   <p className="text-gray-700 font-medium mb-0">
                     {'"For us, the €100,000 means we can now push our projects forward and grow our team," says co-founder Samira Nabatian.'}

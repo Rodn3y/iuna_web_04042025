@@ -474,15 +474,6 @@ export default function NewsPage() {
                   zum neu geschaffenen Venture-Studio-Programm und zum starken Netzwerk der Campus Founders auf dem
                   Bildungscampus.
                 </p>
-                <p>
-                  Die Geschäftsidee entstand 2018 während eines Praktikums bei Audi in Neckarsulm: Beim Rundgang durch
-                  die Lackiererei beobachteten die Gründer Jan Nabatian und Tong Chen, wie Qualitätsprüfer mit bloßem
-                  Auge nach Fehlern suchten. Daraus entstand die Vision einer Künstlichen Intelligenz, die Kamerabilder
-                  auswertet und Defekte automatisch erkennt. Heute prüfen sechs Kameras und unsere KI in den Böllinger
-                  Höfen die Karosserie des Audi R8 auf Dellen und Kratzer – eine Aufgabe, die zuvor manuell erledigt
-                  wurde. Ein besonderes Alleinstellungsmerkmal: Unser patentiertes System kann aus zweidimensionalen
-                  Bildern die Koordinaten der Fehler in dreidimensionalen CAD-Daten ausgeben.
-                </p>
                 <div className="bg-gray-50 border-l-4 border-primary p-6 my-8 rounded-r-lg">
                   <p className="text-gray-700 font-medium mb-0">
                     „Für uns bedeuten die 100.000 €, dass wir jetzt unsere Projekte vorantreiben können und unser Team

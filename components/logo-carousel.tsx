@@ -63,9 +63,9 @@ const logos: Logo[] = [
   {
     src: "/images/logo_michael.png",
     alt: "Michael Kunststofftechnik logo",
-    width: 160,
-    height: 70,
-    className: "h-[38px] sm:h-[48px] w-auto object-contain brightness-0 invert",
+    width: 146,
+    height: 50,
+    className: "h-auto w-[105px] sm:w-[130px] object-contain brightness-0 invert",
   },
 ]
 

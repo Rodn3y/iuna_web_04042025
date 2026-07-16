@@ -4,7 +4,6 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import GoogleAnalytics from "@/components/google-analytics"
 import { CookieConsentProvider } from "@/components/cookie-consent-provider"
 import CookieBanner from "@/components/cookie-banner"
 import { headers } from "next/headers"
@@ -38,8 +37,6 @@ export default async function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <CookieConsentProvider>
-            {/* Google Analytics - only loads with consent */}
-            <GoogleAnalytics GA_MEASUREMENT_ID="G-YVPD5C9ZKC" />
             <Navbar />
             {children}
             <Footer />

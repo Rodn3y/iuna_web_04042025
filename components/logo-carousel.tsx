@@ -56,9 +56,9 @@ const logos: Logo[] = [
   {
     src: "/images/logo_pwo.png",
     alt: "PWO logo",
-    width: 110,
-    height: 55,
-    className: "h-[35px] sm:h-[50px] w-auto object-contain brightness-0 invert",
+    width: 140,
+    height: 70,
+    className: "h-[50px] sm:h-[70px] w-auto object-contain brightness-0 invert",
   },
 ]
 

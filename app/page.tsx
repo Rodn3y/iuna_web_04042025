@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import LogoCarousel from "@/components/logo-carousel"
 
 export default function Home() {
   return (
@@ -41,62 +42,7 @@ export default function Home() {
               <p className="mb-4 sm:mb-6 text-center text-sm sm:text-lg font-medium text-white">
                 Trusted by leading Automotive Manufacturers, Suppliers and System Integrators
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 lg:gap-16">
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_vw.png"
-                    alt="vw logo white"
-                    width={70}
-                    height={70}
-                    className="h-[50px] sm:h-[70px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_audi.png"
-                    alt="audi logo white"
-                    width={90}
-                    height={90}
-                    className="h-[60px] sm:h-[90px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_awl.png"
-                    alt="awl logo white"
-                    width={120}
-                    height={40}
-                    className="h-[30px] sm:h-[40px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_ehr.png"
-                    alt="ehr logo white"
-                    width={70}
-                    height={35}
-                    className="h-[25px] sm:h-[35px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_heidelberg.png"
-                    alt="heidelberger druckmaschinen logo white"
-                    width={120}
-                    height={60}
-                    className="h-[40px] sm:h-[60px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-                <div className="flex justify-center">
-                  <Image
-                    src="/images/logo_schedl.png"
-                    alt="schedl automotive logo white"
-                    width={100}
-                    height={100}
-                    className="h-[70px] sm:h-[100px] w-auto object-contain brightness-0 invert"
-                  />
-                </div>
-              </div>
+              <LogoCarousel />
             </div>
           </div>
         </div>

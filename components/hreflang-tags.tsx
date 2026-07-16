@@ -4,8 +4,8 @@ interface HreflangTagsProps {
   currentPath?: string
 }
 
-export default function HreflangTags({ currentPath }: HreflangTagsProps) {
-  const headersList = headers()
+export default async function HreflangTags({ currentPath }: HreflangTagsProps) {
+  const headersList = await headers()
   const pathname = currentPath || headersList.get("x-pathname") || ""
   const baseUrl = "https://iuna.ai"
 

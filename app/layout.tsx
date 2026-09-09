@@ -5,8 +5,9 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { CookieConsentProvider } from "@/components/cookie-consent-provider"
 import CookieBanner from "@/components/cookie-banner"
+import GoogleAnalytics from "@/components/google-analytics"
 import { headers } from "next/headers"
-
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -40,7 +41,9 @@ export default async function RootLayout({
           <Footer />
           {/* Cookie Banner */}
           <CookieBanner />
+          <GoogleAnalytics GA_MEASUREMENT_ID="G-YVPD5C9ZKC" />
         </CookieConsentProvider>
+        <Analytics />
       </body>
     </html>
   )

@@ -1,3 +1,4 @@
 interface Window {
-  gtag: (command: "config" | "event" | "js" | "set", targetId: string, config?: Record<string, any> | Date) => void
+  dataLayer: unknown[]
+  gtag: (...args: unknown[]) => void
 }

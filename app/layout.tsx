@@ -1,4 +1,5 @@
 import type React from "react"
+import type { Metadata } from "next"
 import "./globals.css"
 import { Inter } from "next/font/google"
 import Navbar from "@/components/navbar"
@@ -11,15 +12,44 @@ import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "IUNA AI - AI Vision Systems for industrial Manufacturing",
-  description:
-    "Leading provider of AI Vision Systems for automotive and manufacturing industries, specializing in weld seam inspection and dimensional measurement.",
-  icons: {
-    icon: "/favicon512.png",
-    apple: "/favicon512.png",
-  },
-    generator: 'v0.app'
+const BASE_URL = "https://iuna.ai"
+
+export function generateMetadata(): Metadata {
+  const headersList = headers()
+  const pathname = headersList.get("x-pathname") || "/"
+
+  const isGerman = pathname.startsWith("/de")
+  const englishPath = isGerman ? pathname.replace(/^\/de/, "") || "/" : pathname
+  const germanPath = isGerman ? pathname : `/de${pathname === "/" ? "" : pathname}`
+
+  const abs = (path: string) => `${BASE_URL}${path === "/" ? "" : path}`
+
+  return {
+    metadataBase: new URL(BASE_URL),
+    title: "IUNA AI - AI Vision Systems for industrial Manufacturing",
+    description:
+      "Leading provider of AI Vision Systems for automotive and manufacturing industries, specializing in weld seam inspection and dimensional measurement.",
+    icons: {
+      icon: [{ url: "/favicon512.png", sizes: "any", type: "image/png" }],
+      shortcut: "/favicon512.png",
+      apple: "/apple-icon.png",
+    },
+    alternates: {
+      canonical: abs(pathname),
+      languages: {
+        en: abs(englishPath),
+        de: abs(germanPath),
+        "x-default": abs(englishPath),
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: abs(pathname),
+      siteName: "IUNA AI",
+      locale: isGerman ? "de_DE" : "en_US",
+    },
+    generator: "v0.app",
+  }
 }
 
 export default async function RootLayout({

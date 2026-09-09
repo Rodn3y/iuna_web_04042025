@@ -1,90 +1,70 @@
 import { NextResponse } from "next/server"
 
-const BASE_URL = "https://iuna.ai" // Ihre Domain
+const BASE_URL = "https://iuna.ai"
 
-// Definieren Sie hier Ihre Routen. Fügen Sie dynamische Routen hinzu, falls erforderlich.
-const staticPaths = [
+// Paths that exist in BOTH English and German. Each produces an en + de entry
+// with reciprocal hreflang alternates.
+const bilingualPaths = [
   "/",
   "/company",
   "/use-cases",
   "/news",
+  "/careers",
+  "/contact",
+  "/contact/thank-you",
   "/imprint",
   "/privacy-policy",
-  "/contact",
-  "/careers",
-  "/products/ai-inspector",
-  "/products/weld-inspector", // Updated from /products/ai-weld-inspector to /products/weld-inspector
-  "/contact/thank-you",
+  "/gtc",
+  "/products/weld-inspector",
+  "/products/assembly-inspector",
 ]
 
-// Beispiel für dynamische Routen (z.B. Lösungsseiten)
-// In einer echten Anwendung würden Sie diese Slugs dynamisch abrufen (z.B. aus einem CMS oder einer Datenbank)
-const solutionSlugs = [
-  "automotive-quality-control",
-  "manufacturing-defect-detection",
-  "weld-seam-inspection-automation", // Beispiel-Slug
-  "surface-inspection", // Beispiel-Slug
-  "ocr-applications", // Beispiel-Slug
-]
+// English-only routes (no German equivalent exists).
+const englishOnlyPaths = ["/solutions/automotive", "/solutions/manufacturing"]
 
-const newsSlugs = [
-  "iuna-featured-in-handelsblatt",
-  "iuna-wins-ai-champion-award-2024",
-  "new-partnership-automotive-manufacturer",
-  "ai-inspector-2-0-release",
-  "iuna-expands-to-european-markets",
-  "successful-series-a-funding-round",
-]
+// German-only routes (no English equivalent exists).
+const germanOnlyPaths = ["/de/kontakt", "/de/kontakt/danke"]
 
-const careerSlugs = [
-  "software-engineer-ai-vision",
-  "senior-machine-learning-engineer",
-  "technical-sales-manager",
-  "quality-assurance-engineer",
-]
+interface Entry {
+  loc: string
+  alternates: { hreflang: string; href: string }[]
+}
 
-const dynamicPaths = [
-  ...solutionSlugs.map((slug) => `/solutions/${slug}`),
-  ...newsSlugs.map((slug) => `/news/${slug}`),
-  ...careerSlugs.map((slug) => `/careers/${slug}`), // Added career paths
-]
+function buildEntries(): Entry[] {
+  const entries: Entry[] = []
 
-const allRelativePaths = [...staticPaths, ...dynamicPaths]
+  for (const path of bilingualPaths) {
+    const enUrl = `${BASE_URL}${path === "/" ? "" : path}`
+    const deUrl = `${BASE_URL}/de${path === "/" ? "" : path}`
+    const alternates = [
+      { hreflang: "en", href: enUrl },
+      { hreflang: "de", href: deUrl },
+      { hreflang: "x-default", href: enUrl },
+    ]
+    entries.push({ loc: enUrl, alternates })
+    entries.push({ loc: deUrl, alternates })
+  }
+
+  for (const path of englishOnlyPaths) {
+    const enUrl = `${BASE_URL}${path}`
+    entries.push({ loc: enUrl, alternates: [{ hreflang: "x-default", href: enUrl }] })
+  }
+
+  for (const path of germanOnlyPaths) {
+    entries.push({ loc: `${BASE_URL}${path}`, alternates: [] })
+  }
+
+  return entries
+}
 
 export async function GET() {
   const today = new Date().toISOString().split("T")[0]
-
-  const sitemapEntries = allRelativePaths.flatMap((relativePath) => {
-    const enUrl = `${BASE_URL}${relativePath === "/" ? "" : relativePath}`
-    const deUrl = `${BASE_URL}/de${relativePath}`
-    const xDefaultUrl = enUrl // Englisch als x-default
-
-    return [
-      {
-        loc: enUrl,
-        lastmod: today,
-        alternates: [
-          { hreflang: "en", href: enUrl },
-          { hreflang: "de", href: deUrl },
-          { hreflang: "x-default", href: xDefaultUrl },
-        ],
-      },
-      {
-        loc: deUrl,
-        lastmod: today,
-        alternates: [
-          { hreflang: "en", href: enUrl },
-          { hreflang: "de", href: deUrl },
-          { hreflang: "x-default", href: xDefaultUrl },
-        ],
-      },
-    ]
-  })
+  const entries = buildEntries()
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  ${sitemapEntries
+  ${entries
     .map((entry) => {
       const alternatesXml = entry.alternates
         .map((alt) => `<xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}"/>`)
@@ -92,7 +72,7 @@ export async function GET() {
       return `
   <url>
     <loc>${entry.loc}</loc>
-    <lastmod>${entry.lastmod}</lastmod>
+    <lastmod>${today}</lastmod>
     ${alternatesXml}
   </url>`
     })

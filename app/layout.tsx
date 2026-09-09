@@ -9,10 +9,11 @@ import CookieBanner from "@/components/cookie-banner"
 import GoogleAnalytics from "@/components/google-analytics"
 import { headers } from "next/headers"
 import { Analytics } from "@vercel/analytics/next"
+import { SITE_URL } from "@/lib/site"
 
 const inter = Inter({ subsets: ["latin"] })
 
-const BASE_URL = "https://iuna.ai"
+const BASE_URL = SITE_URL
 
 export function generateMetadata(): Metadata {
   const headersList = headers()

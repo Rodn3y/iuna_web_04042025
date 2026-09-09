@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /contact/thank-you
+Disallow: /de/contact/thank-you
+Disallow: /de/kontakt/danke
 
-Sitemap: https://iuna.ai/sitemap.xml
+Sitemap: https://www.iuna.ai/sitemap.xml

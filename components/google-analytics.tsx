@@ -4,13 +4,6 @@ import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { useCookieConsent } from "./cookie-consent-provider"
 
-declare global {
-  interface Window {
-    dataLayer: unknown[]
-    gtag: (...args: unknown[]) => void
-  }
-}
-
 function ensureGtag() {
   if (typeof window === "undefined") return
   window.dataLayer = window.dataLayer || []

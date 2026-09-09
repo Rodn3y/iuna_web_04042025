@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server"
+import { SITE_URL } from "@/lib/site"
 
-const BASE_URL = "https://iuna.ai"
+export const dynamic = "force-static"
+
+const BASE_URL = SITE_URL
 
 // Paths that exist in BOTH English and German. Each produces an en + de entry
 // with reciprocal hreflang alternates.

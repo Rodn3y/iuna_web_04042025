@@ -1,4 +1,5 @@
 import { headers } from "next/headers"
+import { SITE_URL } from "@/lib/site"
 
 interface HreflangTagsProps {
   currentPath?: string
@@ -7,7 +8,7 @@ interface HreflangTagsProps {
 export default async function HreflangTags({ currentPath }: HreflangTagsProps) {
   const headersList = await headers()
   const pathname = currentPath || headersList.get("x-pathname") || ""
-  const baseUrl = "https://iuna.ai"
+  const baseUrl = SITE_URL
 
   const isGerman = pathname.startsWith("/de")
 

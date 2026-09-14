@@ -23,10 +23,17 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Führender Anbieter von KI-Bildverarbeitungssystemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtprüfung und dimensionales Messen.",
     icons: {
-      icon: [{ url: "/favicon512.png", sizes: "any", type: "image/png" }],
-      shortcut: "/favicon512.png",
+      icon: [
+        { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
+        { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+        { url: "/icon-96.png", sizes: "96x96", type: "image/png" },
+        { url: "/icon-144.png", sizes: "144x144", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      shortcut: "/favicon.ico",
       apple: "/apple-icon.png",
     },
+    manifest: "/site.webmanifest",
     alternates: {
       canonical: canonicalUrl,
       languages: alternates,

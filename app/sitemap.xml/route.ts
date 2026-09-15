@@ -21,9 +21,6 @@ const bilingualPaths = [
   "/products/assembly-inspector",
 ]
 
-// English-only routes (no German equivalent exists).
-const englishOnlyPaths = ["/solutions/automotive", "/solutions/manufacturing"]
-
 // Google ignores <lastmod> when it changes on every crawl, so use the date of the
 // last real content change instead of the current date.
 const LAST_MODIFIED = "2026-09-15"
@@ -46,11 +43,6 @@ function buildEntries(): Entry[] {
     ]
     entries.push({ loc: enUrl, alternates })
     entries.push({ loc: deUrl, alternates })
-  }
-
-  for (const path of englishOnlyPaths) {
-    const enUrl = `${BASE_URL}${path}`
-    entries.push({ loc: enUrl, alternates: [{ hreflang: "x-default", href: enUrl }] })
   }
 
   return entries

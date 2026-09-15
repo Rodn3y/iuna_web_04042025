@@ -32,6 +32,22 @@ const nextConfig = {
         destination: '/de/contact/thank-you',
         permanent: true,
       },
+      // Legacy placeholder pages removed; keep old URLs alive for Google and any external links.
+      {
+        source: '/solutions/automotive',
+        destination: '/products/weld-inspector',
+        permanent: true,
+      },
+      {
+        source: '/solutions/manufacturing',
+        destination: '/products/assembly-inspector',
+        permanent: true,
+      },
+      {
+        source: '/solutions/:slug*',
+        destination: '/use-cases',
+        permanent: true,
+      },
     ]
   },
 }

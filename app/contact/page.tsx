@@ -128,11 +128,12 @@ export default function ContactPage() {
       <section className="relative h-[60vh] w-full">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/header_landing_page.jpg"
+            src="/images/automotive-head.jpg"
             alt="IUNA AI Contact"
             fill
             className="object-cover brightness-[0.4]"
             priority
+            sizes="100vw"
           />
         </div>
         <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">

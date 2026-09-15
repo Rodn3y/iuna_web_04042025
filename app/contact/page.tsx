@@ -337,7 +337,8 @@ export default function ContactPage() {
               </p>
               <div className="rounded-lg overflow-hidden border border-gray-200 h-[600px]">
                 <iframe
-                  src="https://meetings-eu1.hubspot.com/jan-nabatian?embed=true"
+                  src="https://meetings-eu1.hubspot.com/jnabatian?embed=true"
+                  title="Schedule a meeting with Jan Nabatian"
                   width="100%"
                   height="100%"
                   frameBorder="0"

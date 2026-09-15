@@ -14,7 +14,6 @@ const bilingualPaths = [
   "/news",
   "/careers",
   "/contact",
-  "/contact/thank-you",
   "/imprint",
   "/privacy-policy",
   "/gtc",
@@ -25,8 +24,9 @@ const bilingualPaths = [
 // English-only routes (no German equivalent exists).
 const englishOnlyPaths = ["/solutions/automotive", "/solutions/manufacturing"]
 
-// German-only routes (no English equivalent exists).
-const germanOnlyPaths = ["/de/kontakt", "/de/kontakt/danke"]
+// Google ignores <lastmod> when it changes on every crawl, so use the date of the
+// last real content change instead of the current date.
+const LAST_MODIFIED = "2026-09-15"
 
 interface Entry {
   loc: string
@@ -53,15 +53,10 @@ function buildEntries(): Entry[] {
     entries.push({ loc: enUrl, alternates: [{ hreflang: "x-default", href: enUrl }] })
   }
 
-  for (const path of germanOnlyPaths) {
-    entries.push({ loc: `${BASE_URL}${path}`, alternates: [] })
-  }
-
   return entries
 }
 
 export async function GET() {
-  const today = new Date().toISOString().split("T")[0]
   const entries = buildEntries()
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -75,7 +70,7 @@ export async function GET() {
       return `
   <url>
     <loc>${entry.loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${LAST_MODIFIED}</lastmod>
     ${alternatesXml}
   </url>`
     })

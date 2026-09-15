@@ -3,6 +3,15 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ImageSlider } from "@/components/image-slider"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/use-cases",
+  locale: "en",
+  title: "Use Cases | AI Vision Inspection for Automotive & Manufacturing | IUNA AI",
+  description:
+    "See how IUNA AI vision systems automate weld seam inspection, assembly checks and quality control on real production lines in the automotive and manufacturing industries.",
+})
 
 export default function UseCasesPage() {
   return (

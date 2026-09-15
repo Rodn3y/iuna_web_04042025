@@ -1,12 +1,15 @@
 import Image from "next/image"
 import { Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: "/gtc",
+  locale: "de",
   title: "Allgemeine Geschäftsbedingungen (AGB) | IUNA AI",
   description:
     "Allgemeine Geschäftsbedingungen der IUNA AI Systems GmbH für KI-Vision-Systeme, Schweißnahtprüfung und zugehörige Dienstleistungen.",
-}
+})
 
 export default function AGBPage() {
   return (
@@ -226,7 +229,7 @@ export default function AGBPage() {
             <h2>§ 9 Wartung, Updates und Support</h2>
             <ol>
               <li>
-                Bei Projekten mit einem Volumen von über 50.000 € ist der Abschluss eines Support & License Agreements
+                Bei Projekten mit einem Volumen von über 50.000 ��� ist der Abschluss eines Support & License Agreements
                 (SLA) verpflichtend. Bei kleineren Projekten ist dies optional.
               </li>
               <li>

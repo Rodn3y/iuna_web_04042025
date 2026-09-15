@@ -3,6 +3,15 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LogoCarousel from "@/components/logo-carousel"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/",
+  locale: "en",
+  title: "IUNA AI - AI Vision Systems for industrial Manufacturing",
+  description:
+    "Leading provider of AI Vision Systems for automotive and manufacturing industries, specializing in weld seam inspection and dimensional measurement.",
+})
 
 export default function Home() {
   return (

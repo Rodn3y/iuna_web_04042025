@@ -8,9 +8,9 @@ import { SITE_URL } from "@/lib/site"
 // hreflang via pageMetadata(), so nothing here depends on the request.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "IUNA AI – KI-Bildverarbeitungssysteme für die industrielle Fertigung",
+  title: "IUNA AI - AI Vision Systems for industrial Manufacturing",
   description:
-    "Führender Anbieter von KI-Bildverarbeitungssystemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtprüfung und dimensionales Messen.",
+    "Leading provider of AI Vision Systems for automotive and manufacturing industries, specializing in weld seam inspection and dimensional measurement.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48", type: "image/x-icon" },
@@ -26,6 +26,6 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
-export default function GermanRootLayout({ children }: { children: React.ReactNode }) {
-  return <SiteShell lang="de">{children}</SiteShell>
+export default function EnglishRootLayout({ children }: { children: React.ReactNode }) {
+  return <SiteShell lang="en">{children}</SiteShell>
 }

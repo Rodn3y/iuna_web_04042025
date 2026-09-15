@@ -3,15 +3,15 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Mail, Phone, Calendar } from "lucide-react"
 import GoogleAdsConversion from "@/components/google-ads-conversion"
-import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  path: "/contact/thank-you",
+  locale: "de",
   title: "Vielen Dank - IUNA AI",
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
+  description: "Vielen Dank für Ihre Anfrage bei IUNA AI. Unser Team meldet sich in Kürze bei Ihnen.",
+  noIndex: true,
+})
 
 export default function ThankYouPage() {
   return (

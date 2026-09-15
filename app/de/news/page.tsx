@@ -541,7 +541,7 @@ export default function NewsPage() {
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/de/products/ai-inspector"
+                    href="/de/products/assembly-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80"
                   >
                     Mehr erfahren

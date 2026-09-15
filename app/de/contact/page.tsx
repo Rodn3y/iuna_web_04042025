@@ -195,8 +195,8 @@ export default function ContactPage() {
                       <SelectValue placeholder="Produkt auswählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="ai-inspector">AI Inspector</SelectItem>
                       <SelectItem value="weld-inspector">Weld Inspector</SelectItem>
+                      <SelectItem value="assembly-inspector">Assembly Inspector</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

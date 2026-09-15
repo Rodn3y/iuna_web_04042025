@@ -500,7 +500,7 @@ export default function NewsPage() {
                 </p>
                 <div className="mt-6">
                   <Link
-                    href="/products/ai-inspector"
+                    href="/products/assembly-inspector"
                     className="inline-flex items-center text-primary hover:text-primary/80"
                   >
                     Learn more

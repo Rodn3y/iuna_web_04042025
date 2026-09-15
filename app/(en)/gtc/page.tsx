@@ -1,12 +1,15 @@
 import Image from "next/image"
 import { Download, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
+export const metadata = pageMetadata({
+  path: "/gtc",
+  locale: "en",
   title: "General Terms and Conditions (GTC) | IUNA AI",
   description:
     "General Terms and Conditions of IUNA AI Systems GmbH for AI vision systems, weld seam inspection, and related services.",
-}
+})
 
 export default function GTCPage() {
   return (

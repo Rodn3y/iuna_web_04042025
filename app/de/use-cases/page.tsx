@@ -3,6 +3,15 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ImageSlider } from "@/components/image-slider"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/use-cases",
+  locale: "de",
+  title: "Anwendungsfälle | KI-Bildverarbeitung für Automobil- und Fertigungsindustrie | IUNA AI",
+  description:
+    "Erfahren Sie, wie IUNA AI Vision Systeme Schweißnahtprüfung, Montagekontrolle und Qualitätssicherung in realen Produktionslinien der Automobil- und Fertigungsindustrie automatisieren.",
+})
 
 export default function UseCasesPage() {
   return (

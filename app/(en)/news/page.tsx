@@ -3,6 +3,15 @@ import Link from "next/link"
 import { Calendar, ArrowRight, Linkedin, Youtube, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageSlider } from "@/components/image-slider"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/news",
+  locale: "en",
+  title: "News & Updates | IUNA AI",
+  description:
+    "Latest news, partnerships and milestones from IUNA AI: AI vision systems for automated weld seam and assembly inspection in industrial manufacturing.",
+})
 
 export default function NewsPage() {
   return (

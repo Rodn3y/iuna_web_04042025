@@ -3,6 +3,15 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import LogoCarousel from "@/components/logo-carousel"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/",
+  locale: "de",
+  title: "IUNA AI – KI-Bildverarbeitungssysteme für die industrielle Fertigung",
+  description:
+    "Führender Anbieter von KI-Bildverarbeitungssystemen für die Automobil- und Fertigungsindustrie, spezialisiert auf Schweißnahtprüfung und dimensionales Messen.",
+})
 
 export default function Home() {
   return (

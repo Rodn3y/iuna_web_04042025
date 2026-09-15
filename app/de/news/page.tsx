@@ -3,6 +3,15 @@ import Link from "next/link"
 import { Calendar, ArrowRight, ExternalLink, Linkedin, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ImageSlider } from "@/components/image-slider"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/news",
+  locale: "de",
+  title: "Neuigkeiten & Updates | IUNA AI",
+  description:
+    "Aktuelle Nachrichten, Partnerschaften und Meilensteine von IUNA AI: KI-Bildverarbeitungssysteme für automatisierte Schweißnaht- und Montageprüfung in der Industrie.",
+})
 
 export default function NewsPage() {
   return (

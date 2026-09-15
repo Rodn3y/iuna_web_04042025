@@ -1,4 +1,13 @@
 import Image from "next/image"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/imprint",
+  locale: "de",
+  title: "Impressum | IUNA AI",
+  description:
+    "Impressum und Unternehmensangaben der IUNA AI Systems GmbH, Humboldtstr. 14, 74199 Untergruppenbach.",
+})
 
 export default function ImprintPage() {
   return (

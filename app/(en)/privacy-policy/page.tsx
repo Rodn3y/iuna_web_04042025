@@ -1,5 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
+import { pageMetadata } from "@/lib/seo"
+
+export const metadata = pageMetadata({
+  path: "/privacy-policy",
+  locale: "en",
+  title: "Privacy Policy | IUNA AI",
+  description:
+    "How IUNA AI Systems GmbH collects, uses and protects personal data on this website in accordance with the GDPR.",
+})
 
 export default function PrivacyPolicyPage() {
   return (

@@ -130,11 +130,12 @@ export default function ContactPage() {
       <section className="relative h-[60vh] w-full">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/header_landing_page.jpg"
+            src="/images/automotive-head.jpg"
             alt="IUNA AI Kontakt"
             fill
             className="object-cover brightness-[0.4]"
             priority
+            sizes="100vw"
           />
         </div>
         <div className="container relative z-10 flex h-full flex-col justify-center px-4 sm:px-6 lg:px-8">
@@ -195,8 +196,8 @@ export default function ContactPage() {
                       <SelectValue placeholder="Produkt auswählen" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="ai-inspector">AI Inspector</SelectItem>
                       <SelectItem value="weld-inspector">Weld Inspector</SelectItem>
+                      <SelectItem value="assembly-inspector">Assembly Inspector</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

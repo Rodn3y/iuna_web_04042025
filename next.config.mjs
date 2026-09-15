@@ -21,6 +21,28 @@ const nextConfig = {
         destination: '/de/products/weld-inspector',
         permanent: true, // 301 redirect
       },
+      // There is no products overview page; send visitors to the flagship product.
+      {
+        source: '/products',
+        destination: '/products/weld-inspector',
+        permanent: true,
+      },
+      {
+        source: '/de/products',
+        destination: '/de/products/weld-inspector',
+        permanent: true,
+      },
+      // The AI Inspector was renamed to Assembly Inspector.
+      {
+        source: '/products/ai-inspector',
+        destination: '/products/assembly-inspector',
+        permanent: true,
+      },
+      {
+        source: '/de/products/ai-inspector',
+        destination: '/de/products/assembly-inspector',
+        permanent: true,
+      },
       // /de/kontakt was a byte-identical duplicate of /de/contact (orphaned, no internal links).
       {
         source: '/de/kontakt',
@@ -30,6 +52,22 @@ const nextConfig = {
       {
         source: '/de/kontakt/danke',
         destination: '/de/contact/thank-you',
+        permanent: true,
+      },
+      // Legacy placeholder pages removed; keep old URLs alive for Google and any external links.
+      {
+        source: '/solutions/automotive',
+        destination: '/products/weld-inspector',
+        permanent: true,
+      },
+      {
+        source: '/solutions/manufacturing',
+        destination: '/products/assembly-inspector',
+        permanent: true,
+      },
+      {
+        source: '/solutions/:slug*',
+        destination: '/use-cases',
         permanent: true,
       },
     ]

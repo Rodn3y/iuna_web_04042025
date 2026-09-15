@@ -88,7 +88,7 @@ export default function ThankYouPage() {
                   <Link href="/de">Zur Startseite</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/de/products/ai-inspector">Unsere Produkte</Link>
+                  <Link href="/de/products/weld-inspector">Unsere Produkte</Link>
                 </Button>
               </div>
             </div>

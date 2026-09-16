@@ -70,6 +70,32 @@ const nextConfig = {
         destination: '/use-cases',
         permanent: true,
       },
+      // URLs of the pre-2025 website that Google still crawls (Search Console: "Not found (404)").
+      {
+        source: '/en/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
+      {
+        source: '/produkte',
+        destination: '/de/products/weld-inspector',
+        permanent: true,
+      },
+      {
+        source: '/de/produkte',
+        destination: '/de/products/weld-inspector',
+        permanent: true,
+      },
     ]
   },
 }

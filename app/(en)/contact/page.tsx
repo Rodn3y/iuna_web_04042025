@@ -330,12 +330,12 @@ export default function ContactPage() {
             </div>
 
             {/* Calendar */}
-            <div id="schedule-consultation">
+            <div id="schedule-consultation" className="flex flex-col">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">Schedule a Meeting</h2>
               <p className="mt-4 text-lg text-gray-600 mb-6">
                 Schedule a meeting with our sales team to discuss your specific requirements.
               </p>
-              <div className="rounded-lg overflow-hidden border border-gray-200 h-[600px]">
+              <div className="rounded-lg overflow-hidden border border-gray-200 h-[900px] lg:h-auto lg:flex-1 lg:min-h-[900px]">
                 <iframe
                   src="https://bookings.cloud.microsoft/book/IUNAAISales@iuna.ai/?ismsaljsauthenabled"
                   title="Schedule a meeting with the IUNA AI sales team"

@@ -337,20 +337,20 @@ export default function ContactPage() {
             </div>
 
             {/* Calendar */}
-            <div id="schedule-consultation">
+            <div id="schedule-consultation" className="flex flex-col">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900">Termin vereinbaren</h2>
               <p className="mt-4 text-lg text-gray-600 mb-6">
-                Vereinbaren Sie einen Termin mit Jan Nabatian, um Ihre spezifischen Anforderungen zu besprechen.
+                Vereinbaren Sie einen Termin mit unserem Sales-Team, um Ihre spezifischen Anforderungen zu besprechen.
               </p>
-              <div className="rounded-lg overflow-hidden border border-gray-200 h-[600px]">
+              <div className="rounded-lg overflow-hidden border border-gray-200 h-[900px] lg:h-auto lg:flex-1 lg:min-h-[900px]">
                 <iframe
-                  src="https://meetings-eu1.hubspot.com/jnabatian?embed=true"
-                  title="Termin mit Jan Nabatian vereinbaren"
+                  src="https://bookings.cloud.microsoft/book/IUNAAISales@iuna.ai/?ismsaljsauthenabled"
+                  title="Termin mit dem IUNA AI Sales-Team vereinbaren"
                   width="100%"
                   height="100%"
-                  frameBorder="0"
-                  style={{ width: "100%", height: "100%", border: "none" }}
-                  allow="camera; microphone; fullscreen; display-capture"
+                  scrolling="yes"
+                  style={{ width: "100%", height: "100%", border: 0 }}
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>

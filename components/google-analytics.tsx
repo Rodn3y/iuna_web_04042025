@@ -49,12 +49,12 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
 
     ensureGtag()
 
-    // Respect the saved choices before the first event, including analytics-only consent.
+    // Set default consent - granted for non-EU users (updated later on change)
     window.gtag("consent", "default", {
-      analytics_storage: hasAnalyticsConsent ? "granted" : "denied",
-      ad_storage: consent?.marketing ? "granted" : "denied",
-      ad_user_data: consent?.marketing ? "granted" : "denied",
-      ad_personalization: consent?.marketing ? "granted" : "denied",
+      analytics_storage: "granted",
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
     })
 
     const script = document.createElement("script")
@@ -63,10 +63,13 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`
     script.onload = () => {
       window.gtag("js", new Date())
+      window.gtag("config", GA_MEASUREMENT_ID, {
+        page_path: window.location.pathname,
+      })
       setGaLoaded(true)
     }
     document.head.appendChild(script)
-  }, [shouldLoadGA, GA_MEASUREMENT_ID, hasAnalyticsConsent, consent?.marketing])
+  }, [shouldLoadGA, GA_MEASUREMENT_ID])
 
   // Track page views when pathname changes and GA is loaded
   useEffect(() => {

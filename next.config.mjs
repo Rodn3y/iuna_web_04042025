@@ -6,8 +6,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // All images are local and rendered through next/image, so Vercel resizes them and
+  // serves AVIF/WebP on the fly instead of shipping multi-megabyte source files.
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   async redirects() {
     return [
@@ -82,8 +85,9 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/en/:path*',
-        destination: '/:path*',
+        // Keep /en/home exclusive to its homepage redirect, including in deployed routing.
+        source: '/en/:path((?!home$).+)',
+        destination: '/:path',
         permanent: true,
       },
       {

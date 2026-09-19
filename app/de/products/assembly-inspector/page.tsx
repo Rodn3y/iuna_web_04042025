@@ -543,22 +543,28 @@ export default function AssemblyInspectorPage() {
 
           {/* Image Slider */}
           <div className="relative max-w-5xl mx-auto">
-            <div className="relative bg-gray-100 rounded-lg overflow-hidden shadow-xl">
-              <div className="relative h-[400px] md:h-[500px]">
-                <Image
-                  src={integrationOptions[currentSlide].image || "/placeholder.svg"}
-                  alt={integrationOptions[currentSlide].title}
-                  fill
-                  className="object-contain"
-                />
+            {integrationOptions.map((option, index) => (
+              <div
+                key={option.id}
+                hidden={index !== currentSlide}
+                className="relative bg-gray-100 rounded-lg overflow-hidden shadow-xl"
+              >
+                <div className="relative h-[400px] md:h-[500px]">
+                  <Image
+                    src={option.image}
+                    alt={option.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="bg-white p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {index + 1}. {option.title}
+                  </h3>
+                  <p className="text-gray-600">{option.description}</p>
+                </div>
               </div>
-              <div className="bg-white p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {currentSlide + 1}. {integrationOptions[currentSlide].title}
-                </h3>
-                <p className="text-gray-600">{integrationOptions[currentSlide].description}</p>
-              </div>
-            </div>
+            ))}
 
             {/* Slider Controls */}
             <button

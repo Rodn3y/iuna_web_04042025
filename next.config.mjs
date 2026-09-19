@@ -82,8 +82,9 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/en/:path*',
-        destination: '/:path*',
+        // Keep /en/home exclusive to its homepage redirect, including in deployed routing.
+        source: '/en/:path((?!home$).+)',
+        destination: '/:path',
         permanent: true,
       },
       {

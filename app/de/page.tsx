@@ -34,7 +34,7 @@ export default function Home() {
           <div className="flex flex-grow items-center">
             <div className="container px-4 sm:px-6 lg:px-8">
               <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                Der neue Standard für visuelle Schweiß- & Montageprüfung
+                KI-Schweißnahtprüfung & Montagekontrolle für die Fertigung
               </h1>
               <div className="mt-4 h-1 w-32 bg-primary md:mt-6 md:w-48"></div>
               <p className="mt-6 max-w-2xl text-lg text-gray-200 sm:text-xl md:text-2xl">
